@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mockup Home — Apavi Green</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --g950:#0B2918;--g900:#143D25;--g800:#1A5C38;--g700:#207A4B;
+  --g600:#27975D;--g500:#2EB570;--g400:#5CC98C;--g300:#8DDCAB;
+  --g200:#BDEECB;--g100:#E2F7EC;--g50:#F2FCF6;
+  --gold:#C49430;--gold-l:#E4C07A;--gold-bg:#FBF3E2;
+  --n950:#0D0F0E;--n900:#1A1D1B;--n700:#3D4441;--n500:#6B7370;
+  --n300:#B0B8B4;--n100:#EEF1EF;--n50:#F7F9F8;
+  --font-h:'Plus Jakarta Sans',sans-serif;
+  --font-b:'Inter',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{font-family:var(--font-b);background:#fff;color:var(--n900);line-height:1.6;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--n100);height:66px;display:flex;align-items:center;padding:0 40px;gap:28px;position:sticky;top:0;z-index:100;}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.nav-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--g700),var(--g500));border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.nav-icon svg{width:20px;height:20px;}
+.nav-brand{font-family:var(--font-h);font-size:18px;font-weight:800;color:var(--n950);}
+.nav-brand span{color:var(--g600);}
+.nav-links{display:flex;gap:22px;margin-left:auto;}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--n500);transition:color .2s;}
+.nav-links a:hover{color:var(--g700);}
+.nav-phone{font-size:13px;font-weight:600;color:var(--n700);display:flex;align-items:center;gap:5px;}
+.nav-cta{background:var(--g700);color:#fff;font-family:var(--font-h);font-size:13.5px;font-weight:700;padding:9px 20px;border-radius:6px;transition:background .2s;}
+.nav-cta:hover{background:var(--g800);}
+
+/* HERO */
+.hero{min-height:92vh;background:linear-gradient(140deg,var(--g950) 0%,var(--g900) 40%,var(--g800) 75%,var(--g700) 100%);display:flex;align-items:center;position:relative;overflow:hidden;}
+.hero-noise{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:.4;}
+.hero-glow{position:absolute;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(46,181,112,.18) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;width:100%;}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(46,181,112,.15);border:1px solid rgba(46,181,112,.3);color:var(--g300);font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;margin-bottom:20px;}
+.hero-tag-dot{width:6px;height:6px;background:var(--g400);border-radius:50%;}
+.hero h1{font-family:var(--font-h);font-size:clamp(36px,4.5vw,58px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:18px;letter-spacing:-.02em;}
+.hero h1 em{font-style:normal;color:var(--g400);}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:32px;max-width:480px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--gold);color:#fff;font-family:var(--font-h);font-size:15px;font-weight:700;padding:14px 28px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;transition:background .2s;cursor:pointer;}
+.btn-primary:hover{background:#b8861f;}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;font-family:var(--font-h);font-size:15px;font-weight:600;padding:14px 28px;border-radius:8px;border:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:8px;transition:all .2s;cursor:pointer;}
+.btn-ghost:hover{background:rgba(255,255,255,.18);}
+.hero-stats{display:flex;gap:32px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);}
+.hero-stat-num{font-family:var(--font-h);font-size:28px;font-weight:900;color:#fff;}
+.hero-stat-label{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;}
+
+/* SLIDER ANTES/DESPUÉS */
+.slider-wrap{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(11,41,24,.25);position:relative;}
+.slider-header{background:var(--g50);padding:12px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--g200);}
+.slider-header-dot{width:8px;height:8px;border-radius:50%;}
+.slider-title{font-family:var(--font-h);font-size:13px;font-weight:700;color:var(--g900);}
+.slider-body{position:relative;height:280px;overflow:hidden;cursor:ew-resize;}
+.slider-before{position:absolute;inset:0;background:linear-gradient(135deg,#8a9b8a 0%,#6b7b6b 100%);display:flex;align-items:center;justify-content:center;}
+.slider-after{position:absolute;inset:0;background:linear-gradient(135deg,var(--g800) 0%,var(--g600) 50%,var(--g400) 100%);display:flex;align-items:center;justify-content:center;clip-path:inset(0 45% 0 0);}
+.slider-handle{position:absolute;left:55%;top:0;bottom:0;width:3px;background:#fff;z-index:10;transform:translateX(-50%);}
+.slider-handle-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;background:#fff;border-radius:50%;border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.3);}
+.slider-label{position:absolute;bottom:14px;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;}
+.slider-label-before{left:14px;}
+.slider-label-after{right:14px;}
+.slider-label-after{background:rgba(46,181,112,.7);}
+.slider-chips{padding:12px 14px;display:flex;gap:6px;flex-wrap:wrap;}
+.chip{font-size:11.5px;font-weight:600;padding:5px 12px;border-radius:20px;border:1px solid var(--g200);color:var(--g700);background:var(--g50);cursor:pointer;transition:all .15s;}
+.chip.active{background:var(--g700);color:#fff;border-color:var(--g700);}
+.chip.gold{border-color:var(--gold-l);color:var(--gold);background:var(--gold-bg);}
+.slider-before-icon{font-size:48px;opacity:.4;}
+.slider-after-icon{font-size:48px;opacity:.7;}
+.slider-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;}
+.slider-text-title{font-family:var(--font-h);font-size:15px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.4);}
+.slider-text-sub{font-size:11px;color:rgba(255,255,255,.7);text-shadow:0 1px 4px rgba(0,0,0,.3);}
+
+/* TRUST BAR */
+.trust-bar{background:var(--g900);padding:20px 40px;display:flex;justify-content:center;gap:60px;}
+.trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);}
+.trust-icon{width:32px;height:32px;background:rgba(46,181,112,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.trust-text-main{font-family:var(--font-h);font-size:14px;font-weight:700;}
+.trust-text-sub{font-size:11px;color:rgba(255,255,255,.45);margin-top:1px;}
+
+/* SECCIONES */
+.section{padding:88px 0;}
+.container{max-width:1160px;margin:0 auto;padding:0 40px;}
+.section-label{font-size:11.5px;font-weight:700;color:var(--g600);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:10px;}
+.section-title{font-family:var(--font-h);font-size:clamp(28px,3vw,42px);font-weight:800;color:var(--n950);line-height:1.15;margin-bottom:14px;letter-spacing:-.02em;}
+.section-title em{font-style:normal;color:var(--g700);}
+.section-sub{font-size:16px;color:var(--n500);max-width:540px;line-height:1.65;}
+.section-header{margin-bottom:52px;}
+
+/* CONFIGURADOR */
+.configurador{background:var(--n950);padding:80px 0;}
+.config-grid{display:grid;grid-template-columns:1fr 380px;gap:56px;align-items:start;}
+.config-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px;}
+.config-step-title{font-size:11px;font-weight:700;color:var(--g400);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+.config-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+.config-pill{font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);cursor:pointer;transition:all .15s;}
+.config-pill.active{background:var(--g700);color:#fff;border-color:var(--g700);}
+.config-pill.gold-pill{border-color:rgba(196,148,48,.4);color:var(--gold-l);}
+.config-pill.gold-pill.active{background:var(--gold);color:#fff;border-color:var(--gold);}
+.config-result-box{background:linear-gradient(135deg,var(--g900),var(--g800));border-radius:16px;padding:28px;}
+.config-result-label{font-size:12px;color:var(--g300);font-weight:600;margin-bottom:6px;}
+.config-result-price{font-family:var(--font-h);font-size:44px;font-weight:900;color:#fff;letter-spacing:-.02em;margin-bottom:4px;}
+.config-result-note{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:24px;}
+.config-included{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+.config-included-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.7);}
+.config-included-icon{width:18px;height:18px;background:rgba(46,181,112,.2);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;}
+.btn-gold{background:var(--gold);color:#fff;font-family:var(--font-h);font-size:14.5px;font-weight:700;padding:13px 24px;border-radius:8px;border:none;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;}
+.btn-gold:hover{background:#b8861f;}
+
+/* PORTFOLIO */
+.portfolio-filters{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap;}
+.pf-chip{font-size:13px;font-weight:600;padding:8px 18px;border-radius:20px;border:1px solid var(--n100);color:var(--n500);cursor:pointer;transition:all .15s;}
+.pf-chip.active{background:var(--g700);color:#fff;border-color:var(--g700);}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.portfolio-card{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;}
+.portfolio-card-img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.portfolio-card:hover .portfolio-card-img{transform:scale(1.05);}
+.portfolio-card-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,41,24,.85) 0%,transparent 50%);opacity:0;transition:opacity .3s;}
+.portfolio-card:hover .portfolio-card-overlay{opacity:1;}
+.portfolio-card-info{position:absolute;bottom:0;left:0;right:0;padding:16px;transform:translateY(8px);opacity:0;transition:all .3s;}
+.portfolio-card:hover .portfolio-card-info{transform:translateY(0);opacity:1;}
+.portfolio-card-title{font-family:var(--font-h);font-size:14px;font-weight:700;color:#fff;}
+.portfolio-card-meta{font-size:11px;color:rgba(255,255,255,.65);margin-top:3px;}
+/* Placeholder gradients for portfolio */
+.pg1{background:linear-gradient(135deg,#1A5C38 0%,#2EB570 100%);}
+.pg2{background:linear-gradient(135deg,#0B2918 0%,#207A4B 100%);}
+.pg3{background:linear-gradient(135deg,#27975D 0%,#8DDCAB 100%);}
+.pg4{background:linear-gradient(135deg,#143D25 0%,#5CC98C 100%);}
+.pg5{background:linear-gradient(135deg,#A07726 0%,#E4C07A 100%);}
+.pg6{background:linear-gradient(135deg,#207A4B 0%,#BDEECB 100%);}
+.pg-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:40px;opacity:.3;}
+.portfolio-cta{text-align:center;margin-top:40px;}
+
+/* SERVICIOS */
+.servicios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.servicio-card{background:var(--n50);border-radius:14px;overflow:hidden;border:1px solid var(--n100);transition:all .25s;cursor:pointer;}
+.servicio-card:hover{border-color:var(--g300);box-shadow:0 8px 32px rgba(20,61,37,.1);}
+.servicio-card-top{height:120px;display:flex;align-items:center;justify-content:center;font-size:48px;}
+.servicio-card-body{padding:18px 20px;}
+.servicio-card-title{font-family:var(--font-h);font-size:16px;font-weight:700;color:var(--n950);margin-bottom:6px;}
+.servicio-card-desc{font-size:13px;color:var(--n500);line-height:1.5;margin-bottom:14px;}
+.servicio-card-link{font-size:13px;font-weight:600;color:var(--g700);display:flex;align-items:center;gap:5px;}
+
+/* CUESTIONARIO CTA */
+.quiz-cta{background:linear-gradient(135deg,var(--g950) 0%,var(--g900) 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden;}
+.quiz-cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(46,181,112,.12) 0%,transparent 70%);pointer-events:none;}
+.quiz-cta-inner{position:relative;z-index:2;}
+.quiz-cta h2{font-family:var(--font-h);font-size:clamp(28px,3vw,44px);font-weight:900;color:#fff;margin-bottom:16px;letter-spacing:-.02em;}
+.quiz-cta h2 em{font-style:normal;color:var(--g400);}
+.quiz-cta p{font-size:17px;color:rgba(255,255,255,.6);margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;}
+.quiz-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.quiz-steps{display:flex;justify-content:center;gap:32px;margin-top:48px;}
+.quiz-step{text-align:center;}
+.quiz-step-num{width:36px;height:36px;background:rgba(46,181,112,.15);border:1px solid rgba(46,181,112,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-h);font-size:14px;font-weight:700;color:var(--g400);margin:0 auto 8px;}
+.quiz-step-label{font-size:12px;color:rgba(255,255,255,.5);}
+
+/* FOOTER minimal */
+footer{background:var(--n950);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;}
+.footer-brand{font-family:var(--font-h);font-size:16px;font-weight:800;color:#fff;}
+.footer-brand span{color:var(--g500);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.4);transition:color .2s;}
+.footer-links a:hover{color:rgba(255,255,255,.8);}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.25);}
+
+/* SECTION LABEL decorador */
+.deco-line{width:40px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:20px;}
+
+/* ANNOTATION overlay */
+.ann{position:relative;}
+.ann-badge{position:absolute;background:var(--gold);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;z-index:50;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.2);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+        <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+        <line x1="9" y1="9" x2="9.01" y2="9"/>
+        <line x1="15" y1="9" x2="15.01" y2="9"/>
+      </svg>
+    </div>
+    <span class="nav-brand">Apavi <span>Green</span></span>
+  </div>
+  <div class="nav-links">
+    <a href="#simulador">Simulador</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#">Nosotros</a>
+    <a href="#">Blog</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;margin-left:auto;">
+    <span class="nav-phone">📞 +34 XXX XXX XXX</span>
+    <a href="#cuestionario" class="nav-cta">Pedir presupuesto</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><span class="hero-tag-dot"></span>Especialistas en césped artificial · Gran Canaria</div>
+      <h1>Transforma tu espacio.<br/>Vive el <em>verde</em> todo el año.</h1>
+      <p class="hero-sub">Instalación profesional de césped artificial, jardines verticales y pavimentos deportivos. Presupuesto gratuito en 24h.</p>
+      <div class="hero-actions">
+        <a href="#cuestionario" class="btn-primary">Pedir presupuesto gratis →</a>
+        <a href="#simulador" class="btn-ghost">Ver el simulador</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">+500</div><div class="hero-stat-label">Proyectos realizados</div></div>
+        <div><div class="hero-stat-num">15 años</div><div class="hero-stat-label">de experiencia</div></div>
+        <div><div class="hero-stat-num">24h</div><div class="hero-stat-label">Presupuesto gratis</div></div>
+      </div>
+    </div>
+
+    <!-- SLIDER ANTES/DESPUÉS en el hero -->
+    <div class="ann">
+      <div class="ann-badge" style="top:-12px;right:-12px;">✦ Arrastra para ver</div>
+      <div class="slider-wrap">
+        <div class="slider-header">
+          <div class="slider-header-dot" style="background:var(--g400)"></div>
+          <div class="slider-header-dot" style="background:var(--gold)"></div>
+          <span class="slider-title" style="margin-left:4px;">Antes / Después — Jardín residencial</span>
+        </div>
+        <div class="slider-body">
+          <div class="slider-before">
+            <div class="slider-text">
+              <div style="font-size:52px;opacity:.35;">🏚</div>
+              <div class="slider-text-title">Antes</div>
+              <div class="slider-text-sub">Tierra sin tratar</div>
+            </div>
+          </div>
+          <div class="slider-after">
+            <div class="slider-text">
+              <div style="font-size:52px;opacity:.6;">🌿</div>
+              <div class="slider-text-title">Después</div>
+              <div class="slider-text-sub">Césped premium instalado</div>
+            </div>
+          </div>
+          <div class="slider-handle">
+            <div class="slider-handle-circle">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C49430" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/></svg>
+            </div>
+          </div>
+          <span class="slider-label slider-label-before">ANTES</span>
+          <span class="slider-label slider-label-after">DESPUÉS ✦</span>
+        </div>
+        <div class="slider-chips">
+          <div class="chip active">Jardín residencial</div>
+          <div class="chip">Piscina</div>
+          <div class="chip">Terraza</div>
+          <div class="chip">Deportivo</div>
+          <div class="chip gold">Vertical</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-icon">🏆</div><div><div class="trust-text-main">+500 proyectos</div><div class="trust-text-sub">en toda España</div></div></div>
+  <div class="trust-item"><div class="trust-icon">💬</div><div><div class="trust-text-main">WhatsApp directo</div><div class="trust-text-sub">Respuesta en minutos</div></div></div>
+  <div class="trust-item"><div class="trust-icon">🛡</div><div><div class="trust-text-main">Garantía 10 años</div><div class="trust-text-sub">en todos los productos</div></div></div>
+  <div class="trust-item"><div class="trust-icon">📐</div><div><div class="trust-text-main">Visita gratuita</div><div class="trust-text-sub">Medición y asesoría</div></div></div>
+</div>
+
+<!-- CONFIGURADOR DE PRECIO -->
+<section class="configurador" id="simulador">
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <div class="section-label" style="color:var(--g400);">Simulador de proyecto</div>
+      <h2 style="font-family:var(--font-h);font-size:clamp(28px,3vw,42px);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.02em;">¿Cuánto cuesta <em style="color:var(--g400);font-style:normal;">tu proyecto</em>?</h2>
+      <p style="font-size:16px;color:rgba(255,255,255,.5);margin-top:10px;max-width:480px;">Configura tu espacio en segundos y obtén una estimación orientativa. Sin compromiso.</p>
+    </div>
+    <div class="config-grid">
+      <div class="config-panel">
+        <div class="config-step-title">1. Tipo de espacio</div>
+        <div class="config-pills">
+          <div class="config-pill active">🌿 Jardín</div>
+          <div class="config-pill">🏊 Piscina</div>
+          <div class="config-pill">🏡 Terraza</div>
+          <div class="config-pill">⚽ Deportivo</div>
+          <div class="config-pill">🌳 Vertical</div>
+          <div class="config-pill">🏢 Corporativo</div>
+        </div>
+        <div class="config-step-title">2. Superficie aproximada</div>
+        <div class="config-pills">
+          <div class="config-pill">Menos de 20 m²</div>
+          <div class="config-pill active">20 – 50 m²</div>
+          <div class="config-pill">50 – 100 m²</div>
+          <div class="config-pill gold-pill">Más de 100 m²</div>
+        </div>
+        <div class="config-step-title">3. Calidad del producto</div>
+        <div class="config-pills">
+          <div class="config-pill">Estándar</div>
+          <div class="config-pill active">Premium</div>
+          <div class="config-pill gold-pill gold-pill">✦ Élite</div>
+        </div>
+        <div class="config-step-title">4. ¿Incluye instalación?</div>
+        <div class="config-pills">
+          <div class="config-pill active">Sí, instalación completa</div>
+          <div class="config-pill">Solo material</div>
+        </div>
+      </div>
+      <div>
+        <div class="config-result-box">
+          <div class="config-result-label">Estimación para tu proyecto</div>
+          <div class="config-result-price">~2.400 €</div>
+          <div class="config-result-note">Jardín 20–50 m² · Premium · Con instalación · IGIC no incluido</div>
+          <div class="config-included">
+            <div class="config-included-item"><div class="config-included-icon">✓</div>Material césped premium seleccionado</div>
+            <div class="config-included-item"><div class="config-included-icon">✓</div>Preparación del terreno</div>
+            <div class="config-included-item"><div class="config-included-icon">✓</div>Instalación profesional</div>
+            <div class="config-included-item"><div class="config-included-icon">✓</div>Garantía 10 años incluida</div>
+            <div class="config-included-item"><div class="config-included-icon" style="background:rgba(196,148,48,.2);">i</div>Visita previa gratuita</div>
+          </div>
+          <button class="btn-gold">Obtener presupuesto exacto →</button>
+          <p style="font-size:11px;color:rgba(255,255,255,.3);text-align:center;margin-top:10px;">Respuesta en menos de 24h · Sin compromiso</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="proyectos">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Nuestro trabajo</div>
+      <div class="deco-line"></div>
+      <h2 class="section-title">Proyectos que <em>hablan</em> por sí solos</h2>
+      <p class="section-sub">Más de 500 instalaciones en toda España. Filtra por tipo de proyecto y encuentra el tuyo.</p>
+    </div>
+    <div class="portfolio-filters">
+      <div class="pf-chip active">Todos</div>
+      <div class="pf-chip">Residencial</div>
+      <div class="pf-chip">Deportivo</div>
+      <div class="pf-chip">Corporativo</div>
+      <div class="pf-chip">Jardín vertical</div>
+      <div class="pf-chip">Piscina</div>
+      <div class="pf-chip">Eventos</div>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card pg1"><div class="pg-inner">🌿</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Jardín unifamiliar · Las Palmas</div><div class="portfolio-card-meta">Residencial · 85 m²</div></div></div>
+      <div class="portfolio-card pg2"><div class="pg-inner">⚽</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Campo fútbol sala · Telde</div><div class="portfolio-card-meta">Deportivo · 420 m²</div></div></div>
+      <div class="portfolio-card pg3"><div class="pg-inner">🏊</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Piscina & jardín · Maspalomas</div><div class="portfolio-card-meta">Residencial · 60 m²</div></div></div>
+      <div class="portfolio-card pg5"><div class="pg-inner">🌳</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Jardín vertical corporativo · Madrid</div><div class="portfolio-card-meta">Corporativo · 40 m²</div></div></div>
+      <div class="portfolio-card pg4"><div class="pg-inner">🏡</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Terraza ático · Santa Cruz</div><div class="portfolio-card-meta">Residencial · 35 m²</div></div></div>
+      <div class="portfolio-card pg6"><div class="pg-inner">🎪</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Moqueta ferial · FITUR Madrid</div><div class="portfolio-card-meta">Eventos · 200 m²</div></div></div>
+    </div>
+    <div class="portfolio-cta">
+      <a href="proyectos.html" class="btn-primary" style="display:inline-flex;">Ver todos los proyectos →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section" style="background:var(--n50);padding-top:72px;padding-bottom:72px;" id="servicios">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:36px;">
+      <div class="section-label">Lo que hacemos</div>
+      <div class="deco-line"></div>
+      <h2 class="section-title">Servicios <em>especializados</em></h2>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card"><div class="servicio-card-top" style="background:linear-gradient(135deg,var(--g100),var(--g50));">🌿</div><div class="servicio-card-body"><div class="servicio-card-title">Césped Artificial</div><div class="servicio-card-desc">Instalación profesional para jardines, piscinas, terrazas y más. Calidades desde estándar hasta élite.</div><div class="servicio-card-link">Ver servicio →</div></div></div>
+      <div class="servicio-card"><div class="servicio-card-top" style="background:linear-gradient(135deg,#E2F7EC,var(--g50));">🌳</div><div class="servicio-card-body"><div class="servicio-card-title">Jardines Verticales</div><div class="servicio-card-desc">Muros verdes para interior y exterior. Diseño personalizado y plantas naturales o artificiales.</div><div class="servicio-card-link">Ver servicio →</div></div></div>
+      <div class="servicio-card"><div class="servicio-card-top" style="background:linear-gradient(135deg,#FBF3E2,#fff8ed);">⚽</div><div class="servicio-card-body"><div class="servicio-card-title">Instalaciones Deportivas</div><div class="servicio-card-desc">Campos de fútbol, pádel, tenis y multideporte. Homologados FIFA y ITF.</div><div class="servicio-card-link">Ver servicio →</div></div></div>
+      <div class="servicio-card"><div class="servicio-card-top" style="background:linear-gradient(135deg,var(--g100),var(--g50));">👶</div><div class="servicio-card-body"><div class="servicio-card-title">Espacios Infantiles</div><div class="servicio-card-desc">Suelos amortiguantes y césped seguro para parques y zonas de juego infantil.</div><div class="servicio-card-link">Ver servicio →</div></div></div>
+      <div class="servicio-card"><div class="servicio-card-top" style="background:linear-gradient(135deg,#EEF1EF,var(--n50));">🎪</div><div class="servicio-card-body"><div class="servicio-card-title">Moqueta Ferial</div><div class="servicio-card-desc">Alquiler y venta de moqueta para stands, eventos y ferias. Montaje y desmontaje incluido.</div><div class="servicio-card-link">Ver servicio →</div></div></div>
+      <div class="servicio-card"><div class="servicio-card-top" style="background:linear-gradient(135deg,#FBF3E2,#fff8ed);">🏊</div><div class="servicio-card-body"><div class="servicio-card-title">Zonas de Piscina</div><div class="servicio-card-desc">Césped anti-deslizante y resistente al cloro. Diseños que realzan el entorno acuático.</div><div class="servicio-card-link">Ver servicio →</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CUESTIONARIO CTA -->
+<section class="quiz-cta" id="cuestionario">
+  <div class="quiz-cta-glow"></div>
+  <div class="container quiz-cta-inner">
+    <div class="section-label" style="color:var(--g400);text-align:center;">Presupuesto gratuito</div>
+    <h2>¿Listo para transformar<br/><em>tu espacio</em>?</h2>
+    <p>Cuéntanos tu proyecto en 2 minutos y te enviamos un presupuesto detallado sin compromiso en menos de 24 horas.</p>
+    <div class="quiz-cta-btns">
+      <a href="cuestionario.html" class="btn-primary" style="font-size:16px;padding:16px 32px;">Iniciar cuestionario →</a>
+      <a href="https://wa.me/34XXXXXXXXX" class="btn-ghost" style="font-size:15px;">💬 WhatsApp directo</a>
+    </div>
+    <div class="quiz-steps">
+      <div class="quiz-step"><div class="quiz-step-num">1</div><div class="quiz-step-label">Tipo de proyecto</div></div>
+      <div class="quiz-step"><div class="quiz-step-num">2</div><div class="quiz-step-label">Superficie y uso</div></div>
+      <div class="quiz-step"><div class="quiz-step-num">3</div><div class="quiz-step-label">Datos de contacto</div></div>
+      <div class="quiz-step"><div class="quiz-step-num">4</div><div class="quiz-step-label">Presupuesto en 24h</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Apavi <span>Green</span></div>
+  <div class="footer-links">
+    <a href="#">Política de privacidad</a>
+    <a href="#">Aviso legal</a>
+    <a href="#">Cookies</a>
+    <a href="#">Contacto</a>
+  </div>
+  <div class="footer-copy">© 2026 Apavi Green · Todos los derechos reservados</div>
+</footer>
+
+</body>
+</html>
