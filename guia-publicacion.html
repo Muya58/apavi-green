@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía de Publicación — Apavi Green</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --g950:#0B2918;--g700:#207A4B;--g500:#2EB570;--g300:#8DDCAB;--g100:#E2F7EC;--g50:#F2FCF6;
+    --gold:#C49430;--gold-lt:#F5E9C8;
+    --n950:#0D0F0E;--n700:#2D3330;--n400:#8A9690;--n100:#E8EDE9;--n50:#F7F9F8;
+    --red:#C0392B;--red-lt:#FDEDED;
+    --blue:#1A6EBE;--blue-lt:#EBF3FD;
+    --font-head:'Plus Jakarta Sans',sans-serif;
+    --font-body:'Inter',sans-serif;
+    --radius:12px;--shadow:0 4px 24px rgba(11,41,24,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font-body);background:var(--n50);color:var(--n950);line-height:1.6;font-size:15px}
+
+  /* ── Header ── */
+  .header{background:var(--g950);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden}
+  .header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 90% 10%,rgba(46,181,112,.18),transparent)}
+  .header-inner{max-width:900px;margin:0 auto;position:relative}
+  .logo-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:99px;padding:6px 16px 6px 8px;margin-bottom:20px}
+  .logo-dot{width:28px;height:28px;background:var(--g500);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .logo-pill span{font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:.02em}
+  .header h1{font-family:var(--font-head);font-size:clamp(26px,4vw,38px);font-weight:800;line-height:1.2;margin-bottom:12px}
+  .header h1 em{font-style:normal;color:var(--g300)}
+  .header p{color:rgba(255,255,255,.72);font-size:15px;max-width:580px}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border-radius:99px;padding:5px 12px;font-size:12px;font-weight:600;color:rgba(255,255,255,.85)}
+  .badge.green{background:rgba(46,181,112,.2);color:var(--g300)}
+  .badge.gold{background:rgba(196,148,48,.2);color:#E8C97A}
+
+  /* ── Layout ── */
+  .container{max-width:900px;margin:0 auto;padding:40px 24px}
+
+  /* ── Section titles ── */
+  .section-label{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .section-num{width:32px;height:32px;border-radius:50%;background:var(--g500);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .section-num.gold{background:var(--gold)}
+  .section-num.red{background:var(--red)}
+  h2{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--g950)}
+  .section-desc{font-size:14px;color:var(--n400);margin-bottom:20px;margin-left:42px}
+
+  /* ── Cards ── */
+  .card{background:#fff;border-radius:var(--radius);border:1px solid var(--n100);padding:24px;margin-bottom:16px;box-shadow:var(--shadow)}
+  .card+.card{margin-top:0}
+
+  /* ── Steps ── */
+  .steps{display:flex;flex-direction:column;gap:0}
+  .step{display:flex;gap:16px;position:relative;padding-bottom:28px}
+  .step:last-child{padding-bottom:0}
+  .step:not(:last-child)::before{content:'';position:absolute;left:17px;top:36px;bottom:0;width:2px;background:var(--n100)}
+  .step-icon{width:36px;height:36px;border-radius:50%;background:var(--g100);border:2px solid var(--g300);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;position:relative;z-index:1}
+  .step-body{flex:1;padding-top:6px}
+  .step-body h3{font-family:var(--font-head);font-size:15px;font-weight:700;margin-bottom:6px}
+  .step-body p{font-size:14px;color:var(--n700);line-height:1.6}
+
+  /* ── Code blocks ── */
+  pre,code{font-family:'Courier New',monospace}
+  pre{background:var(--n950);color:#A8E6C0;border-radius:8px;padding:16px 20px;font-size:13px;line-height:1.7;overflow-x:auto;margin:12px 0}
+  code{background:var(--g100);color:var(--g700);border-radius:4px;padding:2px 6px;font-size:12.5px}
+
+  /* ── Alert boxes ── */
+  .alert{border-radius:8px;padding:14px 18px;font-size:14px;display:flex;gap:12px;align-items:flex-start;margin:12px 0}
+  .alert-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+  .alert.green{background:var(--g100);border:1px solid var(--g300);color:var(--g700)}
+  .alert.gold{background:var(--gold-lt);border:1px solid var(--gold);color:#7A5C10}
+  .alert.red{background:var(--red-lt);border:1px solid #F5B7B1;color:var(--red)}
+  .alert.blue{background:var(--blue-lt);border:1px solid #B0D0F5;color:var(--blue)}
+  .alert strong{font-weight:700}
+
+  /* ── Tables ── */
+  .table-wrap{overflow-x:auto;margin:12px 0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{background:var(--g950);color:#fff;font-family:var(--font-head);font-weight:700;padding:10px 14px;text-align:left}
+  td{padding:10px 14px;border-bottom:1px solid var(--n100);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:nth-child(even) td{background:var(--n50)}
+
+  /* ── Checklist ── */
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:10px;margin:12px 0}
+  .checklist li{display:flex;align-items:flex-start;gap:10px;font-size:14px;padding:10px 14px;border-radius:8px;background:var(--n50);border:1px solid var(--n100)}
+  .checklist li .cb{width:20px;height:20px;border:2px solid var(--n400);border-radius:4px;flex-shrink:0;margin-top:1px;cursor:pointer;position:relative;transition:.2s}
+  .checklist li.done .cb{background:var(--g500);border-color:var(--g500)}
+  .checklist li.done .cb::after{content:'✓';color:#fff;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+  .checklist li.done .text{text-decoration:line-through;color:var(--n400)}
+  .checklist li .tag{margin-left:auto;flex-shrink:0;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px}
+  .checklist li .tag.urgent{background:#FDECEA;color:var(--red)}
+  .checklist li .tag.medium{background:var(--gold-lt);color:#7A5C10}
+  .checklist li .tag.low{background:var(--g100);color:var(--g700)}
+
+  /* ── Platform comparison ── */
+  .platforms{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:16px 0}
+  .platform-card{border-radius:var(--radius);padding:20px;border:2px solid var(--n100);background:#fff;cursor:pointer;transition:.2s}
+  .platform-card:hover{border-color:var(--g300)}
+  .platform-card.recommended{border-color:var(--g500);background:var(--g50)}
+  .platform-card .p-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:10px}
+  .recommended .p-badge{background:var(--g500);color:#fff}
+  .platform-card h4{font-family:var(--font-head);font-size:15px;font-weight:700;margin-bottom:6px}
+  .platform-card p{font-size:13px;color:var(--n400)}
+
+  /* ── Progress tracker ── */
+  .progress-bar{background:var(--n100);border-radius:99px;height:8px;margin:8px 0 4px;overflow:hidden}
+  .progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--g500),var(--g300));transition:width .6s ease}
+
+  /* ── Section spacing ── */
+  .section{margin-bottom:48px}
+
+  /* ── Footer ── */
+  .footer{background:var(--g950);color:rgba(255,255,255,.55);text-align:center;padding:32px 24px;font-size:13px;margin-top:60px}
+  .footer strong{color:var(--g300)}
+
+  /* ── Responsive ── */
+  @media(max-width:600px){
+    .header{padding:32px 20px}
+    .container{padding:24px 16px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <div class="header-inner">
+    <div class="logo-pill">
+      <div class="logo-dot">🌿</div>
+      <span>Apavi Green — Guía de Publicación</span>
+    </div>
+    <h1>Cómo publicar tu web<br>y <em>conectar tu dominio</em></h1>
+    <p>Guía paso a paso para subir la landing page a internet, conectar tu dominio personalizado y configurar el correo del formulario de contacto.</p>
+    <div class="badge-row">
+      <span class="badge green">✅ index.html listo</span>
+      <span class="badge gold">⏳ Dominio pendiente</span>
+      <span class="badge">🔒 HTTPS gratis</span>
+      <span class="badge">⚡ 0€/mes hosting</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MAIN ══ -->
+<div class="container">
+
+  <!-- ─ Progreso general ─ -->
+  <div class="card" style="margin-bottom:32px">
+    <p style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--n400);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px">Estado del proyecto web</p>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px">
+          <span>Brand Kit &amp; identidad visual</span><span style="color:var(--g500)">100%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px">
+          <span>Landing page (index.html)</span><span style="color:var(--g500)">100%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px">
+          <span>Personalización (fotos, teléfono, email)</span><span style="color:var(--gold)">30%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:30%;background:linear-gradient(90deg,var(--gold),#E8C97A)"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:4px">
+          <span>Publicación online</span><span style="color:var(--n400)">0%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════
+       SECCIÓN 1 — Personalización
+       ════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num gold">1</div>
+      <h2>Antes de publicar — Personalización</h2>
+    </div>
+    <p class="section-desc">Estos datos hay que cambiarlos en el archivo <code>index.html</code> antes de subir la web. Son los únicos cambios obligatorios.</p>
+
+    <div class="card">
+      <ul class="checklist" id="checklist1">
+
+        <li id="c1" onclick="toggle('c1')">
+          <div class="cb"></div>
+          <div class="text" style="flex:1">
+            <strong>Número de teléfono WhatsApp</strong><br>
+            <span style="color:var(--n400)">Busca <code>34600000000</code> en index.html y reemplaza por tu número real (sin espacios, con prefijo España 34). El enlace de WhatsApp también aparece en el footer y en el botón flotante.</span>
+          </div>
+          <span class="tag urgent">🔴 Urgente</span>
+        </li>
+
+        <li id="c2" onclick="toggle('c2')">
+          <div class="cb"></div>
+          <div class="text" style="flex:1">
+            <strong>Email de contacto</strong><br>
+            <span style="color:var(--n400)">Busca <code>info@avigreen.es</code> y pon el email real de la empresa. Aparece en la sección de contacto y en el footer.</span>
+          </div>
+          <span class="tag urgent">🔴 Urgente</span>
+        </li>
+
+        <li id="c3" onclick="toggle('c3')">
+          <div class="cb"></div>
+          <div class="text" style="flex:1">
+            <strong>Activar Formspree (formulario de contacto)</strong><br>
+            <span style="color:var(--n400)">Ve a <a href="https://formspree.io" target="_blank" style="color:var(--g700)">formspree.io</a> → Crea cuenta gratis → Nuevo form → Copia el ID. En index.html busca <code>YOUR_FORM_ID</code> y reemplázalo. Recibirás los mensajes por email.</span>
+          </div>
+          <span class="tag urgent">🔴 Urgente</span>
+        </li>
+
+        <li id="c4" onclick="toggle('c4')">
+          <div class="cb"></div>
+          <div class="text" style="flex:1">
+            <strong>Fotos reales de proyectos</strong><br>
+            <span style="color:var(--n400)">Las tiles del hero, servicios y portfolio son gradientes de color con badge "📷 FOTO REAL". Guarda fotos en la misma carpeta y en CSS cambia el fondo. Instrucciones detalladas al final de esta guía.</span>
+          </div>
+          <span class="tag medium">🟡 Importante</span>
+        </li>
+
+        <li id="c5" onclick="toggle('c5')">
+          <div class="cb"></div>
+          <div class="text" style="flex:1">
+            <strong>Dirección física (opcional)</strong><br>
+            <span style="color:var(--n400)">En el footer pone "Valencia, España". Puedes añadir tu dirección completa si quieres aparecer en búsquedas locales de Google.</span>
+          </div>
+          <span class="tag low">🟢 Opcional</span>
+        </li>
+
+        <li id="c6" onclick="toggle('c6')">
+          <div class="cb"></div>
+          <div class="text" style="flex:1">
+            <strong>Link de Instagram</strong><br>
+            <span style="color:var(--n400)">El footer tiene el icono de Instagram con <code>href="#"</code>. Cuando crees la cuenta ponle la URL real: <code>https://instagram.com/apavitec</code> (o el nombre que elijas).</span>
+          </div>
+          <span class="tag low">🟢 Opcional</span>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════
+       SECCIÓN 2 — Elegir hosting
+       ════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">2</div>
+      <h2>Elegir dónde alojar la web</h2>
+    </div>
+    <p class="section-desc">Tres opciones ordenadas de más fácil a más técnico. Para Apavi Green lo mejor es Netlify.</p>
+
+    <div class="platforms">
+
+      <div class="platform-card recommended">
+        <div class="p-badge">⭐ Recomendado</div>
+        <h4>Netlify</h4>
+        <p style="margin-bottom:10px">Drag &amp; drop de la carpeta → web online en 60 segundos. Dominio gratis, HTTPS automático, 100 GB/mes gratis.</p>
+        <p style="font-size:12px;color:var(--g700);font-weight:600">netlify.com · Gratis siempre</p>
+      </div>
+
+      <div class="platform-card">
+        <div class="p-badge" style="background:var(--n100);color:var(--n700)">Alternativa</div>
+        <h4>GitHub Pages</h4>
+        <p style="margin-bottom:10px">Gratis, fiable, requiere crear una cuenta en GitHub y subir el archivo con git. Algo más técnico.</p>
+        <p style="font-size:12px;color:var(--n400);font-weight:600">pages.github.com · Gratis</p>
+      </div>
+
+      <div class="platform-card">
+        <div class="p-badge" style="background:var(--n100);color:var(--n700)">Con extras</div>
+        <h4>Hosting cPanel</h4>
+        <p style="margin-bottom:10px">Si ya tienes un hosting contratado (OVH, Hostinger, etc.) puedes subir index.html por FTP/File Manager.</p>
+        <p style="font-size:12px;color:var(--n400);font-weight:600">Depende del proveedor · ~3–5€/mes</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════
+       SECCIÓN 3 — Netlify paso a paso
+       ════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">3</div>
+      <h2>Publicar en Netlify — Paso a paso</h2>
+    </div>
+    <p class="section-desc">Desde cero hasta la web online en menos de 5 minutos.</p>
+
+    <div class="card">
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-icon">🌐</div>
+          <div class="step-body">
+            <h3>1. Crear cuenta gratuita</h3>
+            <p>Ve a <strong>netlify.com</strong> → Haz clic en <em>"Sign up"</em> → Puedes entrar con tu cuenta de Google (josepig1978@gmail.com). No necesitas tarjeta de crédito.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">📁</div>
+          <div class="step-body">
+            <h3>2. Arrastra la carpeta "Apavi Green"</h3>
+            <p>En el dashboard de Netlify verás un recuadro que dice <em>"Drag and drop your site output folder here"</em>. Arrastra la carpeta <strong>Apavi Green</strong> (la que contiene index.html) directamente sobre ese recuadro.</p>
+            <div class="alert green">
+              <div class="alert-icon">💡</div>
+              <div>Si la carpeta tiene más archivos (fotos, etc.) arrástralos todos juntos en la misma carpeta. Netlify publicará <code>index.html</code> como página principal automáticamente.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">⚡</div>
+          <div class="step-body">
+            <h3>3. Web publicada al instante</h3>
+            <p>Netlify asigna una URL automática del tipo <code>random-name-123456.netlify.app</code>. Ya puedes compartirla y verla funcionar mientras esperas el dominio.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">✏️</div>
+          <div class="step-body">
+            <h3>4. Cambiar el subdominio (opcional)</h3>
+            <p><em>Site settings → General → Site details → Change site name</em>. Puedes ponerlo como <code>apavi-green.netlify.app</code> para que sea más presentable.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-icon">🔄</div>
+          <div class="step-body">
+            <h3>5. Actualizar la web en el futuro</h3>
+            <p>Para subir cambios: <em>Deploys → Drag and drop</em> con la nueva versión de la carpeta. Netlify reemplaza el contenido en segundos y guarda historial de versiones.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════
+       SECCIÓN 4 — Dominio
+       ════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">4</div>
+      <h2>Conectar tu dominio personalizado</h2>
+    </div>
+    <p class="section-desc">Cuando tengas el dominio (ej. <code>apavi-green.es</code> o <code>apavitec.com</code>), sigue estos pasos.</p>
+
+    <div class="card" style="margin-bottom:20px">
+      <p style="font-family:var(--font-head);font-weight:700;margin-bottom:16px">Paso 1 — Añadir el dominio en Netlify</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon" style="font-size:13px;font-weight:800;font-family:var(--font-head)">A</div>
+          <div class="step-body">
+            <h3>Ir a Domain Management</h3>
+            <p>En Netlify: <em>Site settings → Domain management → Add custom domain</em></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-icon" style="font-size:13px;font-weight:800;font-family:var(--font-head)">B</div>
+          <div class="step-body">
+            <h3>Escribir tu dominio</h3>
+            <p>Escribe <code>apavi-green.es</code> (o el que hayas comprado) → Clic en <em>"Verify"</em>. Netlify te mostrará los registros DNS que tienes que configurar.</p>
+          </div>
+        </div>
+        <div class="step" style="padding-bottom:0">
+          <div class="step-icon" style="font-size:13px;font-weight:800;font-family:var(--font-head)">C</div>
+          <div class="step-body">
+            <h3>Netlify DNS (opción más fácil)</h3>
+            <p>Puedes elegir <em>"Use Netlify DNS"</em>. Te da 4 servidores de nombres (nameservers). Solo tienes que copiarlos y pegarlos en tu registrador de dominio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px">
+      <p style="font-family:var(--font-head);font-weight:700;margin-bottom:16px">Paso 2 — Configurar DNS en el registrador</p>
+
+      <div class="alert blue" style="margin-bottom:16px">
+        <div class="alert-icon">ℹ️</div>
+        <div>El <strong>registrador</strong> es donde compraste el dominio: GoDaddy, Namecheap, IONOS, OVH, Dondominio… El panel de DNS suele llamarse "Zone Editor", "DNS Manager" o "Gestión DNS".</div>
+      </div>
+
+      <p style="font-size:14px;font-weight:600;margin-bottom:10px">Opción A — Usar Netlify DNS (recomendado, más simple):</p>
+      <p style="font-size:14px;color:var(--n700);margin-bottom:12px">En tu registrador ve a <em>Nameservers</em> o <em>Servidores de nombres</em> y reemplaza los que hay por los 4 que Netlify te proporciona. Ejemplo:</p>
+      <pre>dns1.p01.nsone.net
+dns2.p01.nsone.net
+dns3.p01.nsone.net
+dns4.p01.nsone.net</pre>
+      <div class="alert gold">
+        <div class="alert-icon">⏱️</div>
+        <div>Los cambios de DNS tardan entre <strong>1 y 48 horas</strong> en propagarse por internet. Lo normal es que funcione en menos de 2 horas.</div>
+      </div>
+
+      <hr style="border:none;border-top:1px solid var(--n100);margin:20px 0">
+
+      <p style="font-size:14px;font-weight:600;margin-bottom:10px">Opción B — Mantener DNS del registrador (manual):</p>
+      <p style="font-size:14px;color:var(--n700);margin-bottom:12px">Si prefieres no cambiar los nameservers, añade estos registros en la zona DNS de tu registrador:</p>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Tipo</th><th>Nombre/Host</th><th>Valor/Apunta a</th><th>Para qué sirve</th>
+          </tr>
+          <tr>
+            <td><strong>A</strong></td>
+            <td><code>@</code> (o vacío)</td>
+            <td><code>75.2.60.5</code></td>
+            <td>Dominio raíz (apavi-green.es)</td>
+          </tr>
+          <tr>
+            <td><strong>CNAME</strong></td>
+            <td><code>www</code></td>
+            <td><code>tu-site.netlify.app</code></td>
+            <td>Subdominio www</td>
+          </tr>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--n400);margin-top:8px">* Reemplaza <code>tu-site.netlify.app</code> por tu URL real de Netlify.</p>
+    </div>
+
+    <div class="card">
+      <p style="font-family:var(--font-head);font-weight:700;margin-bottom:16px">Paso 3 — HTTPS gratis (automático)</p>
+      <div class="steps">
+        <div class="step" style="padding-bottom:0">
+          <div class="step-icon">🔒</div>
+          <div class="step-body">
+            <h3>SSL automático con Let's Encrypt</h3>
+            <p>Una vez que el dominio apunte a Netlify, ve a <em>Domain management → HTTPS → Verify DNS configuration</em>. Netlify solicita el certificado SSL automáticamente y gratis. En 5–10 minutos tu web tendrá el candado verde 🔒 y la URL <code>https://</code>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════
+       SECCIÓN 5 — Dónde comprar dominio
+       ════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">5</div>
+      <h2>¿Dónde comprar el dominio?</h2>
+    </div>
+    <p class="section-desc">Recomendaciones para España. Precio orientativo por año.</p>
+
+    <div class="card">
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Registrador</th><th>.es / año</th><th>.com / año</th><th>Por qué</th>
+          </tr>
+          <tr>
+            <td><strong>Namecheap</strong></td>
+            <td>~9€</td>
+            <td>~10€</td>
+            <td>Panel sencillo, buen soporte, DNS fácil de editar</td>
+          </tr>
+          <tr>
+            <td><strong>Dondominio.com</strong></td>
+            <td>~7€</td>
+            <td>~12€</td>
+            <td>Español, bien conocido en España, soporte en castellano</td>
+          </tr>
+          <tr>
+            <td><strong>IONOS</strong></td>
+            <td>~1€ 1er año</td>
+            <td>~1€ 1er año</td>
+            <td>Muy barato el primer año (sube al 2º)</td>
+          </tr>
+          <tr>
+            <td><strong>OVH</strong></td>
+            <td>~5€</td>
+            <td>~10€</td>
+            <td>Precio estable, buen rendimiento</td>
+          </tr>
+          <tr>
+            <td><strong>GoDaddy</strong></td>
+            <td>~10€</td>
+            <td>~15€</td>
+            <td>Conocido, pero panel más complejo</td>
+          </tr>
+        </table>
+      </div>
+      <div class="alert green" style="margin-top:16px">
+        <div class="alert-icon">💡</div>
+        <div><strong>Sugerencia de nombres:</strong> <code>apavi-green.es</code> · <code>apavitec.es</code> · <code>apavitec.com</code> · <code>apavi.es</code>. Comprueba disponibilidad en <a href="https://www.namecheap.com/domains/registration/results/?domain=apavi-green" target="_blank" style="color:var(--g700)">namecheap.com</a> o <a href="https://www.dondominio.com/check/#search=apavi-green" target="_blank" style="color:var(--g700)">dondominio.com</a>.</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════
+       SECCIÓN 6 — Formspree
+       ════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">6</div>
+      <h2>Activar el formulario de contacto</h2>
+    </div>
+    <p class="section-desc">El formulario usa Formspree para enviarte los mensajes por email. Gratis hasta 50 envíos/mes.</p>
+
+    <div class="card">
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">📧</div>
+          <div class="step-body">
+            <h3>1. Crear cuenta en Formspree</h3>
+            <p>Ve a <strong>formspree.io</strong> → Sign up con tu email → Plan "Starter" gratis.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-icon">➕</div>
+          <div class="step-body">
+            <h3>2. Crear un nuevo Form</h3>
+            <p><em>Dashboard → New Form</em> → Llámalo "Contacto Apavi Green" → Email de destino: tu email de empresa.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-icon">📋</div>
+          <div class="step-body">
+            <h3>3. Copiar el Form ID</h3>
+            <p>Formspree te da una URL del tipo <code>https://formspree.io/f/<strong>xabcdefg</strong></code>. El ID es la parte final (<code>xabcdefg</code>).</p>
+          </div>
+        </div>
+        <div class="step" style="padding-bottom:0">
+          <div class="step-icon">✏️</div>
+          <div class="step-body">
+            <h3>4. Pegarlo en index.html</h3>
+            <p>Abre <code>index.html</code> y busca (Ctrl+F) el texto <code>YOUR_FORM_ID</code>. Reemplázalo por tu ID real:</p>
+            <pre>// Antes:
+'https://formspree.io/f/YOUR_FORM_ID'
+
+// Después (ejemplo):
+'https://formspree.io/f/xabcdefg'</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════
+       SECCIÓN 7 — Cómo añadir fotos
+       ════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">7</div>
+      <h2>Cómo añadir fotos reales</h2>
+    </div>
+    <p class="section-desc">Las fotos están como placeholders de color. Aquí tienes cómo reemplazarlas fácilmente.</p>
+
+    <div class="card">
+
+      <div class="alert gold" style="margin-bottom:20px">
+        <div class="alert-icon">📸</div>
+        <div><strong>Consejo:</strong> Las fotos deben estar en formato JPG/WEBP, orientación horizontal (landscape), mínimo 800×500 px. Nómbralas descriptivamente: <code>cesped-hotel.jpg</code>, <code>jardin-vertical-oasis.jpg</code>, etc.</div>
+      </div>
+
+      <p style="font-size:14px;font-weight:600;margin-bottom:10px">Estructura de carpeta recomendada:</p>
+      <pre>📁 Apavi Green/
+├── index.html
+└── 📁 img/
+    ├── hero-1.jpg
+    ├── hero-2.jpg
+    ├── hero-3.jpg
+    ├── srv-cesped.jpg
+    ├── srv-deportes.jpg
+    ├── srv-vertical.jpg
+    ├── srv-infantil.jpg
+    ├── srv-tarima.jpg
+    ├── srv-epoxi.jpg
+    ├── srv-piscinas.jpg
+    ├── port-hotel-resort.jpg
+    ├── port-oasis.jpg
+    └── ... (resto de portfolio)</pre>
+
+      <p style="font-size:14px;font-weight:600;margin:16px 0 10px">Cómo cambiar una foto en el CSS:</p>
+      <p style="font-size:14px;color:var(--n700);margin-bottom:10px">En el archivo <code>index.html</code> busca el placeholder de la foto que quieres cambiar. Cada tile de servicio tiene un comentario. Añade <code>background-image</code> al estilo inline o al CSS:</p>
+      <pre>/* Antes (placeholder de color): */
+.srv-card:nth-child(1) .srv-img {
+  background: linear-gradient(135deg, #207A4B 0%, #0B2918 100%);
+}
+
+/* Después (foto real): */
+.srv-card:nth-child(1) .srv-img {
+  background-image: url('img/srv-cesped.jpg');
+  background-size: cover;
+  background-position: center;
+}</pre>
+
+      <div class="alert blue" style="margin-top:12px">
+        <div class="alert-icon">⚡</div>
+        <div><strong>Atajo rápido:</strong> Cuando tengamos las fotos, dámelas y yo actualizo el index.html directamente con todas las imágenes en su sitio. Solo tienes que arrastrar las fotos a la carpeta de trabajo.</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════
+       SECCIÓN 8 — Checklist final
+       ════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num red">✓</div>
+      <h2>Checklist final antes de lanzar</h2>
+    </div>
+    <p class="section-desc">Marca cada punto cuando esté listo. Haz clic para marcar.</p>
+
+    <div class="card">
+      <ul class="checklist" id="checklist-final">
+        <li id="f1" onclick="toggle('f1')"><div class="cb"></div><div class="text" style="flex:1">Teléfono WhatsApp real en index.html</div><span class="tag urgent">Urgente</span></li>
+        <li id="f2" onclick="toggle('f2')"><div class="cb"></div><div class="text" style="flex:1">Email real en index.html</div><span class="tag urgent">Urgente</span></li>
+        <li id="f3" onclick="toggle('f3')"><div class="cb"></div><div class="text" style="flex:1">Formspree activado (formulario de contacto)</div><span class="tag urgent">Urgente</span></li>
+        <li id="f4" onclick="toggle('f4')"><div class="cb"></div><div class="text" style="flex:1">Cuenta Netlify creada</div><span class="tag medium">Importante</span></li>
+        <li id="f5" onclick="toggle('f5')"><div class="cb"></div><div class="text" style="flex:1">Web subida a Netlify (drag &amp; drop)</div><span class="tag medium">Importante</span></li>
+        <li id="f6" onclick="toggle('f6')"><div class="cb"></div><div class="text" style="flex:1">Dominio comprado</div><span class="tag medium">Importante</span></li>
+        <li id="f7" onclick="toggle('f7')"><div class="cb"></div><div class="text" style="flex:1">Dominio conectado a Netlify</div><span class="tag medium">Importante</span></li>
+        <li id="f8" onclick="toggle('f8')"><div class="cb"></div><div class="text" style="flex:1">HTTPS activado en Netlify</div><span class="tag medium">Importante</span></li>
+        <li id="f9" onclick="toggle('f9')"><div class="cb"></div><div class="text" style="flex:1">Fotos reales de proyectos añadidas</div><span class="tag low">Opcional</span></li>
+        <li id="f10" onclick="toggle('f10')"><div class="cb"></div><div class="text" style="flex:1">Instagram creado y link en footer actualizado</div><span class="tag low">Opcional</span></li>
+        <li id="f11" onclick="toggle('f11')"><div class="cb"></div><div class="text" style="flex:1">Web probada en móvil</div><span class="tag low">Opcional</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       SECCIÓN 9 — Próximos pasos
+       ════════════════════════════════ -->
+  <div class="section">
+    <div class="card" style="background:linear-gradient(135deg,var(--g950),#1A4F31);color:#fff;border:none">
+      <p style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--g300);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px">Próximos pasos recomendados</p>
+      <div style="display:grid;gap:10px">
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:18px">1️⃣</span>
+          <div><strong>Completa los datos urgentes</strong> (tel, email, Formspree) y dime cuándo estén listos para que lo verifique.</div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:18px">2️⃣</span>
+          <div><strong>Sube la web a Netlify</strong> — te funciona al instante con URL pública para poder compartirla con clientes.</div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:18px">3️⃣</span>
+          <div><strong>Compra el dominio</strong> — cuando lo tengas, dime el nombre y el registrador y te guío en la conexión en tiempo real.</div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:18px">4️⃣</span>
+          <div><strong>Abre Instagram</strong> con el nombre <code>apavitec</code> o <code>apavi.green</code> — máxima prioridad según la estrategia de redes.</div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:18px">5️⃣</span>
+          <div><strong>Pásame las fotos de proyectos</strong> — las integro en la web en un momento. El antes/después visual será enorme.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ FOOTER ══ -->
+<div class="footer">
+  Creado para <strong>Apavi Green</strong> · Guía de publicación web · Mayo 2026
+</div>
+
+<script>
+// Checklist interactivo con persistencia en localStorage
+function toggle(id) {
+  const li = document.getElementById(id);
+  li.classList.toggle('done');
+  saveState();
+}
+
+function saveState() {
+  const state = {};
+  document.querySelectorAll('.checklist li[id]').forEach(li => {
+    state[li.id] = li.classList.contains('done');
+  });
+  try { localStorage.setItem('apavi-guide-checklist', JSON.stringify(state)); } catch(e) {}
+}
+
+function loadState() {
+  try {
+    const state = JSON.parse(localStorage.getItem('apavi-guide-checklist') || '{}');
+    Object.entries(state).forEach(([id, done]) => {
+      if (done) {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('done');
+      }
+    });
+  } catch(e) {}
+}
+
+document.addEventListener('DOMContentLoaded', loadState);
+</script>
+
+</body>
+</html>

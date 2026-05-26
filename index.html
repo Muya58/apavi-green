@@ -22,8 +22,7 @@
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-icon">&#127807;</div>
-      <span class="nav-brand">Apavi<strong>Green</strong></span>
+      <img src="assets/img/logo/logo-apavigreen.jpeg" alt="Apavi Green" style="height:40px;width:auto;border-radius:6px;">
     </a>
     <ul class="nav-links">
       <li><a href="#servicios">Servicios</a></li>
@@ -72,20 +71,39 @@
           <span class="slider-title">Jardin residencial &middot; Las Palmas</span>
         </div>
         <div class="slider-body">
-          <div class="slider-before">
-            <div class="slider-text"><div class="slider-text-title">&#127968; Antes</div><div class="slider-text-sub">Tierra arida sin vida</div></div>
+          <div class="slider-before" style="background-image:url('assets/img/cesped-despues-1.jpg.webp');background-size:cover;background-position:center;filter:grayscale(80%) brightness(0.7);">
             <div class="slider-label slider-label-before">ANTES</div>
           </div>
-          <div class="slider-after">
-            <div class="slider-text"><div class="slider-text-title">&#127807; Despues</div><div class="slider-text-sub">Cesped premium instalado</div></div>
-            <div class="slider-label slider-label-after">DESPUES</div>
+          <div class="slider-after" style="background-image:url('assets/img/cesped-despues-1.jpg.webp');background-size:cover;background-position:center;">
+            <div class="slider-label slider-label-after">DESPU&#201;S</div>
           </div>
           <div class="slider-handle"><div class="slider-handle-circle">&#8596;</div></div>
         </div>
         <div class="slider-chips">
-          <button class="chip active" data-slider-chip data-title="Jardin residencial Las Palmas" data-before="" data-after="">Residencial</button>
-          <button class="chip" data-slider-chip data-title="Pista de padel Maspalomas" data-before="" data-after="">Deportivo</button>
-          <button class="chip" data-slider-chip data-title="Jardin vertical Hotel" data-before="" data-after="">Vertical</button>
+          <button class="chip active" data-slider-chip
+            data-title="Jardin residencial &middot; Las Palmas"
+            data-before="assets/img/cesped-despues-1.jpg.webp"
+            data-after="assets/img/cesped-despues-1.jpg.webp"
+            data-before-filter="grayscale(85%) brightness(0.65)"
+            data-after-filter="none">
+            C&eacute;sped
+          </button>
+          <button class="chip" data-slider-chip
+            data-title="Jard&iacute;n Vertical &middot; Edificio corporativo"
+            data-before="assets/img/jardin-vertical-despues1.jpg.png"
+            data-after="assets/img/jardin-vertical-despues1.jpg.png"
+            data-before-filter="grayscale(85%) brightness(0.55)"
+            data-after-filter="none">
+            Vertical
+          </button>
+          <button class="chip" data-slider-chip
+            data-title="Espacio Infantil &middot; Parque urbano"
+            data-before="assets/img/zona-infantil-despues1.jpg.png"
+            data-after="assets/img/zona-infantil-despues1.jpg.png"
+            data-before-filter="grayscale(85%) brightness(0.6)"
+            data-after-filter="none">
+            Infantil
+          </button>
         </div>
       </div>
     </div>
@@ -217,12 +235,12 @@
       <button class="pf-chip" data-filter="infantil">Infantil</button>
     </div>
     <div class="portfolio-grid">
-      <div class="portfolio-card" data-category="cesped"><div class="portfolio-card-placeholder" style="background:linear-gradient(135deg,var(--g800),var(--g600));">&#127807;</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Jardin residencial &middot; Telde</div><div class="portfolio-card-meta">Cesped artificial 35mm &middot; 120 m&sup2;</div></div></div>
-      <div class="portfolio-card" data-category="deportivo"><div class="portfolio-card-placeholder" style="background:linear-gradient(135deg,#1a3d6e,#2563eb);">&#9917;</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Pista de padel &middot; Maspalomas</div><div class="portfolio-card-meta">Cesped deportivo homologado &middot; 200 m&sup2;</div></div></div>
-      <div class="portfolio-card" data-category="vertical"><div class="portfolio-card-placeholder" style="background:linear-gradient(135deg,var(--g900),var(--g400));">&#127807;</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Jardin vertical &middot; Hotel</div><div class="portfolio-card-meta">Pared verde artificial &middot; 80 m&sup2;</div></div></div>
-      <div class="portfolio-card" data-category="infantil"><div class="portfolio-card-placeholder" style="background:linear-gradient(135deg,#7c3aed,#ec4899);">&#127904;</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Parque infantil &middot; Colegio</div><div class="portfolio-card-meta">Cesped con acolchado &middot; 350 m&sup2;</div></div></div>
-      <div class="portfolio-card" data-category="cesped"><div class="portfolio-card-placeholder" style="background:linear-gradient(135deg,var(--g700),var(--g300));">&#127968;</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Terraza privada &middot; Las Palmas</div><div class="portfolio-card-meta">Cesped 25mm + bordillos &middot; 65 m&sup2;</div></div></div>
-      <div class="portfolio-card" data-category="deportivo"><div class="portfolio-card-placeholder" style="background:linear-gradient(135deg,#064e3b,#059669);">&#127942;</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Campo de futbol &middot; Municipio</div><div class="portfolio-card-meta">Cesped FIFA &middot; 5.000 m&sup2;</div></div></div>
+      <div class="portfolio-card" data-category="cesped"><img src="assets/img/cesped-despues-1.jpg.webp" alt="Jardin residencial" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Jard&iacute;n residencial &middot; Las Palmas</div><div class="portfolio-card-meta">C&eacute;sped artificial 35mm &middot; 120 m&sup2;</div></div></div>
+      <div class="portfolio-card" data-category="vertical"><img src="assets/img/jardin-vertical-despues1.jpg.png" alt="Jardin vertical" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Jard&iacute;n vertical &middot; Edificio</div><div class="portfolio-card-meta">Pared verde natural &middot; 120 m&sup2;</div></div></div>
+      <div class="portfolio-card" data-category="infantil"><img src="assets/img/zona-infantil-despues1.jpg.png" alt="Zona infantil" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Parque infantil &middot; Zona urbana</div><div class="portfolio-card-meta">Suelo amortiguador &middot; 650 m&sup2;</div></div></div>
+      <div class="portfolio-card" data-category="deportivo"><div class="portfolio-card-placeholder" style="background:linear-gradient(135deg,#1a3d6e,#2563eb);">&#9917;</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Pista de p&aacute;del &middot; Maspalomas</div><div class="portfolio-card-meta">C&eacute;sped deportivo &middot; 200 m&sup2;</div></div></div>
+      <div class="portfolio-card" data-category="cesped"><div class="portfolio-card-placeholder" style="background:linear-gradient(135deg,var(--g700),var(--g300));">&#127968;</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Terraza privada &middot; Las Palmas</div><div class="portfolio-card-meta">C&eacute;sped 25mm &middot; 65 m&sup2;</div></div></div>
+      <div class="portfolio-card" data-category="deportivo"><div class="portfolio-card-placeholder" style="background:linear-gradient(135deg,#064e3b,#059669);">&#127942;</div><div class="portfolio-card-overlay"></div><div class="portfolio-card-info"><div class="portfolio-card-title">Campo de f&uacute;tbol &middot; Municipio</div><div class="portfolio-card-meta">C&eacute;sped FIFA &middot; 5.000 m&sup2;</div></div></div>
     </div>
     <div style="text-align:center;margin-top:40px;"><a href="proyectos.html" class="btn-green">Ver todos los proyectos &rarr;</a></div>
   </div>
@@ -251,7 +269,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <div class="nav-logo" style="margin-bottom:14px;"><div class="nav-icon">&#127807;</div><span class="nav-brand">Apavi<strong>Green</strong></span></div>
+        <div style="margin-bottom:16px;"><img src="assets/img/logo/logo-apavigreen.jpeg" alt="Apavi Green" style="height:48px;width:auto;border-radius:6px;"></div>
         <p class="footer-tagline">Transformamos espacios con la naturaleza. Cesped artificial, jardines verticales e instalaciones deportivas en Gran Canaria y toda Espana.</p>
         <div class="footer-social"><a href="#" aria-label="Instagram">&#128247;</a><a href="#" aria-label="Facebook">&#128077;</a><a href="https://wa.me/34XXXXXXXXX" aria-label="WhatsApp">&#128172;</a></div>
       </div>

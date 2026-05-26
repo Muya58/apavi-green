@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Apavi Green — Estrategia de Redes Sociales 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --g900:#143D25;--g700:#207A4B;--g600:#27975D;--g500:#2EB570;
+  --g400:#5CC98C;--g300:#8DDCAB;--g100:#E2F7EC;--g50:#F2FCF6;
+  --gold:#C49430;--gold-l:#F0D080;--gold-bg:#FBF3E2;
+  --n950:#0D0F0E;--n900:#1A1D1B;--n700:#3D4441;--n500:#6B7370;
+  --n300:#B0B8B4;--n100:#EEF1EF;--n50:#F7F9F8;
+  --fb:#1877F2;--ig:#E1306C;--yt:#FF0000;--tt:#010101;--pi:#E60023;
+  --white:#FFFFFF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--n50);color:var(--n900);}
+
+/* COVER */
+.cover{background:linear-gradient(140deg,var(--g900) 0%,var(--g700) 55%,var(--g500) 100%);padding:72px 64px;position:relative;overflow:hidden;}
+.cover::before{content:'';position:absolute;right:-5%;top:-20%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(46,181,112,.2),transparent 65%);}
+.cover-tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);font-size:11px;font-weight:700;padding:5px 14px;border-radius:100px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;}
+.cover-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:44px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-.025em;margin-bottom:12px;}
+.cover-title em{color:var(--g300);font-style:normal;}
+.cover-sub{font-size:16px;color:rgba(255,255,255,.65);max-width:560px;line-height:1.7;margin-bottom:28px;}
+.cover-meta{display:flex;gap:28px;flex-wrap:wrap;}
+.cover-meta-item{font-size:13px;color:rgba(255,255,255,.55);}
+.cover-meta-item strong{color:rgba(255,255,255,.9);}
+
+/* LAYOUT */
+.page{max-width:1100px;margin:0 auto;padding:48px 40px;}
+h2.section-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800;color:var(--n950);margin-bottom:6px;}
+.section-sub{font-size:15px;color:var(--n500);margin-bottom:36px;}
+.section-block{margin-bottom:60px;}
+.tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g600);margin-bottom:8px;}
+
+/* SUMMARY CARDS */
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px;}
+.sum-card{background:var(--white);border:1px solid var(--n100);border-radius:16px;padding:22px;text-align:center;}
+.sum-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:900;color:var(--g700);line-height:1;margin-bottom:6px;}
+.sum-num sup{font-size:18px;}
+.sum-lbl{font-size:12px;color:var(--n500);line-height:1.5;}
+
+/* PLATAFORMAS */
+.platforms{display:flex;flex-direction:column;gap:20px;}
+.platform-card{background:var(--white);border:1px solid var(--n100);border-radius:20px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.platform-header{display:flex;align-items:center;gap:20px;padding:24px 28px;border-bottom:1px solid var(--n100);}
+.platform-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.platform-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;color:var(--n950);}
+.platform-status{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;margin-top:4px;}
+.status-active{background:#E2F7EC;color:var(--g700);}
+.status-new{background:var(--gold-bg);color:var(--gold);}
+.status-future{background:var(--n100);color:var(--n500);}
+.platform-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;}
+.platform-section{padding:22px 28px;border-right:1px solid var(--n100);}
+.platform-section:last-child{border-right:none;}
+.ps-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--n400);margin-bottom:12px;}
+.reach-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:900;color:var(--n950);line-height:1;margin-bottom:4px;}
+.reach-num sub{font-size:14px;color:var(--n500);}
+.reach-desc{font-size:12px;color:var(--n500);line-height:1.6;}
+.content-list{display:flex;flex-direction:column;gap:7px;}
+.content-item{font-size:13px;color:var(--n700);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.content-item::before{content:'→';color:var(--g600);font-weight:700;flex-shrink:0;margin-top:1px;}
+.freq-badge{display:inline-block;background:var(--g100);color:var(--g800);font-size:12px;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:8px;}
+
+/* REACH TABLE */
+.reach-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.reach-table th{background:var(--n900);color:rgba(255,255,255,.7);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:14px 20px;text-align:left;}
+.reach-table td{padding:14px 20px;border-bottom:1px solid var(--n100);font-size:14px;color:var(--n700);vertical-align:middle;}
+.reach-table tr:last-child td{border-bottom:none;}
+.reach-table tr:hover td{background:var(--n50);}
+.reach-table .num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--n950);}
+.reach-table .highlight{color:var(--g700);font-weight:700;}
+.plat-pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;}
+
+/* CONTENT CALENDAR */
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;}
+.cal-day{background:var(--white);border:1px solid var(--n100);border-radius:10px;padding:12px 8px;min-height:90px;}
+.cal-day-name{font-size:10px;font-weight:700;color:var(--n400);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;text-align:center;}
+.cal-post{border-radius:6px;padding:5px 7px;font-size:11px;font-weight:600;margin-bottom:5px;line-height:1.35;}
+
+/* INVESTMENT */
+.invest-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.invest-card{border-radius:16px;padding:26px;border:2px solid;}
+.invest-tier{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;}
+.invest-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:900;margin-bottom:4px;line-height:1;}
+.invest-price sub{font-size:14px;font-weight:500;}
+.invest-desc{font-size:13px;margin-bottom:16px;line-height:1.5;}
+.invest-list{display:flex;flex-direction:column;gap:7px;}
+.invest-item{font-size:13px;display:flex;align-items:center;gap:7px;}
+.invest-item::before{content:'✓';font-weight:900;flex-shrink:0;}
+.invest-reach{margin-top:16px;padding-top:14px;border-top:1px solid;font-size:13px;font-weight:700;}
+
+/* ROI */
+.roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.roi-card{background:var(--white);border:1px solid var(--n100);border-radius:16px;padding:26px;}
+.roi-card h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;font-weight:800;color:var(--n950);margin-bottom:12px;}
+
+/* TIPS */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.tip-card{background:var(--white);border:1px solid var(--n100);border-radius:14px;padding:22px;display:flex;gap:14px;align-items:flex-start;}
+.tip-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:900;color:var(--g300);line-height:1;flex-shrink:0;}
+.tip-title{font-size:14px;font-weight:700;color:var(--n900);margin-bottom:5px;}
+.tip-p{font-size:13px;color:var(--n500);line-height:1.6;}
+
+/* CONCLUSION */
+.conclusion{background:linear-gradient(135deg,var(--g900),var(--g700));border-radius:20px;padding:40px;color:#fff;}
+.conclusion h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;margin-bottom:14px;}
+.conclusion p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.75;margin-bottom:20px;}
+.conclusion-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;}
+.ch-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px;text-align:center;}
+.ch-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:900;color:var(--g300);margin-bottom:4px;}
+.ch-lbl{font-size:12px;color:rgba(255,255,255,.6);}
+
+/* PAGE BREAK HINT */
+.divider{height:1px;background:var(--n100);margin:48px 0;}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div style="position:relative;z-index:1;">
+    <div class="cover-tag">Estrategia Digital · Mayo 2026</div>
+    <h1 class="cover-title">
+      Redes Sociales<br/>
+      <em>Apavi Green</em>
+    </h1>
+    <p class="cover-sub">Análisis de plataformas, estimación de alcance, plan de contenidos y presupuesto de inversión para escalar la presencia digital de la empresa.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">Empresa: <strong>Apavi Green (Apavitec)</strong></div>
+      <div class="cover-meta-item">Sector: <strong>Instalaciones · Paisajismo · Pavimentos</strong></div>
+      <div class="cover-meta-item">Mercado: <strong>España (Gran Canaria + nacional)</strong></div>
+      <div class="cover-meta-item">Fecha: <strong>Mayo 2026</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- RESUMEN EJECUTIVO -->
+  <div class="section-block">
+    <div class="tag">Resumen ejecutivo</div>
+    <h2 class="section-title">El potencial de alcance de Apavi Green</h2>
+    <p class="section-sub">Con una estrategia multicanal bien ejecutada, Apavi Green puede pasar de ~1.000 seguidores en Facebook a impactar más de 500.000 personas al mes en un período de 12 meses.</p>
+
+    <div class="summary-grid">
+      <div class="sum-card">
+        <div class="sum-num">500<sup>k+</sup></div>
+        <div class="sum-lbl">Personas alcanzables por mes con estrategia completa</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-num">4</div>
+        <div class="sum-lbl">Plataformas recomendadas (prioritarias + apoyo)</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-num">3x</div>
+        <div class="sum-lbl">Más leads cualificados vs. solo publicidad tradicional</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-num">12</div>
+        <div class="sum-lbl">Meses para ver resultados sólidos y medibles</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLATAFORMAS -->
+  <div class="section-block">
+    <div class="tag">Análisis de plataformas</div>
+    <h2 class="section-title">¿En qué redes debes estar y por qué?</h2>
+    <p class="section-sub">Análisis de cada plataforma adaptado al sector de Apavi Green: visual, local e inspiracional.</p>
+
+    <div class="platforms">
+
+      <!-- INSTAGRAM -->
+      <div class="platform-card">
+        <div class="platform-header">
+          <div class="platform-icon" style="background:#F5E0EC;">📸</div>
+          <div>
+            <div class="platform-name">Instagram</div>
+            <div style="font-size:13px;color:var(--n500);margin-top:3px;">La red más importante para Apavi Green — es completamente visual y los proyectos venden solos</div>
+            <div style="margin-top:6px;">
+              <span class="platform-status status-new">🚀 CREAR YA — Máxima prioridad</span>
+            </div>
+          </div>
+          <div style="margin-left:auto;text-align:right;">
+            <div style="font-size:11px;color:var(--n400);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Usuarios en España</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--ig);">22 millones</div>
+          </div>
+        </div>
+        <div class="platform-body">
+          <div class="platform-section">
+            <div class="ps-title">Alcance estimado</div>
+            <div class="reach-num">80–250k<sub>/mes en 12m</sub></div>
+            <div class="reach-desc">
+              <strong>Orgánico:</strong> 5.000–20.000/mes (0–6 meses)<br/>
+              <strong>Con Reels:</strong> 50.000–150.000/mes<br/>
+              <strong>Con publicidad:</strong> hasta 250.000/mes<br/><br/>
+              Canarias tiene ~1,9M de habitantes + 16M de turistas/año = audiencia enorme para proyectos de jardines, terrazas y piscinas.
+            </div>
+          </div>
+          <div class="platform-section">
+            <div class="ps-title">Qué publicar</div>
+            <div class="freq-badge">5–7 publicaciones/semana</div>
+            <div class="content-list">
+              <div class="content-item">Antes/después de cada proyecto (formato carrusel)</div>
+              <div class="content-item">Reels del proceso de instalación (5–30 segundos)</div>
+              <div class="content-item">Fotos de detalle: césped, jardines verticales, piscinas</div>
+              <div class="content-item">Stories diarios con avances de obra</div>
+              <div class="content-item">Testimonios de clientes en video</div>
+              <div class="content-item">Clips rápidos tipo "¿sabías que?" sobre cesped artificial</div>
+            </div>
+          </div>
+          <div class="platform-section">
+            <div class="ps-title">Por qué es clave</div>
+            <div class="content-list">
+              <div class="content-item">El 78% de usuarios busca inspiración de jardines/hogar en Instagram</div>
+              <div class="content-item">Los Reels tienen 30% más alcance que las fotos</div>
+              <div class="content-item">Perfecto para atraer tanto particulares como promotoras</div>
+              <div class="content-item">El sector "green & outdoors" es de los más buscados en 2026</div>
+              <div class="content-item">Enlaza directamente al formulario de presupuesto de la web</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FACEBOOK (actual) -->
+      <div class="platform-card">
+        <div class="platform-header">
+          <div class="platform-icon" style="background:#E8F0FE;">👍</div>
+          <div>
+            <div class="platform-name">Facebook</div>
+            <div style="font-size:13px;color:var(--n500);margin-top:3px;">Ya activo como "Apavitec" — optimizar y potenciar con publicidad local en Canarias</div>
+            <div style="margin-top:6px;">
+              <span class="platform-status status-active">✓ YA ACTIVO — Potenciar</span>
+            </div>
+          </div>
+          <div style="margin-left:auto;text-align:right;">
+            <div style="font-size:11px;color:var(--n400);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Usuarios en España</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--fb);">24 millones</div>
+          </div>
+        </div>
+        <div class="platform-body">
+          <div class="platform-section">
+            <div class="ps-title">Alcance estimado</div>
+            <div class="reach-num">20–80k<sub>/mes</sub></div>
+            <div class="reach-desc">
+              <strong>Orgánico actual:</strong> ~1.000–3.000/mes<br/>
+              <strong>Con publicidad local:</strong> 20.000–80.000/mes<br/><br/>
+              El target de Facebook en Canarias (35-65 años: comunidades de vecinos, promotoras, administradores de fincas) es exactamente el perfil que contrata este tipo de servicios.
+            </div>
+          </div>
+          <div class="platform-section">
+            <div class="ps-title">Qué publicar</div>
+            <div class="freq-badge">3–4 publicaciones/semana</div>
+            <div class="content-list">
+              <div class="content-item">Álbumes de proyectos terminados con descripción</div>
+              <div class="content-item">Casos de éxito con nombre del cliente (si autoriza)</div>
+              <div class="content-item">Posts informativos: ventajas del césped artificial</div>
+              <div class="content-item">Campañas de temporada (verano → piscinas, otoño → jardines)</div>
+              <div class="content-item">Ofertas y promociones locales</div>
+            </div>
+          </div>
+          <div class="platform-section">
+            <div class="ps-title">Acciones inmediatas</div>
+            <div class="content-list">
+              <div class="content-item">Actualizar nombre de página a "Apavi Green"</div>
+              <div class="content-item">Añadir botón "Solicitar presupuesto" enlazado a la web</div>
+              <div class="content-item">Activar catálogo de servicios en Facebook Business</div>
+              <div class="content-item">Lanzar campaña local Canarias con €300–500/mes</div>
+              <div class="content-item">Crear Grupo Facebook "Jardines & Exteriores Canarias"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIKTOK -->
+      <div class="platform-card">
+        <div class="platform-header">
+          <div class="platform-icon" style="background:#F0F0F0;">🎵</div>
+          <div>
+            <div class="platform-name">TikTok</div>
+            <div style="font-size:13px;color:var(--n500);margin-top:3px;">El mayor potencial viral — los vídeos de transformación de espacios son tendencia global</div>
+            <div style="margin-top:6px;">
+              <span class="platform-status status-new">🚀 CREAR — Alta prioridad</span>
+            </div>
+          </div>
+          <div style="margin-left:auto;text-align:right;">
+            <div style="font-size:11px;color:var(--n400);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Usuarios en España</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--tt);">18 millones</div>
+          </div>
+        </div>
+        <div class="platform-body">
+          <div class="platform-section">
+            <div class="ps-title">Alcance estimado</div>
+            <div class="reach-num">50–500k<sub>/mes viral</sub></div>
+            <div class="reach-desc">
+              <strong>Vídeo normal:</strong> 1.000–10.000 views<br/>
+              <strong>Vídeo trending:</strong> 50.000–500.000 views<br/>
+              <strong>Vídeo viral:</strong> +1.000.000 views posibles<br/><br/>
+              Un solo vídeo de "transformación" bien editado puede generar más impacto que 6 meses de publicidad tradicional. Coste: casi cero.
+            </div>
+          </div>
+          <div class="platform-section">
+            <div class="ps-title">Qué publicar</div>
+            <div class="freq-badge">3–5 vídeos/semana</div>
+            <div class="content-list">
+              <div class="content-item">Time-lapse de instalación de césped completa (30 seg)</div>
+              <div class="content-item">"Antes vs. Después" de jardines y piscinas (MUY viral)</div>
+              <div class="content-item">POV instalando tarima junto a piscina</div>
+              <div class="content-item">Césped artificial en cámara lenta con agua (visual)</div>
+              <div class="content-item">Parque infantil montándose paso a paso</div>
+              <div class="content-item">Reacción del cliente al ver el resultado final</div>
+            </div>
+          </div>
+          <div class="platform-section">
+            <div class="ps-title">Potencial de viralidad</div>
+            <div class="content-list">
+              <div class="content-item">Hashtags: #transformacion #jardin #cesped #landscaping</div>
+              <div class="content-item">El algoritmo favorece contenido nuevo → 0 seguidores no es barrera</div>
+              <div class="content-item">Reutilizar mismos vídeos en Instagram Reels y YouTube Shorts</div>
+              <div class="content-item">Tendencia #GardenTok tiene 8.000M de visualizaciones globales</div>
+              <div class="content-item">Captura de leads directa: "link en bio → presupuesto"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- YOUTUBE / SHORTS -->
+      <div class="platform-card">
+        <div class="platform-header">
+          <div class="platform-icon" style="background:#FFE8E8;">▶️</div>
+          <div>
+            <div class="platform-name">YouTube + YouTube Shorts</div>
+            <div style="font-size:13px;color:var(--n500);margin-top:3px;">Posicionamiento SEO a largo plazo — las búsquedas de "césped artificial canarias" tienen alta intención de compra</div>
+            <div style="margin-top:6px;">
+              <span class="platform-status status-new">📌 CREAR — Prioridad media</span>
+            </div>
+          </div>
+          <div style="margin-left:auto;text-align:right;">
+            <div style="font-size:11px;color:var(--n400);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Usuarios en España</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--yt);">33 millones</div>
+          </div>
+        </div>
+        <div class="platform-body">
+          <div class="platform-section">
+            <div class="ps-title">Alcance estimado</div>
+            <div class="reach-num">10–50k<sub>/mes</sub></div>
+            <div class="reach-desc">
+              <strong>Shorts (60 seg):</strong> 5.000–100.000 views/vídeo<br/>
+              <strong>Vídeos largos (SEO):</strong> 500–5.000 views/mes acumulativos<br/><br/>
+              Un vídeo "Cómo instalar césped artificial en casa" bien posicionado puede traer tráfico a la web durante AÑOS.
+            </div>
+          </div>
+          <div class="platform-section">
+            <div class="ps-title">Qué publicar</div>
+            <div class="freq-badge">1–2 vídeos/semana</div>
+            <div class="content-list">
+              <div class="content-item">Vídeos de proyectos completos (2–5 minutos)</div>
+              <div class="content-item">Guías: "Tipos de césped artificial para tu jardín"</div>
+              <div class="content-item">Tours de proyectos terminados con el cliente</div>
+              <div class="content-item">Shorts reutilizando los vídeos de TikTok/Reels</div>
+              <div class="content-item">"FAQ" respondiendo preguntas frecuentes de clientes</div>
+            </div>
+          </div>
+          <div class="platform-section">
+            <div class="ps-title">Ventaja SEO</div>
+            <div class="content-list">
+              <div class="content-item">YouTube es el 2º buscador del mundo (propiedad de Google)</div>
+              <div class="content-item">Los vídeos salen en los resultados de Google</div>
+              <div class="content-item">Búsquedas locales: "instalar césped Gran Canaria" = alta conversión</div>
+              <div class="content-item">Genera confianza: ver el proceso completo convence al cliente</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PINTEREST -->
+      <div class="platform-card">
+        <div class="platform-header">
+          <div class="platform-icon" style="background:#FFE8EC;">📌</div>
+          <div>
+            <div class="platform-name">Pinterest</div>
+            <div style="font-size:13px;color:var(--n500);margin-top:3px;">Tráfico pasivo de muy alta calidad — los usuarios buscan activamente inspiración para sus jardines, piscinas y exteriores</div>
+            <div style="margin-top:6px;">
+              <span class="platform-status status-future">→ Fase 2 (meses 4–6)</span>
+            </div>
+          </div>
+          <div style="margin-left:auto;text-align:right;">
+            <div style="font-size:11px;color:var(--n400);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Usuarios en España</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--pi);">7 millones</div>
+          </div>
+        </div>
+        <div class="platform-body">
+          <div class="platform-section">
+            <div class="ps-title">Alcance estimado</div>
+            <div class="reach-num">5–30k<sub>/mes (pasivo)</sub></div>
+            <div class="reach-desc">
+              El contenido de Pinterest dura años. Una imagen subida hoy puede traer visitas a la web en 2028. Ideal para tráfico orgánico hacia la landing.
+            </div>
+          </div>
+          <div class="platform-section">
+            <div class="ps-title">Qué publicar</div>
+            <div class="freq-badge">10–15 pines/semana</div>
+            <div class="content-list">
+              <div class="content-item">Fotos profesionales de jardines y piscinas terminadas</div>
+              <div class="content-item">Tableros por categoría: "Jardines verticales", "Piscinas"</div>
+              <div class="content-item">Infografías: "Ideas para tu terraza con cesped artificial"</div>
+              <div class="content-item">Vinculados directamente a la web para tráfico</div>
+            </div>
+          </div>
+          <div class="platform-section">
+            <div class="ps-title">Perfil del usuario</div>
+            <div class="content-list">
+              <div class="content-item">85% mujeres, 28-45 años, alta capacidad adquisitiva</div>
+              <div class="content-item">Buscan activamente "ideas jardín", "piscina diseño"</div>
+              <div class="content-item">Alta intención de compra (planifican con meses de antelación)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TABLA DE ALCANCE -->
+  <div class="section-block">
+    <div class="tag">Proyección de alcance</div>
+    <h2 class="section-title">¿A cuántas personas puede llegar Apavi Green?</h2>
+    <p class="section-sub">Estimaciones basadas en datos reales del sector de landscaping, reforma del hogar e instalaciones deportivas en España 2025–2026.</p>
+
+    <table class="reach-table">
+      <thead>
+        <tr>
+          <th>Plataforma</th>
+          <th>Alcance mes 3</th>
+          <th>Alcance mes 6</th>
+          <th>Alcance mes 12</th>
+          <th>Coste/mes</th>
+          <th>Tipo de audience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="plat-pill">📸 Instagram</span></td>
+          <td class="num">5.000–20.000</td>
+          <td class="num highlight">30.000–80.000</td>
+          <td class="num" style="color:var(--g700);">80.000–250.000</td>
+          <td>€0 (orgánico) <br/>+€200–500 ads</td>
+          <td>Particulares, promotoras, hoteles</td>
+        </tr>
+        <tr>
+          <td><span class="plat-pill">👍 Facebook</span></td>
+          <td class="num">3.000–8.000</td>
+          <td class="num highlight">10.000–30.000</td>
+          <td class="num" style="color:var(--g700);">20.000–80.000</td>
+          <td>€300–500 ads</td>
+          <td>Comunidades de vecinos, admins fincas</td>
+        </tr>
+        <tr>
+          <td><span class="plat-pill">🎵 TikTok</span></td>
+          <td class="num">2.000–50.000</td>
+          <td class="num highlight">20.000–150.000</td>
+          <td class="num" style="color:var(--g700);">50.000–500.000</td>
+          <td>€0 (orgánico)</td>
+          <td>Jóvenes propietarios, constructoras</td>
+        </tr>
+        <tr>
+          <td><span class="plat-pill">▶️ YouTube</span></td>
+          <td class="num">500–3.000</td>
+          <td class="num highlight">3.000–15.000</td>
+          <td class="num" style="color:var(--g700);">10.000–50.000</td>
+          <td>€0 (orgánico)</td>
+          <td>Cualquiera que busca en Google</td>
+        </tr>
+        <tr>
+          <td><span class="plat-pill">📌 Pinterest</span></td>
+          <td class="num">—</td>
+          <td class="num highlight">2.000–8.000</td>
+          <td class="num" style="color:var(--g700);">5.000–30.000</td>
+          <td>€0 (orgánico)</td>
+          <td>Mujeres 28-45, alta capacidad adquisitiva</td>
+        </tr>
+        <tr style="background:var(--g50);">
+          <td style="font-weight:800;color:var(--g800);">🏆 TOTAL COMBINADO</td>
+          <td class="num" style="font-weight:700;">~80.000</td>
+          <td class="num" style="font-weight:800;color:var(--g700);">~280.000</td>
+          <td class="num" style="font-weight:900;font-size:16px;color:var(--g700);">+500.000/mes</td>
+          <td style="font-weight:700;">€500–1.000/mes</td>
+          <td style="font-weight:600;">Toda la cadena de valor</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--n400);margin-top:12px;">* Estimaciones basadas en datos de empresas similares del sector en España. El alcance viral de TikTok puede ser mucho mayor con un vídeo trending.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PLAN DE CONTENIDOS -->
+  <div class="section-block">
+    <div class="tag">Plan de contenidos</div>
+    <h2 class="section-title">Calendario tipo de una semana</h2>
+    <p class="section-sub">Ejemplo de semana tipo con publicaciones coordinadas en todas las plataformas.</p>
+
+    <div class="calendar-grid">
+      <div class="cal-day">
+        <div class="cal-day-name">Lunes</div>
+        <div class="cal-post" style="background:#FCE4EC;color:#880E4F;">📸 IG: Foto proyecto finalizado (jardín vertical)</div>
+        <div class="cal-post" style="background:#E3F2FD;color:#0D47A1;">👍 FB: Álbum del mismo proyecto</div>
+      </div>
+      <div class="cal-day">
+        <div class="cal-day-name">Martes</div>
+        <div class="cal-post" style="background:#F3E5F5;color:#4A148C;">🎵 TT: Time-lapse instalación césped</div>
+        <div class="cal-post" style="background:#FCE4EC;color:#880E4F;">📸 IG Story: avance de obra del día</div>
+      </div>
+      <div class="cal-day">
+        <div class="cal-day-name">Miércoles</div>
+        <div class="cal-post" style="background:#E8F5E9;color:#1B5E20;">📸 IG Reel: Antes/después piscina + tarima</div>
+        <div class="cal-post" style="background:#FFF3E0;color:#E65100;">▶️ YT Short: mismo reel</div>
+      </div>
+      <div class="cal-day">
+        <div class="cal-day-name">Jueves</div>
+        <div class="cal-post" style="background:#F3E5F5;color:#4A148C;">🎵 TT: Parque infantil en construcción</div>
+        <div class="cal-post" style="background:#E3F2FD;color:#0D47A1;">👍 FB: Post informativo "ventajas del cesped artificial"</div>
+      </div>
+      <div class="cal-day">
+        <div class="cal-day-name">Viernes</div>
+        <div class="cal-post" style="background:#FCE4EC;color:#880E4F;">📸 IG: Carrusel proyecto hotel resort</div>
+        <div class="cal-post" style="background:#FCE4EC;color:#880E4F;">📸 IG Story: "¿Tienes un proyecto? Presupuesto gratis"</div>
+      </div>
+      <div class="cal-day">
+        <div class="cal-day-name">Sábado</div>
+        <div class="cal-post" style="background:#F3E5F5;color:#4A148C;">🎵 TT: Vídeo viral "Reacción cliente al ver resultado"</div>
+        <div class="cal-post" style="background:#FFF0E0;color:#7B3000;">📌 PIN: 3 fotos de jardines a tablero</div>
+      </div>
+      <div class="cal-day">
+        <div class="cal-day-name">Domingo</div>
+        <div class="cal-post" style="background:#FCE4EC;color:#880E4F;">📸 IG: Foto inspiracional con CTA</div>
+        <div class="cal-post" style="background:#FFF3E0;color:#E65100;">▶️ YT: Vídeo largo proyecto de la semana</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- INVERSIÓN RECOMENDADA -->
+  <div class="section-block">
+    <div class="tag">Inversión</div>
+    <h2 class="section-title">Plan de inversión mensual recomendado</h2>
+    <p class="section-sub">Tres niveles según el presupuesto disponible. El contenido orgánico va incluido en todos.</p>
+
+    <div class="invest-grid">
+      <div class="invest-card" style="background:var(--n50);border-color:var(--n100);">
+        <div class="invest-tier" style="color:var(--n500);">Nivel Básico</div>
+        <div class="invest-price" style="color:var(--n900);">€300<sub>/mes</sub></div>
+        <div class="invest-desc" style="color:var(--n500);">Para empezar. Contenido propio + algo de publicidad en Facebook e Instagram.</div>
+        <div class="invest-list" style="color:var(--n700);">
+          <div class="invest-item" style="--c:var(--g600);">Crear y gestionar Instagram + TikTok</div>
+          <div class="invest-item">€150 en publicidad Facebook (local Canarias)</div>
+          <div class="invest-item">€150 en publicidad Instagram</div>
+          <div class="invest-item">3–4 publicaciones/semana por plataforma</div>
+          <div class="invest-item">Sin producción de vídeo profesional</div>
+        </div>
+        <div class="invest-reach" style="border-color:var(--n200);color:var(--n700);">📊 Alcance estimado: 30.000–60.000 personas/mes</div>
+      </div>
+
+      <div class="invest-card" style="background:linear-gradient(135deg,var(--g50),#fff);border-color:var(--g300);box-shadow:0 4px 20px rgba(32,122,75,.12);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+          <div class="invest-tier" style="color:var(--g700);">Nivel Recomendado ⭐</div>
+          <span style="background:var(--g700);color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:100px;">MEJOR OPCIÓN</span>
+        </div>
+        <div class="invest-price" style="color:var(--g700);">€700<sub>/mes</sub></div>
+        <div class="invest-desc" style="color:var(--n500);">Estrategia completa con contenido de calidad y publicidad segmentada. Resultados sólidos en 3–4 meses.</div>
+        <div class="invest-list" style="color:var(--n700);">
+          <div class="invest-item">Gestión de IG, TikTok, FB y YouTube</div>
+          <div class="invest-item">€300 publicidad Facebook + Instagram segmentada</div>
+          <div class="invest-item">€200 producción de vídeos/reels mensuales</div>
+          <div class="invest-item">€200 fotografía de proyectos (1 sesión/mes)</div>
+          <div class="invest-item">7+ publicaciones/semana + stories diarios</div>
+          <div class="invest-item">Respuesta a comentarios y mensajes en 24h</div>
+          <div class="invest-item">Informe mensual de resultados y alcance</div>
+        </div>
+        <div class="invest-reach" style="border-color:var(--g200);color:var(--g700);">📊 Alcance estimado: 100.000–200.000 personas/mes</div>
+      </div>
+
+      <div class="invest-card" style="background:linear-gradient(135deg,#1a1d1b,#2a3028);border-color:#3d4441;">
+        <div class="invest-tier" style="color:var(--g400);">Nivel Premium</div>
+        <div class="invest-price" style="color:#fff;">€1.500<sub style="color:rgba(255,255,255,.6);">/mes</sub></div>
+        <div class="invest-desc" style="color:rgba(255,255,255,.6);">Escalar agresivamente para dominar el sector en Canarias y posicionarse a nivel nacional.</div>
+        <div class="invest-list" style="color:rgba(255,255,255,.7);">
+          <div class="invest-item" style="--c:var(--g400);">Community manager dedicado (tiempo parcial)</div>
+          <div class="invest-item">€600 publicidad segmentada avanzada</div>
+          <div class="invest-item">€400 producción vídeo profesional mensual</div>
+          <div class="invest-item">Colaboraciones con influencers locales</div>
+          <div class="invest-item">Google Ads + SEO local incluidos</div>
+          <div class="invest-item">Estrategia Pinterest y LinkedIn (promotoras)</div>
+          <div class="invest-item">A/B testing de creatividades publicitarias</div>
+        </div>
+        <div class="invest-reach" style="border-color:rgba(255,255,255,.1);color:var(--g300);">📊 Alcance estimado: 300.000–500.000+ personas/mes</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TIPS PARA APAVI GREEN -->
+  <div class="section-block">
+    <div class="tag">Recomendaciones clave</div>
+    <h2 class="section-title">10 acciones concretas para empezar HOY</h2>
+    <p class="section-sub">Acciones de alto impacto que no requieren casi inversión, solo constancia.</p>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-num">01</div>
+        <div><div class="tip-title">Crear @apavitec o @avigreen en Instagram YA</div><div class="tip-p">Antes de que otro tome el nombre. Perfil de empresa con dirección, teléfono y enlace a la web. Foto de portada: proyecto más impactante.</div></div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">02</div>
+        <div><div class="tip-title">Grabar cada proyecto desde el primer día</div><div class="tip-p">Cualquier trabajador con un móvil puede grabar. No necesita ser perfecto: los vídeos auténticos de obra funcionan mejor que los producidos.</div></div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">03</div>
+        <div><div class="tip-title">Publicar 5 "antes/después" acumulados</div><div class="tip-p">Con el portfolio de Facebook ya tienes decenas de proyectos. Edita 5 carruseles de antes/después y publícalos en los primeros 5 días para arrancar con fuerza.</div></div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">04</div>
+        <div><div class="tip-title">Añadir "Link en Bio" → Formulario de presupuesto</div><div class="tip-p">Cada publicación debe dirigir al presupuesto. Bio de Instagram: "Presupuesto gratis en 24h → enlace". Es tu principal generador de leads.</div></div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">05</div>
+        <div><div class="tip-title">Pedir reseñas a clientes actuales en Google</div><div class="tip-p">El 87% de las personas leen reseñas antes de contratar. Envía un mensaje a tus clientes satisfechos con el enlace directo a Google Maps.</div></div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">06</div>
+        <div><div class="tip-title">Usar hashtags locales en cada post</div><div class="tip-p">#GranCanaria #Canarias #JardinCanarias #CespedArtificial #JardinVertical #EspacioInfantil — 5 específicos + 5 generales por post.</div></div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">07</div>
+        <div><div class="tip-title">Crear cuenta TikTok @apavitec</div><div class="tip-p">Primer vídeo: "Así transformamos una terraza aburrida en 3 días". Música trending + resultado visual = potencial viral sin coste alguno.</div></div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">08</div>
+        <div><div class="tip-title">Publicar el proceso, no solo el resultado</div><div class="tip-p">La gente quiere ver cómo se hace. El proceso de instalación del césped, cómo se planta un jardín vertical o cómo se vierte la resina epoxi es fascinante para el público.</div></div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">09</div>
+        <div><div class="tip-title">Responder a TODOS los comentarios</div><div class="tip-p">El algoritmo premia la interacción. Responder cada comentario en las primeras 2 horas multiplica el alcance del post sin ningún coste adicional.</div></div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">10</div>
+        <div><div class="tip-title">Campañas estacionales en verano 2026</div><div class="tip-p">Verano = piscinas + terrazas + jardines. Lanzar campaña "Transforma tu exterior este verano" en junio con €300 de publicidad puede generar 20–30 presupuestos cualificados.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCLUSIÓN -->
+  <div class="conclusion">
+    <h3>Conclusión: el momento es ahora</h3>
+    <p>Apavi Green tiene uno de los portfolios visuales más potentes que puede tener una empresa en redes sociales. Los jardines verticales, las piscinas con tarima, los parques infantiles de colores y los campos de césped son contenido que la gente quiere ver, compartir y guardar. Lo único que falta es llevarlo a las plataformas correctas con consistencia.</p>
+    <p>La inversión mínima para empezar es casi cero. Con los vídeos del portfolio existente y un móvil, ya hay material para los primeros 3 meses de contenido. La oportunidad de ser la referencia del sector en Canarias en redes sociales existe hoy — y todavía no la tiene nadie.</p>
+    <div class="conclusion-highlights">
+      <div class="ch-item">
+        <div class="ch-num">+500k</div>
+        <div class="ch-lbl">personas/mes alcanzables en 12 meses</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-num">€700</div>
+        <div class="ch-lbl">inversión mensual recomendada (nivel óptimo)</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-num">4</div>
+        <div class="ch-lbl">plataformas prioritarias: IG, TikTok, FB, YouTube</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:40px 0 20px;color:var(--n400);font-size:12px;">
+    Apavi Green · Estrategia de Redes Sociales 2026 · Elaborado con Claude (Anthropic) · Mayo 2026
+  </div>
+
+</div>
+</body>
+</html>

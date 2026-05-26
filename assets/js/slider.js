@@ -69,15 +69,21 @@ class SliderAntesDespues {
         const meta   = chip.dataset.meta;
 
         // Update background images if provided, else keep gradient placeholders
+        const beforeEl = this.wrap.querySelector('.slider-before');
+        const beforeFilter = chip.dataset.beforeFilter || 'none';
+        const afterFilter  = chip.dataset.afterFilter  || 'none';
+
         if (before) {
-          this.wrap.querySelector('.slider-before').style.backgroundImage = `url('${before}')`;
-          this.wrap.querySelector('.slider-before').style.backgroundSize  = 'cover';
-          this.wrap.querySelector('.slider-before').style.backgroundPosition = 'center';
+          beforeEl.style.backgroundImage    = `url('${before}')`;
+          beforeEl.style.backgroundSize     = 'cover';
+          beforeEl.style.backgroundPosition = 'center';
+          beforeEl.style.filter = beforeFilter;
         }
         if (after) {
           this.after.style.backgroundImage    = `url('${after}')`;
           this.after.style.backgroundSize     = 'cover';
           this.after.style.backgroundPosition = 'center';
+          this.after.style.filter = afterFilter;
         }
 
         // Update title/meta in slider header

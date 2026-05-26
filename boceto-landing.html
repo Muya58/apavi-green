@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Apavi Green — Boceto Landing Page v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --g950:#0B2918;--g900:#143D25;--g800:#1A5C38;--g700:#207A4B;
+  --g600:#27975D;--g500:#2EB570;--g400:#5CC98C;--g300:#8DDCAB;
+  --g200:#BDEECB;--g100:#E2F7EC;--g50:#F2FCF6;
+  --gold:#C49430;--gold-l:#E8C97A;--gold-bg:#FBF3E2;
+  --n950:#0D0F0E;--n900:#1A1D1B;--n700:#3D4441;--n500:#6B7370;
+  --n300:#B0B8B4;--n100:#EEF1EF;--n50:#F7F9F8;--white:#FFFFFF;
+  --r-sm:6px;--r-md:12px;--r-lg:20px;--r-xl:32px;
+  --sh:0 4px 20px rgba(20,61,37,.10);--sh-lg:0 16px 48px rgba(20,61,37,.14);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--n900);line-height:1.6;}
+
+/* BOCETO TOP BAR */
+.boceto-bar{background:linear-gradient(90deg,var(--gold),#e8c55a);padding:11px 48px;text-align:center;font-size:13px;font-weight:700;color:#3a2800;position:sticky;top:0;z-index:300;display:flex;align-items:center;justify-content:center;gap:12px;}
+.boceto-dot{width:8px;height:8px;border-radius:50%;background:#3a2800;opacity:.4;}
+.boceto-note{font-weight:400;opacity:.7;}
+
+/* NAV */
+nav{position:sticky;top:43px;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--n100);height:66px;display:flex;align-items:center;padding:0 48px;gap:32px;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nav-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--g700),var(--g500));border-radius:11px;display:flex;align-items:center;justify-content:center;}
+.nav-icon svg{width:21px;height:21px;}
+.nav-brand{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:var(--n950);}
+.nav-brand span{color:var(--g600);}
+.nav-links{display:flex;gap:24px;margin-left:auto;}
+.nav-links a{font-size:14px;font-weight:500;color:var(--n500);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--g700);}
+.nav-phone{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--n700);text-decoration:none;white-space:nowrap;}
+.nav-phone svg{width:14px;height:14px;color:var(--g600);}
+.nav-cta{background:var(--g700);color:#fff;font-size:14px;font-weight:600;padding:9px 20px;border-radius:var(--r-sm);text-decoration:none;white-space:nowrap;}
+
+/* HERO */
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;}
+.hero-bg-img{position:absolute;inset:0;background:
+  linear-gradient(140deg,rgba(11,41,24,.97) 0%,rgba(20,61,37,.90) 45%,rgba(26,92,56,.80) 75%,rgba(39,151,93,.60) 100%);
+  z-index:1;}
+/* Simulación visual de foto de fondo: campo de césped artificial */
+.hero-bg-visual{position:absolute;inset:0;background:
+  radial-gradient(ellipse 120% 80% at 70% 60%, #2EB570 0%, #1A5C38 40%, #0B2918 80%);
+  z-index:0;}
+.hero-blobs{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-blob-1{position:absolute;right:-15%;top:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(46,181,112,.15),transparent 65%);}
+.hero-blob-2{position:absolute;left:-10%;bottom:-15%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(20,61,37,.4),transparent 70%);}
+.hero-grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;z-index:1;}
+.hero-content{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 48px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,181,112,.12);border:1px solid rgba(46,181,112,.28);color:var(--g300);font-size:11px;font-weight:700;padding:6px 14px;border-radius:100px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px;}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--g400);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+.hero-h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:52px;font-weight:900;line-height:1.06;letter-spacing:-.025em;color:var(--white);margin-bottom:18px;}
+.hero-h1 em{color:var(--g300);font-style:normal;}
+.hero-p{font-size:16px;color:rgba(255,255,255,.65);line-height:1.78;margin-bottom:34px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;}
+.btn-prim{background:var(--g500);color:#fff;font-size:15px;font-weight:700;padding:14px 26px;border-radius:var(--r-md);text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(46,181,112,.35);transition:all .2s;}
+.btn-prim:hover{background:var(--g400);transform:translateY(-1px);}
+.btn-sec{color:rgba(255,255,255,.75);font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.2);padding:13px 22px;border-radius:var(--r-md);transition:all .2s;}
+.btn-sec:hover{background:rgba(255,255,255,.07);color:#fff;}
+
+.hero-stats{display:flex;gap:0;}
+.hero-stat{padding:0 28px 0 0;border-right:1px solid rgba(255,255,255,.12);margin-right:28px;}
+.hero-stat:last-child{border-right:none;}
+.hero-stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:900;color:#fff;line-height:1;}
+.hero-stat-lbl{font-size:11px;color:rgba(255,255,255,.45);margin-top:3px;text-transform:uppercase;letter-spacing:.06em;}
+
+/* Hero right — mosaic */
+.hero-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:196px 196px;gap:10px;}
+.hm-item{border-radius:var(--r-md);overflow:hidden;position:relative;}
+.hm-item-big{grid-row:span 2;border-radius:var(--r-lg);}
+.hm-body{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:16px;}
+.hm-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.85);text-align:center;letter-spacing:.04em;text-transform:uppercase;background:rgba(0,0,0,.3);backdrop-filter:blur(4px);padding:5px 10px;border-radius:100px;}
+.photo-note{position:absolute;top:10px;right:10px;background:rgba(212,168,83,.9);color:#3a2800;font-size:9px;font-weight:800;padding:3px 7px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;}
+
+/* TRUST BAR */
+.trust{background:var(--n50);border-bottom:1px solid var(--n100);padding:18px 48px;display:flex;align-items:center;justify-content:center;gap:44px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--n500);}
+.trust-icon{width:16px;height:16px;color:var(--g600);}
+
+/* SECTIONS */
+section{padding:88px 0;}
+.container{max-width:1160px;margin:0 auto;padding:0 48px;}
+.sec-tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g600);margin-bottom:8px;}
+.sec-h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;color:var(--n950);letter-spacing:-.02em;margin-bottom:10px;line-height:1.15;}
+.sec-sub{font-size:16px;color:var(--n500);line-height:1.7;max-width:560px;}
+.sec-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:24px;flex-wrap:wrap;}
+.link-more{font-size:14px;font-weight:600;color:var(--g700);text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;border:1.5px solid var(--g200);padding:9px 18px;border-radius:var(--r-sm);transition:all .2s;}
+.link-more:hover{background:var(--g50);border-color:var(--g400);}
+.link-more svg{width:15px;height:15px;}
+
+/* SERVICES GRID — 4 cols top row, 3 cols bottom */
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:20px;}
+.srv-grid-2{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.srv-card{background:var(--white);border:1px solid var(--n100);border-radius:var(--r-lg);overflow:hidden;transition:all .25s;cursor:default;}
+.srv-card:hover{border-color:var(--g300);box-shadow:var(--sh-lg);transform:translateY(-3px);}
+.srv-card.featured{border-color:var(--g300);background:linear-gradient(135deg,var(--g50),var(--white));}
+.srv-img{height:160px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.srv-img-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.06em;text-align:center;margin-top:8px;}
+.srv-body{padding:20px;}
+.srv-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.srv-icon svg{width:20px;height:20px;}
+.srv-h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--n900);margin-bottom:6px;}
+.srv-p{font-size:12px;color:var(--n500);line-height:1.6;margin-bottom:12px;}
+.srv-tags{display:flex;gap:5px;flex-wrap:wrap;}
+.srv-tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:100px;}
+
+/* PORTFOLIO */
+.pf-bg{background:var(--n950);}
+.pf-bg .sec-h2{color:#fff;}
+.pf-bg .sec-sub{color:rgba(255,255,255,.5);}
+.pf-bg .sec-tag{color:var(--g400);}
+
+/* Main portfolio grid */
+.pf-grid-main{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 220px;gap:12px;margin-bottom:12px;}
+.pf-grid-secondary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.pf-item{border-radius:var(--r-md);overflow:hidden;position:relative;cursor:pointer;}
+.pf-item-hero{grid-row:span 2;border-radius:var(--r-lg);}
+.pf-visual{width:100%;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:18px;}
+.pf-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.1) 50%,transparent 100%);opacity:.7;transition:opacity .3s;}
+.pf-item:hover .pf-overlay{opacity:1;}
+.pf-info{position:relative;z-index:2;}
+.pf-tag{display:inline-block;font-size:10px;font-weight:700;padding:3px 8px;border-radius:100px;margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase;}
+.pf-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:2px;}
+.pf-sub{font-size:11px;color:rgba(255,255,255,.65);}
+.pf-photo-badge{position:absolute;top:10px;right:10px;z-index:3;background:rgba(212,168,83,.9);color:#3a2800;font-size:9px;font-weight:800;padding:3px 8px;border-radius:4px;letter-spacing:.04em;}
+
+/* PROCESS */
+.process-bg{background:var(--n50);}
+.process-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:16px;}
+.process-row::before{content:'';position:absolute;top:35px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--g300),var(--g600),var(--g300));z-index:0;}
+.process-item{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 20px;position:relative;z-index:1;}
+.process-num{width:70px;height:70px;border-radius:50%;background:var(--white);border:2px solid var(--g300);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:900;color:var(--g700);margin-bottom:18px;box-shadow:0 0 0 8px var(--n50);}
+.process-h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--n900);margin-bottom:7px;}
+.process-p{font-size:13px;color:var(--n500);line-height:1.6;}
+
+/* STATS */
+.stats-bg{background:linear-gradient(140deg,var(--g950) 0%,var(--g800) 100%);}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.stat-item{padding:44px 28px;text-align:center;background:rgba(255,255,255,.05);}
+.stat-icon-wrap{width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+.stat-icon-wrap svg{width:24px;height:24px;color:var(--g300);}
+.stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:44px;font-weight:900;color:#fff;line-height:1;margin-bottom:6px;}
+.stat-num sup{font-size:22px;color:var(--g300);}
+.stat-lbl{font-size:13px;color:rgba(255,255,255,.5);}
+
+/* CLIENTES / LOGOS */
+.clients-row{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:16px;}
+.client-badge{background:var(--white);border:1px solid var(--n100);border-radius:var(--r-md);padding:14px 22px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:var(--n700);box-shadow:var(--sh);}
+
+/* TESTIMONIOS */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.test-card{background:var(--white);border:1px solid var(--n100);border-radius:var(--r-lg);padding:26px;box-shadow:0 1px 4px rgba(20,61,37,.06);}
+.test-stars{color:var(--gold);font-size:16px;margin-bottom:12px;letter-spacing:2px;}
+.test-q{font-size:14px;color:var(--n700);line-height:1.72;margin-bottom:18px;font-style:italic;}
+.test-author{display:flex;align-items:center;gap:12px;}
+.test-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;}
+.test-name{font-size:14px;font-weight:700;color:var(--n900);}
+.test-role{font-size:12px;color:var(--n400);margin-top:1px;}
+.test-type{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;margin-top:4px;background:var(--g100);color:var(--g700);}
+
+/* CTA + FORM */
+.cta-bg{background:var(--g50);border-top:1px solid var(--g200);}
+.cta-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.cta-features{display:flex;flex-direction:column;gap:16px;margin:28px 0 32px;}
+.cta-feat{display:flex;align-items:flex-start;gap:12px;}
+.cta-feat-icon{width:36px;height:36px;border-radius:10px;background:var(--g100);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.cta-feat-icon svg{width:17px;height:17px;color:var(--g700);}
+.cta-feat-title{font-size:14px;font-weight:700;color:var(--n900);}
+.cta-feat-p{font-size:13px;color:var(--n500);}
+.cta-contact-row{display:flex;gap:20px;flex-wrap:wrap;}
+.cta-contact-item{display:flex;align-items:center;gap:10px;}
+.cta-contact-icon{width:36px;height:36px;border-radius:10px;background:var(--g700);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cta-contact-icon svg{width:16px;height:16px;color:#fff;}
+.cta-contact-label{font-size:11px;font-weight:600;color:var(--n400);text-transform:uppercase;letter-spacing:.06em;}
+.cta-contact-val{font-size:15px;font-weight:700;color:var(--n900);}
+
+.form-box{background:var(--white);border-radius:var(--r-xl);padding:34px;box-shadow:var(--sh-lg);border:1px solid var(--n100);}
+.form-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;color:var(--n950);margin-bottom:4px;}
+.form-sub{font-size:13px;color:var(--n400);margin-bottom:22px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:11px;}
+.form-field{display:flex;flex-direction:column;gap:5px;margin-bottom:11px;}
+.form-label{font-size:12px;font-weight:600;color:var(--n700);}
+.form-input,.form-select{height:42px;border:1.5px solid var(--n100);border-radius:var(--r-sm);padding:0 12px;font-family:'Inter',sans-serif;font-size:14px;color:var(--n900);background:var(--n50);outline:none;transition:border-color .2s,box-shadow .2s;}
+.form-input:focus,.form-select:focus{border-color:var(--g400);background:var(--white);box-shadow:0 0 0 3px rgba(46,181,112,.12);}
+.form-textarea{height:auto;padding:10px 12px;resize:vertical;}
+.form-select{appearance:none;cursor:pointer;}
+.form-submit{width:100%;height:48px;background:var(--g700);color:#fff;border:none;border-radius:var(--r-md);font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;}
+.form-submit:hover{background:var(--g800);}
+.form-note{font-size:11px;color:var(--n400);text-align:center;margin-top:10px;}
+
+/* FOOTER */
+footer{background:var(--n950);padding:60px 48px 28px;}
+.ft-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px;}
+.ft-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.ft-brand{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:#fff;}
+.ft-brand span{color:var(--g400);}
+.ft-p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.75;margin-bottom:18px;}
+.ft-social{display:flex;gap:8px;}
+.ft-social-btn{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:background .2s;text-decoration:none;}
+.ft-social-btn:hover{background:var(--g700);}
+.ft-social-btn svg{width:16px;height:16px;color:rgba(255,255,255,.65);}
+.ft-col-title{font-size:11px;font-weight:700;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+.ft-links{display:flex;flex-direction:column;gap:9px;}
+.ft-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s;}
+.ft-links a:hover{color:var(--g300);}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.28);}
+.ft-badges{display:flex;gap:8px;}
+.ft-badge{font-size:11px;font-weight:600;padding:4px 10px;border-radius:100px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.07);}
+</style>
+</head>
+<body>
+
+<!-- BOCETO BAR -->
+<div class="boceto-bar">
+  <div class="boceto-dot"></div>
+  🎨 BOCETO v2 — Apavi Green · Landing Page
+  <span class="boceto-note">· Las cajas son marcadores de posición → se reemplazarán con fotos reales del portfolio ·</span>
+  <div class="boceto-dot"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-icon">
+      <svg viewBox="0 0 21 21" fill="none"><path d="M10.5 2C6.3 2 3 5.3 3 9.5c0 3.7 2.5 6.8 6 7.7V14.8c-2.3-.8-4-3-4-5.3 0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5c0 2.3-1.7 4.5-4 5.3v2.4c3.5-.9 6-4 6-7.7 0-4.2-3.3-7.5-7.5-7.5z" fill="white" opacity=".95"/><circle cx="10.5" cy="9.5" r="2.2" fill="white"/></svg>
+    </div>
+    <span class="nav-brand">Apavi <span>Green</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#proceso">Cómo trabajamos</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <a class="nav-phone" href="tel:+34600000000">
+    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 2h3l1 3-2 1.5a10 10 0 004 4L9.5 9l3 1v3a1 1 0 01-1 1A11 11 0 011 3a1 1 0 011-1z" stroke-linecap="round"/></svg>
+    +34 600 000 000
+  </a>
+  <a class="nav-cta" href="#contacto">Presupuesto gratis</a>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg-visual"></div>
+  <div class="hero-bg-img"></div>
+  <div class="hero-blobs"><div class="hero-blob-1"></div><div class="hero-blob-2"></div></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Césped · Jardines · Pavimentos · Piscinas
+      </div>
+      <h1 class="hero-h1">
+        Transformamos<br/>
+        <em>cada espacio</em><br/>
+        en algo único
+      </h1>
+      <p class="hero-p">Especialistas en instalaciones deportivas, jardines verticales, espacios infantiles, tarima de madera, resina epoxi y piscinas de cuarzo. Tu visión, nuestra ejecución.</p>
+      <div class="hero-btns">
+        <a class="btn-prim" href="#contacto">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8.5 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Solicitar presupuesto
+        </a>
+        <a class="btn-sec" href="#proyectos">
+          Ver proyectos reales
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">+500</div>
+          <div class="hero-stat-lbl">Proyectos</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">+15</div>
+          <div class="hero-stat-lbl">Años de experiencia</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">7</div>
+          <div class="hero-stat-lbl">Servicios especializados</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOSAICO PROYECTOS -->
+    <div class="hero-mosaic">
+      <!-- Grande: césped residencial con piscina (vista de apartamentos) -->
+      <div class="hm-item hm-item-big" style="background:linear-gradient(145deg,#0d4a1e,#2eb570);">
+        <div class="hm-body" style="height:100%;justify-content:flex-end;">
+          <span class="hm-label">Césped artificial residencial</span>
+        </div>
+        <div class="photo-note">📷 FOTO REAL</div>
+      </div>
+      <!-- Jardín vertical interior -->
+      <div class="hm-item" style="background:linear-gradient(145deg,#083d18,#1a8048);">
+        <div class="hm-body" style="height:100%;justify-content:flex-end;">
+          <span class="hm-label">Jardín vertical</span>
+        </div>
+        <div class="photo-note">📷 FOTO REAL</div>
+      </div>
+      <!-- Piscina con tarima -->
+      <div class="hm-item" style="background:linear-gradient(145deg,#6b3a10,#c87030);">
+        <div class="hm-body" style="height:100%;justify-content:flex-end;">
+          <span class="hm-label">Piscina + tarima madera</span>
+        </div>
+        <div class="photo-note">📷 FOTO REAL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-item">
+    <svg class="trust-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 1.5l1.5 3.2L13 5.3l-2.5 2.5.6 3.5L8 9.7l-3.1 1.6.6-3.5L3 5.3l3.5-.6L8 1.5z" stroke-linecap="round"/></svg>
+    Instaladores certificados
+  </div>
+  <div class="trust-item">
+    <svg class="trust-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1.5" stroke-linecap="round"/></svg>
+    Presupuesto en 24h
+  </div>
+  <div class="trust-item">
+    <svg class="trust-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2l1 3h3l-2.5 2 1 3L8 8.5l-2.5 1.5 1-3L4 5h3L8 2z" stroke-linecap="round"/></svg>
+    Materiales premium
+  </div>
+  <div class="trust-item">
+    <svg class="trust-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l3.5 3.5L13 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Garantía en todos los trabajos
+  </div>
+  <div class="trust-item">
+    <svg class="trust-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2C5 2 2 5 2 8s3 6 6 6 6-3 6-6-3-6-6-6zm0 3v3l3 1.5" stroke-linecap="round"/></svg>
+    Proyectos en toda España
+  </div>
+</div>
+
+<!-- ══ SERVICIOS ══════════════════════════════════════════ -->
+<section id="servicios">
+  <div class="container">
+    <div class="sec-header">
+      <div>
+        <div class="sec-tag">Lo que hacemos</div>
+        <h2 class="sec-h2">7 especialidades, un solo equipo</h2>
+        <p class="sec-sub">Desde campos deportivos hasta jardines verticales en restaurantes. Cubrimos cualquier proyecto con la misma calidad y precisión.</p>
+      </div>
+      <a class="link-more" href="#contacto">
+        Pedir presupuesto
+        <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7.5h9M8 4l4 3.5L8 11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <!-- Fila 1: 4 servicios -->
+    <div class="srv-grid">
+
+      <!-- 1. Césped artificial -->
+      <div class="srv-card featured">
+        <div class="srv-img" style="background:linear-gradient(135deg,#0d4a1e,#2eb570);">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M4 32s3-10 16-10S28 32 36 32M3 24C3 13 20 4 20 4s17 9 17 20" stroke="rgba(255,255,255,.6)" stroke-width="2.5" stroke-linecap="round"/></svg>
+            <div class="srv-img-label">Hotel resort · Villas · Residencial</div>
+          </div>
+          <div class="photo-note">📷 FOTO REAL</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon" style="background:var(--g100);">
+            <svg viewBox="0 0 20 20" fill="none" stroke="var(--g700)" stroke-width="1.8"><path d="M2 16s2-6 8-6 6 6 10 6M2 12c0-6 8-10 8-10s8 4 8 10" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="srv-h3">Césped Artificial</h3>
+          <p class="srv-p">Instalación para jardines residenciales, hoteles resort, terrazas y zonas comunes. Alto realismo y cero mantenimiento.</p>
+          <div class="srv-tags">
+            <span class="srv-tag" style="background:var(--g100);color:var(--g800);">Jardines</span>
+            <span class="srv-tag" style="background:var(--g100);color:var(--g800);">Hoteles</span>
+            <span class="srv-tag" style="background:var(--g100);color:var(--g800);">Terrazas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Instalaciones deportivas -->
+      <div class="srv-card">
+        <div class="srv-img" style="background:linear-gradient(135deg,#1a3a5c,#2d7ac0);">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="24" rx="3" stroke="rgba(255,255,255,.55)" stroke-width="2.5"/><path d="M20 8v24M4 20h32M10 8v24M30 8v24" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/><circle cx="20" cy="20" r="5" stroke="rgba(255,255,255,.55)" stroke-width="2"/></svg>
+            <div class="srv-img-label">Tenis · Pádel · Fútbol · Baloncesto</div>
+          </div>
+          <div class="photo-note">📷 FOTO REAL</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon" style="background:#E6F0FF;">
+            <svg viewBox="0 0 20 20" fill="none" stroke="#2d7ac0" stroke-width="1.8"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M10 4v12M2 10h16" stroke-linecap="round"/><circle cx="10" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="srv-h3">Instalaciones Deportivas</h3>
+          <p class="srv-p">Pistas de tenis, pádel, fútbol-sala, baloncesto y campos de fútbol 11 con césped artificial deportivo de alta prestación.</p>
+          <div class="srv-tags">
+            <span class="srv-tag" style="background:#E6F0FF;color:#1a4a8c;">Tenis</span>
+            <span class="srv-tag" style="background:#E6F0FF;color:#1a4a8c;">Fútbol</span>
+            <span class="srv-tag" style="background:#E6F0FF;color:#1a4a8c;">Baloncesto</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Jardines verticales -->
+      <div class="srv-card">
+        <div class="srv-img" style="background:linear-gradient(135deg,#0a3d18,#1a7040);">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="32" height="32" rx="5" stroke="rgba(255,255,255,.5)" stroke-width="2.5"/><path d="M12 28s3-10 8-10M28 28s-3-10-8-10M20 18v14" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="15" r="4" fill="rgba(255,255,255,.35)"/></svg>
+            <div class="srv-img-label">Interior · Exterior · Oasis · Restaurantes</div>
+          </div>
+          <div class="photo-note">📷 FOTO REAL</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon" style="background:var(--g100);">
+            <svg viewBox="0 0 20 20" fill="none" stroke="var(--g700)" stroke-width="1.8"><rect x="2" y="2" width="16" height="16" rx="3"/><path d="M7 14s1-4 3-4M13 14s-1-4-3-4M10 10v6" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="srv-h3">Jardines Verticales</h3>
+          <p class="srv-p">Muros verdes vivos y artificiales para fachadas de negocios, interiores corporativos y espacios gastronómicos como el proyecto "Oasis".</p>
+          <div class="srv-tags">
+            <span class="srv-tag" style="background:var(--g100);color:var(--g800);">Fachadas</span>
+            <span class="srv-tag" style="background:var(--g100);color:var(--g800);">Negocios</span>
+            <span class="srv-tag" style="background:var(--g100);color:var(--g800);">Restaurantes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Espacios infantiles -->
+      <div class="srv-card">
+        <div class="srv-img" style="background:linear-gradient(135deg,#8b3200,#e07030);">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="10" r="5" stroke="rgba(255,255,255,.6)" stroke-width="2.5"/><path d="M12 38v-12a4 4 0 014-4h8a4 4 0 014 4v12M8 28h5M27 28h5" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linecap="round"/></svg>
+            <div class="srv-img-label">Colegios · Comunidades · Resorts</div>
+          </div>
+          <div class="photo-note">📷 FOTO REAL</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon" style="background:#FFF0E6;">
+            <svg viewBox="0 0 20 20" fill="none" stroke="#C05D0A" stroke-width="1.8"><circle cx="10" cy="6" r="2.5"/><path d="M6 18v-6a2 2 0 012-2h4a2 2 0 012 2v6M4 14h2M14 14h2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="srv-h3">Espacios Infantiles</h3>
+          <p class="srv-p">Parques y zonas de juego completas con suelos de caucho multicolor y equipamiento certificado. Proyectos para colegios, hoteles y comunidades.</p>
+          <div class="srv-tags">
+            <span class="srv-tag" style="background:#FFF0E6;color:#C05D0A;">Parques</span>
+            <span class="srv-tag" style="background:#FFF0E6;color:#C05D0A;">Colegios</span>
+            <span class="srv-tag" style="background:#FFF0E6;color:#C05D0A;">Resorts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila 2: 3 servicios -->
+    <div class="srv-grid-2">
+
+      <!-- 5. Tarima de madera -->
+      <div class="srv-card featured">
+        <div class="srv-img" style="background:linear-gradient(135deg,#5c3010,#a05828);">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="5" rx="2" stroke="rgba(255,255,255,.55)" stroke-width="2"/><rect x="4" y="18" width="32" height="5" rx="2" stroke="rgba(255,255,255,.55)" stroke-width="2"/><rect x="4" y="28" width="32" height="5" rx="2" stroke="rgba(255,255,255,.55)" stroke-width="2"/></svg>
+            <div class="srv-img-label">Piscinas · Terrazas · Pasarelas</div>
+          </div>
+          <div class="photo-note">📷 FOTO REAL</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon" style="background:#F5EBE0;">
+            <svg viewBox="0 0 20 20" fill="none" stroke="#8B5E3C" stroke-width="1.8"><rect x="2" y="4" width="16" height="3" rx="1.5"/><rect x="2" y="9" width="16" height="3" rx="1.5"/><rect x="2" y="14" width="16" height="3" rx="1.5"/></svg>
+          </div>
+          <h3 class="srv-h3">Tarima de Madera</h3>
+          <p class="srv-p">Instalación de tarima exterior de madera tropical alrededor de piscinas, terrazas y pasarelas. Elegancia y durabilidad para espacios premium.</p>
+          <div class="srv-tags">
+            <span class="srv-tag" style="background:#F5EBE0;color:#6b3a10;">Piscinas</span>
+            <span class="srv-tag" style="background:#F5EBE0;color:#6b3a10;">Terrazas</span>
+            <span class="srv-tag" style="background:#F5EBE0;color:#6b3a10;">Madera tropical</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Suelos de resina epoxi -->
+      <div class="srv-card">
+        <div class="srv-img" style="background:linear-gradient(135deg,#1a2a3a,#3a5a8a);">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="32" height="32" rx="5" stroke="rgba(255,255,255,.4)" stroke-width="2.5" stroke-dasharray="0"/><path d="M4 20h32M20 4v32" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/></svg>
+            <div class="srv-img-label">Azul · Gris · Decorativo · Industrial</div>
+          </div>
+          <div class="photo-note">📷 FOTO REAL</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon" style="background:#E8EFF8;">
+            <svg viewBox="0 0 20 20" fill="none" stroke="#2d5a9a" stroke-width="1.8"><rect x="2" y="2" width="16" height="16" rx="3"/><path d="M2 10h16M10 2v16" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="srv-h3">Suelos de Resina Epoxi</h3>
+          <p class="srv-p">Pavimentos continuos de resina epoxi en azul, gris y colores personalizados para naves, gimnasios, pasillos y espacios comerciales. Alta resistencia y acabado brillante.</p>
+          <div class="srv-tags">
+            <span class="srv-tag" style="background:#E8EFF8;color:#1a3d6a;">Industrial</span>
+            <span class="srv-tag" style="background:#E8EFF8;color:#1a3d6a;">Comercial</span>
+            <span class="srv-tag" style="background:#E8EFF8;color:#1a3d6a;">Deportivo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Piscinas cuarzo -->
+      <div class="srv-card">
+        <div class="srv-img" style="background:linear-gradient(135deg,#0a3d6a,#1a7ac0);">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M4 32s4-8 10-8 8 8 12 8 6-8 10-8" stroke="rgba(255,255,255,.65)" stroke-width="2.5" stroke-linecap="round"/><path d="M7 24c0-7 5-15 13-15s13 8 13 15" stroke="rgba(255,255,255,.4)" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="8" r="4" stroke="rgba(255,255,255,.5)" stroke-width="2"/></svg>
+            <div class="srv-img-label">Residencial · Comunitaria · Personalizada</div>
+          </div>
+          <div class="photo-note">📷 FOTO REAL</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon" style="background:#E0F0FF;">
+            <svg viewBox="0 0 20 20" fill="none" stroke="#0a6abf" stroke-width="1.8"><path d="M2 16s3-5 6-5 4 5 6 5 3-5 6-5M4 12c0-4 3-8 6-8s6 4 6 8" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="srv-h3">Piscinas de Cuarzo y Resina</h3>
+          <p class="srv-p">Construcción de piscinas innovadoras con acabados de cuarzo y resina. Formas orgánicas, colores azul intenso y máxima durabilidad. Proyectos únicos a medida.</p>
+          <div class="srv-tags">
+            <span class="srv-tag" style="background:#E0F0FF;color:#0a4a8a;">Residencial</span>
+            <span class="srv-tag" style="background:#E0F0FF;color:#0a4a8a;">A medida</span>
+            <span class="srv-tag" style="background:#E0F0FF;color:#0a4a8a;">Lujo</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PORTFOLIO ══════════════════════════════════════════ -->
+<section id="proyectos" class="pf-bg">
+  <div class="container">
+    <div class="sec-header">
+      <div>
+        <div class="sec-tag">Proyectos reales</div>
+        <h2 class="sec-h2">Nuestros trabajos hablan por nosotros</h2>
+        <p class="sec-sub">Más de 500 proyectos ejecutados. Aquí un vistazo a algunos de los más destacados del portfolio.</p>
+      </div>
+      <a class="link-more" href="#" style="border-color:rgba(255,255,255,.15);color:var(--g300);">
+        Ver todo el portfolio
+        <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7.5h9M8 4l4 3.5L8 11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <!-- Grid principal -->
+    <div class="pf-grid-main" style="margin-bottom:12px;">
+
+      <!-- Hero: hotel resort con césped junto a piscina -->
+      <div class="pf-item pf-item-hero" style="background:linear-gradient(150deg,#0d4a1e,#2eb570);">
+        <div class="pf-overlay"></div>
+        <div class="pf-visual">
+          <div class="pf-info">
+            <span class="pf-tag" style="background:rgba(46,181,112,.3);color:var(--g200);">Césped artificial · Hotel Resort</span>
+            <div class="pf-title">Hotel Resort — Zona piscina y jardines</div>
+            <div class="pf-sub">Gran Canaria · +2.000 m² · Proyecto integral</div>
+          </div>
+        </div>
+        <div class="pf-photo-badge">📷 FOTO REAL</div>
+      </div>
+
+      <!-- Jardín vertical Oasis Restaurant -->
+      <div class="pf-item" style="background:linear-gradient(145deg,#083d18,#1a7040);">
+        <div class="pf-overlay"></div>
+        <div class="pf-visual">
+          <div class="pf-info">
+            <span class="pf-tag" style="background:rgba(30,120,60,.4);color:#8DDCAB;">Jardín Vertical</span>
+            <div class="pf-title">Restaurante Oasis</div>
+            <div class="pf-sub">Fachada verde interior + exterior</div>
+          </div>
+        </div>
+        <div class="pf-photo-badge">📷 FOTO REAL</div>
+      </div>
+
+      <!-- Piscina con tarima madera -->
+      <div class="pf-item" style="background:linear-gradient(145deg,#0a3d6a,#1a7ac0);">
+        <div class="pf-overlay"></div>
+        <div class="pf-visual">
+          <div class="pf-info">
+            <span class="pf-tag" style="background:rgba(26,122,192,.4);color:#90d0f8;">Piscina + Tarima</span>
+            <div class="pf-title">Piscina comunitaria + tarima tropical</div>
+            <div class="pf-sub">Residencial · Gran Canaria</div>
+          </div>
+        </div>
+        <div class="pf-photo-badge">📷 FOTO REAL</div>
+      </div>
+
+      <!-- Campo de tenis césped -->
+      <div class="pf-item" style="background:linear-gradient(145deg,#1a3a5c,#2d6aa0);">
+        <div class="pf-overlay"></div>
+        <div class="pf-visual">
+          <div class="pf-info">
+            <span class="pf-tag" style="background:rgba(45,106,160,.4);color:#a0d0f8;">Instalación deportiva</span>
+            <div class="pf-title">Pistas de tenis — Complejo deportivo</div>
+            <div class="pf-sub">Césped artificial deportivo</div>
+          </div>
+        </div>
+        <div class="pf-photo-badge">📷 FOTO REAL</div>
+      </div>
+    </div>
+
+    <!-- Grid secundario -->
+    <div class="pf-grid-secondary">
+      <div class="pf-item" style="background:linear-gradient(145deg,#8b3200,#d06020);height:200px;">
+        <div class="pf-overlay"></div>
+        <div class="pf-visual">
+          <div class="pf-info">
+            <span class="pf-tag" style="background:rgba(139,50,0,.4);color:#f0c090;">Espacio infantil</span>
+            <div class="pf-title">Parque infantil — Colegio</div>
+            <div class="pf-sub">Suelo caucho multicolor</div>
+          </div>
+        </div>
+        <div class="pf-photo-badge">📷 FOTO REAL</div>
+      </div>
+      <div class="pf-item" style="background:linear-gradient(145deg,#1a2a3a,#2d5a8a);height:200px;">
+        <div class="pf-overlay"></div>
+        <div class="pf-visual">
+          <div class="pf-info">
+            <span class="pf-tag" style="background:rgba(26,42,58,.5);color:#90b8d8;">Resina epoxi</span>
+            <div class="pf-title">Suelo epoxi azul — Polideportivo</div>
+            <div class="pf-sub">800 m² · Acabado brillante</div>
+          </div>
+        </div>
+        <div class="pf-photo-badge">📷 FOTO REAL</div>
+      </div>
+      <div class="pf-item" style="background:linear-gradient(145deg,#5c3010,#9a5020);height:200px;">
+        <div class="pf-overlay"></div>
+        <div class="pf-visual">
+          <div class="pf-info">
+            <span class="pf-tag" style="background:rgba(92,48,16,.5);color:#d0a060;">Tarima madera</span>
+            <div class="pf-title">Tarima tropical — Terraza premium</div>
+            <div class="pf-sub">Madera exótica · Uso exterior</div>
+          </div>
+        </div>
+        <div class="pf-photo-badge">📷 FOTO REAL</div>
+      </div>
+      <div class="pf-item" style="background:linear-gradient(145deg,#0d4a1e,#1a8048);height:200px;">
+        <div class="pf-overlay"></div>
+        <div class="pf-visual">
+          <div class="pf-info">
+            <span class="pf-tag" style="background:rgba(13,74,30,.5);color:#8DDCAB;">Jardín vertical</span>
+            <div class="pf-title">Muro verde — Edificio corporativo</div>
+            <div class="pf-sub">Plantas naturales · Interior</div>
+          </div>
+        </div>
+        <div class="pf-photo-badge">📷 FOTO REAL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESO ════════════════════════════════════════════ -->
+<section id="proceso" class="process-bg">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px;">
+      <div class="sec-tag">Metodología</div>
+      <h2 class="sec-h2">¿Cómo trabajamos?</h2>
+      <p class="sec-sub" style="margin:0 auto 0;">Un proceso claro, sin sorpresas, de principio a fin.</p>
+    </div>
+    <div class="process-row">
+      <div class="process-item">
+        <div class="process-num">01</div>
+        <h4 class="process-h4">Visita & Consulta gratuita</h4>
+        <p class="process-p">Visitamos el espacio, tomamos medidas y entendemos exactamente lo que necesitas.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">02</div>
+        <h4 class="process-h4">Presupuesto en 24h</h4>
+        <p class="process-p">Propuesta detallada con materiales, plazos y precio final. Sin letras pequeñas.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">03</div>
+        <h4 class="process-h4">Instalación profesional</h4>
+        <p class="process-p">Nuestro equipo ejecuta el proyecto con los más altos estándares y puntualidad.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">04</div>
+        <h4 class="process-h4">Garantía & Soporte</h4>
+        <p class="process-p">Entregamos con garantía escrita y te acompañamos en el mantenimiento posterior.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ═══════════════════════════════════════════════ -->
+<section class="stats-bg" style="padding:72px 0;">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stat-num">500<sup>+</sup></div>
+        <div class="stat-lbl">Proyectos completados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zm14 2l-3 3-1.5-1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stat-num">300<sup>+</sup></div>
+        <div class="stat-lbl">Clientes satisfechos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4 2 9.5l7-1L12 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stat-num">15<sup> años</sup></div>
+        <div class="stat-lbl">De experiencia en el sector</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stat-num">50<sup>k m²</sup></div>
+        <div class="stat-lbl">Superficie instalada</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES DESTACADOS -->
+<section style="padding:60px 0;background:var(--white);border-top:1px solid var(--n100);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:28px;">
+      <div class="sec-tag">Confían en nosotros</div>
+      <p style="font-size:15px;color:var(--n500);">Hoteles, colegios, comunidades de vecinos y restaurantes de toda España</p>
+    </div>
+    <div class="clients-row">
+      <div class="client-badge">🏨 Hoteles Resort</div>
+      <div class="client-badge">🏫 Colegios & Municipios</div>
+      <div class="client-badge">🍽️ Restaurante Oasis</div>
+      <div class="client-badge">🏘️ Comunidades de vecinos</div>
+      <div class="client-badge">⛳ Clubes deportivos</div>
+      <div class="client-badge">🏗️ Promotoras inmobiliarias</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIOS ════════════════════════════════════════ -->
+<section style="background:var(--n50);border-top:1px solid var(--n100);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="sec-tag">Testimonios</div>
+      <h2 class="sec-h2">Lo que dicen nuestros clientes</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-q">Instalaron el jardín vertical en la fachada de nuestro restaurante y el resultado es espectacular. Los clientes siempre lo fotografían y lo comparten en Instagram. Una inversión que vale la pena.</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:var(--g700);">MR</div>
+          <div>
+            <div class="test-name">Miguel Rodríguez</div>
+            <div class="test-role">Propietario — Restaurante Oasis</div>
+            <span class="test-type">Jardín vertical</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-q">El césped artificial alrededor de la piscina de nuestro complejo quedó perfecto. En 3 años no hemos tenido ningún problema y el mantenimiento es mínimo. El equipo fue muy profesional.</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:var(--gold);">LP</div>
+          <div>
+            <div class="test-name">Laura Pérez</div>
+            <div class="test-role">Administradora de fincas</div>
+            <span class="test-type">Césped artificial</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-q">Nos instalaron el parque infantil completo en tiempo récord antes del inicio del curso. Los niños están encantados y los padres valoran mucho la seguridad de los materiales. Totalmente recomendable.</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#e07030;">JM</div>
+          <div>
+            <div class="test-name">Juan Martínez</div>
+            <div class="test-role">Director — Colegio Público</div>
+            <span class="test-type">Espacio infantil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACTO ═══════════════════════════════════════════ -->
+<section id="contacto" class="cta-bg">
+  <div class="container">
+    <div class="cta-layout">
+      <div>
+        <div class="sec-tag">Contacto</div>
+        <h2 class="sec-h2">¿Tienes un proyecto en mente?</h2>
+        <div class="cta-features">
+          <div class="cta-feat">
+            <div class="cta-feat-icon"><svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="8.5" r="6"/><path d="M8.5 5.5v3l2 1.5" stroke-linecap="round"/></svg></div>
+            <div><div class="cta-feat-title">Respuesta en menos de 24h</div><div class="cta-feat-p">Analizamos tu proyecto y te enviamos un presupuesto detallado sin compromiso.</div></div>
+          </div>
+          <div class="cta-feat">
+            <div class="cta-feat-icon"><svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8.5 2C5.5 2 3 4.5 3 7.5c0 4.5 5.5 8.5 5.5 8.5s5.5-4 5.5-8.5C14 4.5 11.5 2 8.5 2z"/><circle cx="8.5" cy="7.5" r="2"/></svg></div>
+            <div><div class="cta-feat-title">Visita técnica gratuita</div><div class="cta-feat-p">Nos desplazamos a tu ubicación, tomamos medidas y te asesoramos in situ.</div></div>
+          </div>
+          <div class="cta-feat">
+            <div class="cta-feat-icon"><svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l3.5 3.5L14 4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="cta-feat-title">Garantía escrita en todos los proyectos</div><div class="cta-feat-p">Trabajamos con materiales certificados y ofrecemos garantía por escrito.</div></div>
+          </div>
+        </div>
+        <div class="cta-contact-row">
+          <div class="cta-contact-item">
+            <div class="cta-contact-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><path d="M2 3h3l1 3-2 1.5a10 10 0 004 4l1.5-2 3 1v3a1 1 0 01-1 1A11 11 0 011 4a1 1 0 011-1z" stroke-linecap="round"/></svg></div>
+            <div><div class="cta-contact-label">Teléfono</div><div class="cta-contact-val">+34 600 000 000</div></div>
+          </div>
+          <div class="cta-contact-item">
+            <div class="cta-contact-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.8"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M2 5l6 5 6-5" stroke-linecap="round"/></svg></div>
+            <div><div class="cta-contact-label">Email</div><div class="cta-contact-val">info@avigreen.com</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <div class="form-title">Solicitar presupuesto</div>
+        <div class="form-sub">Gratis y sin compromiso · Respuesta en 24h</div>
+        <div class="form-row">
+          <div class="form-field"><label class="form-label">Nombre *</label><input class="form-input" type="text" placeholder="Tu nombre"/></div>
+          <div class="form-field"><label class="form-label">Teléfono *</label><input class="form-input" type="tel" placeholder="+34 600 000 000"/></div>
+        </div>
+        <div class="form-field"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="tu@email.com"/></div>
+        <div class="form-field">
+          <label class="form-label">Servicio *</label>
+          <select class="form-select">
+            <option value="">Selecciona un servicio…</option>
+            <option>Césped artificial (jardín / residencial)</option>
+            <option>Instalación deportiva (tenis, pádel, fútbol…)</option>
+            <option>Jardín vertical</option>
+            <option>Espacio infantil (parque / zona de juego)</option>
+            <option>Tarima de madera</option>
+            <option>Suelo de resina epoxi</option>
+            <option>Piscina de cuarzo y resina</option>
+            <option>Varios servicios / proyecto integral</option>
+          </select>
+        </div>
+        <div class="form-field"><label class="form-label">Describe tu proyecto</label><textarea class="form-input form-textarea" rows="3" placeholder="Dimensiones aproximadas, ubicación y cualquier detalle que nos ayude a preparar el presupuesto…"></textarea></div>
+        <button class="form-submit">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 3l5 5-5 5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Enviar solicitud
+        </button>
+        <div class="form-note">🔒 Tus datos están seguros. No compartimos tu información.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════ -->
+<footer>
+  <div class="ft-grid">
+    <div>
+      <div class="ft-logo-row">
+        <div style="width:34px;height:34px;background:linear-gradient(135deg,var(--g700),var(--g500));border-radius:10px;display:flex;align-items:center;justify-content:center;">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M9.5 1.8C5.7 1.8 2.5 5 2.5 8.8c0 3.3 2.3 6.1 5.5 7V13.5c-2-.7-3.5-2.7-3.5-4.7 0-2.8 2.2-5 5-5s5 2.2 5 5c0 2-1.5 4-3.5 4.7v2.3c3.2-.9 5.5-3.7 5.5-7 0-3.8-3.2-7-7-7z" fill="white" opacity=".95"/><circle cx="9.5" cy="8.8" r="2" fill="white"/></svg>
+        </div>
+        <div class="ft-brand">Apavi <span>Green</span></div>
+      </div>
+      <p class="ft-p">Especialistas en instalaciones deportivas, jardines verticales, espacios infantiles, tarima de madera, resina epoxi y piscinas de cuarzo. Proyectos en toda España desde hace más de 15 años.</p>
+      <div class="ft-social">
+        <a class="ft-social-btn" href="https://www.facebook.com/apavitec" target="_blank">
+          <svg viewBox="0 0 16 16" fill="rgba(255,255,255,.65)"><path d="M14 1.5H2a.5.5 0 00-.5.5v12a.5.5 0 00.5.5h6.5v-5H7V7.5h1.5V6a2 2 0 012-2H12v2h-1a.5.5 0 00-.5.5v1H12l-.3 2H10.5v5H14a.5.5 0 00.5-.5V2a.5.5 0 00-.5-.5z"/></svg>
+        </a>
+        <a class="ft-social-btn" href="#" title="Instagram (próximamente)">
+          <svg viewBox="0 0 16 16" fill="none" stroke="rgba(255,255,255,.65)" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="3.5"/><circle cx="8" cy="8" r="3"/><circle cx="11.5" cy="4.5" r=".7" fill="rgba(255,255,255,.65)" stroke="none"/></svg>
+        </a>
+        <a class="ft-social-btn" href="#" title="TikTok (próximamente)">
+          <svg viewBox="0 0 16 16" fill="rgba(255,255,255,.65)"><path d="M13 3.5a3 3 0 01-3-3h-2v9a1.5 1.5 0 11-1.5-1.5V6a3.5 3.5 0 103.5 3.5V7a5 5 0 003 .5V5.5A3 3 0 0113 3.5z"/></svg>
+        </a>
+        <a class="ft-social-btn" href="#" title="Pinterest (próximamente)">
+          <svg viewBox="0 0 16 16" fill="rgba(255,255,255,.65)"><path d="M8 1a7 7 0 00-2.6 13.5c0-.7.1-1.8.3-2.6l1.1-4.6s-.3-.5-.3-1.3c0-1.3.7-2.2 1.7-2.2.8 0 1.2.6 1.2 1.3 0 .8-.5 2-.7 3-.2.9.4 1.6 1.3 1.6 1.6 0 2.7-2 2.7-4.4 0-1.8-1.2-3.2-3.4-3.2a3.8 3.8 0 00-4 3.9c0 .7.2 1.3.5 1.6a.3.3 0 01.1.4l-.2.8c0 .2-.2.3-.3.2C4.6 9.9 4 8.8 4 7.4 4 5 5.9 2.7 9.2 2.7c2.6 0 4.3 1.9 4.3 4 0 2.8-1.5 4.9-3.8 4.9-1 0-1.7-.5-2-1.1l-.5 2.1c-.2.7-.6 1.4-.9 1.9a7 7 0 108-6.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-title">Servicios</div>
+      <div class="ft-links">
+        <a href="#">Césped artificial</a>
+        <a href="#">Instalaciones deportivas</a>
+        <a href="#">Jardines verticales</a>
+        <a href="#">Espacios infantiles</a>
+        <a href="#">Tarima de madera</a>
+        <a href="#">Suelos de resina epoxi</a>
+        <a href="#">Piscinas de cuarzo</a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-title">Empresa</div>
+      <div class="ft-links">
+        <a href="#">Sobre nosotros</a>
+        <a href="#">Portfolio de proyectos</a>
+        <a href="#">Blog & Inspiración</a>
+        <a href="#">Trabaja con nosotros</a>
+        <a href="#">Contacto</a>
+      </div>
+      <div style="margin-top:22px;">
+        <div class="ft-col-title">Horario</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.8;">Lun–Vie: 8:00–18:00<br/>Sáb: 9:00–13:00</div>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-title">Legal</div>
+      <div class="ft-links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Aviso legal</a>
+        <a href="#">Política de cookies</a>
+      </div>
+      <div style="margin-top:22px;">
+        <div class="ft-col-title">Síguenos</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.9;">
+          Facebook: /apavitec<br/>
+          Instagram: próximamente<br/>
+          TikTok: próximamente
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2026 Apavi Green. Todos los derechos reservados.</div>
+    <div class="ft-badges">
+      <span class="ft-badge">+15 años experiencia</span>
+      <span class="ft-badge">Garantía escrita</span>
+      <span class="ft-badge">Instaladores certificados</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
