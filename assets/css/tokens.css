@@ -1,0 +1,48 @@
+/* assets/css/tokens.css */
+:root {
+  /* Green scale */
+  --g950: #0B2918;
+  --g900: #143D25;
+  --g800: #1A5C38;
+  --g700: #207A4B;
+  --g600: #27975D;
+  --g500: #2EB570;
+  --g400: #5CC98C;
+  --g300: #8DDCAB;
+  --g200: #BDEECB;
+  --g100: #E2F7EC;
+  --g50:  #F2FCF6;
+
+  /* Gold */
+  --gold:    #C49430;
+  --gold-l:  #E4C07A;
+  --gold-bg: #FBF3E2;
+
+  /* Neutral */
+  --n950: #0D0F0E;
+  --n900: #1A1D1B;
+  --n700: #3D4441;
+  --n500: #6B7370;
+  --n300: #B0B8B4;
+  --n100: #EEF1EF;
+  --n50:  #F7F9F8;
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-h: 'Plus Jakarta Sans', sans-serif;
+  --font-b: 'Inter', sans-serif;
+
+  /* Radii */
+  --r4: 4px; --r6: 6px; --r8: 8px;
+  --r12: 12px; --r16: 16px; --r20: 20px;
+  --r999: 999px;
+
+  /* Shadows */
+  --sh-sm: 0 1px 4px rgba(20,61,37,.08);
+  --sh:    0 4px 16px rgba(20,61,37,.10);
+  --sh-lg: 0 16px 48px rgba(20,61,37,.14);
+
+  /* Layout */
+  --nav-h: 66px;
+  --max-w: 1160px;
+}
