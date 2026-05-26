@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presupuesto Gratis &mdash; Apavi Green</title>
+  <meta name="description" content="Solicita tu presupuesto de cesped artificial o jardin vertical en 2 minutos. Sin compromiso, respuesta en 24 horas.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    body { background: var(--n950); }
+    .quiz-page { min-height: 100vh; display: flex; flex-direction: column; }
+    .quiz-topbar { padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .quiz-topbar-logo { display: flex; align-items: center; gap: 10px; }
+    .quiz-topbar-back { font-size: 13px; color: rgba(255,255,255,.4); transition: color .2s; }
+    .quiz-topbar-back:hover { color: rgba(255,255,255,.7); }
+    .quiz-progress-bar { height: 3px; background: rgba(255,255,255,.08); }
+    .quiz-progress-fill { height: 100%; background: var(--g500); border-radius: 2px; transition: width .4s ease; width: 0%; }
+    .quiz-main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 20px; }
+    .quiz-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--r20); padding: 48px; max-width: 640px; width: 100%; }
+    .quiz-step-tag { font-size: 11px; font-weight: 700; color: var(--g400); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; }
+    .quiz-card h2 { font-family: var(--font-h); font-size: clamp(22px,3vw,32px); font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: -.02em; }
+    .quiz-card p.quiz-sub { font-size: 15px; color: rgba(255,255,255,.45); margin-bottom: 28px; }
+    .quiz-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+    .quiz-pill {
+      font-size: 14px; font-weight: 600; padding: 11px 20px;
+      border-radius: var(--r8); border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.65); cursor: pointer; transition: all .15s;
+      background: rgba(255,255,255,.04);
+    }
+    .quiz-pill:hover { border-color: rgba(255,255,255,.25); color: #fff; }
+    .quiz-pill.active { background: var(--g700); color: #fff; border-color: var(--g700); }
+    .quiz-nav { display: flex; gap: 12px; }
+    .quiz-btn-prev { background: rgba(255,255,255,.06); color: rgba(255,255,255,.6); font-family: var(--font-h); font-size: 14px; font-weight: 600; padding: 12px 22px; border-radius: var(--r8); border: 1px solid rgba(255,255,255,.1); cursor: pointer; transition: all .15s; }
+    .quiz-btn-prev:hover { background: rgba(255,255,255,.1); color: #fff; }
+    .quiz-btn-next { background: var(--g700); color: #fff; font-family: var(--font-h); font-size: 14px; font-weight: 700; padding: 12px 24px; border-radius: var(--r8); border: none; cursor: pointer; transition: background .15s; }
+    .quiz-btn-next:hover { background: var(--g800); }
+    .quiz-step-counter { font-size: 12px; color: rgba(255,255,255,.3); margin-left: auto; display: flex; align-items: center; }
+    .quiz-form-group { margin-bottom: 16px; }
+    .quiz-form-group label { display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 8px; }
+    .quiz-input { width: 100%; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r8); padding: 12px 16px; font-size: 15px; color: #fff; font-family: var(--font-b); transition: border-color .2s; }
+    .quiz-input:focus { outline: none; border-color: var(--g500); }
+    .quiz-input::placeholder { color: rgba(255,255,255,.25); }
+    .quiz-textarea { resize: vertical; min-height: 80px; }
+    .quiz-btn-submit { width: 100%; background: var(--gold); color: #fff; font-family: var(--font-h); font-size: 16px; font-weight: 700; padding: 15px 28px; border-radius: var(--r8); border: none; cursor: pointer; transition: background .2s; margin-top: 8px; }
+    .quiz-btn-submit:hover { background: #b8861f; }
+    .quiz-success { text-align: center; padding: 20px; }
+    .quiz-success-icon { font-size: 64px; margin-bottom: 20px; }
+    .quiz-success h2 { font-family: var(--font-h); font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+    .quiz-success p { font-size: 16px; color: rgba(255,255,255,.55); line-height: 1.7; }
+    .quiz-prefill-banner { background: rgba(46,181,112,.1); border: 1px solid rgba(46,181,112,.2); border-radius: var(--r8); padding: 12px 16px; font-size: 13px; color: var(--g300); margin-bottom: 20px; display: none; }
+    .quiz-prefill-banner.visible { display: block; }
+    @media (max-width: 640px) {
+      .quiz-topbar { padding: 16px 20px; }
+      .quiz-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+<div class="quiz-page">
+
+  <!-- Top bar -->
+  <div class="quiz-topbar">
+    <a href="index.html" class="quiz-topbar-logo">
+      <div class="nav-icon">&#127807;</div>
+      <span class="nav-brand" style="color:#fff;">Apavi<strong>Green</strong></span>
+    </a>
+    <a href="index.html" class="quiz-topbar-back">&#8592; Volver al inicio</a>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="quiz-progress-bar">
+    <div class="quiz-progress-fill" id="quizProgress"></div>
+  </div>
+
+  <!-- Main -->
+  <div class="quiz-main">
+    <div class="quiz-card" id="cuestionarioApp">
+
+      <!-- Step 1: Tipo -->
+      <div data-step="1">
+        <div class="quiz-step-tag">Paso 1 de 4 &middot; Tipo de proyecto</div>
+        <h2>&#191;Que tipo de espacio quieres transformar?</h2>
+        <p class="quiz-sub">Selecciona el tipo que mejor describe tu proyecto. Avanzaremos automaticamente.</p>
+        <div class="quiz-pills">
+          <button class="quiz-pill" data-field="tipo" data-value="residencial">&#127968; Jardin / Terraza privada</button>
+          <button class="quiz-pill" data-field="tipo" data-value="deportivo">&#9917; Instalacion deportiva</button>
+          <button class="quiz-pill" data-field="tipo" data-value="comercial">&#127963;&#65039; Local / Feria / Evento</button>
+          <button class="quiz-pill" data-field="tipo" data-value="infantil">&#127774; Espacio infantil</button>
+          <button class="quiz-pill" data-field="tipo" data-value="vertical">&#127807; Jardin vertical</button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-next" data-action="next">Siguiente &rarr;</button>
+          <span class="quiz-step-counter" id="quizStepCounter">1 / 4</span>
+        </div>
+      </div>
+
+      <!-- Step 2: Superficie -->
+      <div data-step="2" style="display:none;">
+        <div class="quiz-step-tag">Paso 2 de 4 &middot; Superficie</div>
+        <h2>&#191;Cuanta superficie quieres cubrir?</h2>
+        <p class="quiz-sub">Una estimacion aproximada es suficiente. No es necesario medirlo ahora.</p>
+        <div class="quiz-pills">
+          <button class="quiz-pill" data-field="superficie" data-value="s">Hasta 50 m&#178;</button>
+          <button class="quiz-pill" data-field="superficie" data-value="m">50 &ndash; 150 m&#178;</button>
+          <button class="quiz-pill" data-field="superficie" data-value="l">150 &ndash; 300 m&#178;</button>
+          <button class="quiz-pill" data-field="superficie" data-value="xl">Mas de 300 m&#178;</button>
+          <button class="quiz-pill" data-field="superficie" data-value="nd">No lo se aun</button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-prev" data-action="prev">&#8592; Atras</button>
+          <button class="quiz-btn-next" data-action="next">Siguiente &rarr;</button>
+          <span class="quiz-step-counter">2 / 4</span>
+        </div>
+      </div>
+
+      <!-- Step 3: Urgencia -->
+      <div data-step="3" style="display:none;">
+        <div class="quiz-step-tag">Paso 3 de 4 &middot; Urgencia</div>
+        <h2>&#191;Para cuando necesitas la instalacion?</h2>
+        <p class="quiz-sub">Esto nos ayuda a organizar el equipo y darte los tiempos reales.</p>
+        <div class="quiz-pills">
+          <button class="quiz-pill" data-field="urgencia" data-value="urgente">Lo antes posible</button>
+          <button class="quiz-pill" data-field="urgencia" data-value="mes">En el proximo mes</button>
+          <button class="quiz-pill" data-field="urgencia" data-value="trimestre">En los proximos 3 meses</button>
+          <button class="quiz-pill" data-field="urgencia" data-value="planificando">Solo estoy planificando</button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-prev" data-action="prev">&#8592; Atras</button>
+          <button class="quiz-btn-next" data-action="next">Siguiente &rarr;</button>
+          <span class="quiz-step-counter">3 / 4</span>
+        </div>
+      </div>
+
+      <!-- Step 4: Contacto -->
+      <div data-step="4" style="display:none;">
+        <div class="quiz-step-tag">Paso 4 de 4 &middot; Tus datos</div>
+        <h2>&#191;Como te llamamos?</h2>
+        <p class="quiz-sub">Te enviamos el presupuesto sin compromiso. Solo te pedimos lo esencial.</p>
+        <div class="quiz-prefill-banner" id="prefillBanner">
+          &#128161; Hemos precargado tu seleccion del configurador de precio. Solo revisa y envia.
+        </div>
+        <form id="quizForm" novalidate>
+          <div class="quiz-form-group">
+            <label>Nombre *</label>
+            <input class="quiz-input" type="text" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="quiz-form-group">
+            <label>Telefono *</label>
+            <input class="quiz-input" type="tel" name="telefono" placeholder="+34 6XX XXX XXX" required>
+          </div>
+          <div class="quiz-form-group">
+            <label>Email (opcional)</label>
+            <input class="quiz-input" type="email" name="email" placeholder="tu@email.com">
+          </div>
+          <div class="quiz-form-group">
+            <label>Notas adicionales (opcional)</label>
+            <textarea class="quiz-input quiz-textarea" name="notas" placeholder="Describe brevemente tu proyecto si quieres..."></textarea>
+          </div>
+          <div class="quiz-nav" style="margin-bottom:12px;">
+            <button type="button" class="quiz-btn-prev" data-action="prev">&#8592; Atras</button>
+            <span class="quiz-step-counter">4 / 4</span>
+          </div>
+          <button type="submit" class="quiz-btn-submit">Enviar solicitud de presupuesto &#8594;</button>
+          <p style="text-align:center;font-size:11px;color:rgba(255,255,255,.2);margin-top:10px;">Sin spam &middot; Tus datos son confidenciales &middot; RGPD</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<script src="assets/js/cuestionario.js"></script>
+<script>
+  // Show prefill banner if URL has params from configurador
+  if (window.location.search.includes('tipo=')) {
+    const b = document.getElementById('prefillBanner');
+    if (b) b.classList.add('visible');
+  }
+</script>
+</body>
+</html>
