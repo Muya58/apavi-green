@@ -96,3 +96,66 @@
   .process-steps  { grid-template-columns: repeat(2, 1fr); }
   .trust-bar { flex-direction: column; gap: 16px; align-items: flex-start; }
 }
+
+/* ── COOKIE BANNER ── */
+#cookieBanner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+  background: var(--n900);
+  border-top: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 -8px 32px rgba(0,0,0,.4);
+  transform: translateY(100%);
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+}
+#cookieBanner.cb-visible { transform: translateY(0); }
+.cb-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 20px 32px;
+  display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+}
+.cb-text { flex: 1; min-width: 260px; }
+.cb-title { font-family: var(--font-h); font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.cb-desc  { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.6; }
+.cb-link  { color: var(--g400); text-decoration: underline; }
+.cb-link:hover { color: var(--g300); }
+.cb-actions { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+.cb-btn {
+  font-family: var(--font-h); font-size: 13px; font-weight: 700;
+  padding: 10px 20px; border-radius: var(--r8); cursor: pointer;
+  border: none; transition: all .15s; white-space: nowrap;
+}
+.cb-btn-primary  { background: var(--g500); color: #fff; }
+.cb-btn-primary:hover  { background: var(--g400); }
+.cb-btn-secondary { background: rgba(255,255,255,.08); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.15); }
+.cb-btn-secondary:hover { background: rgba(255,255,255,.14); color: #fff; }
+@media (max-width: 640px) {
+  .cb-inner { padding: 16px 20px; gap: 16px; }
+  .cb-actions { width: 100%; }
+  .cb-btn { flex: 1; text-align: center; }
+}
+
+/* ── LEGAL PAGES ── */
+.legal-page { min-height: 100vh; background: var(--n950); color: var(--n100); padding: 80px 0 60px; }
+.legal-header { text-align: center; margin-bottom: 48px; padding: 0 20px; }
+.legal-header .legal-tag { display: inline-block; font-size: 11px; font-weight: 700; color: var(--g400); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; }
+.legal-header h1 { font-family: var(--font-h); font-size: clamp(26px, 4vw, 40px); font-weight: 800; color: #fff; letter-spacing: -.02em; margin-bottom: 8px; }
+.legal-header p { font-size: 14px; color: rgba(255,255,255,.4); }
+.legal-body { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.legal-body h2 { font-family: var(--font-h); font-size: 18px; font-weight: 700; color: #fff; margin: 36px 0 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.legal-body h3 { font-family: var(--font-h); font-size: 15px; font-weight: 600; color: var(--g300); margin: 24px 0 8px; }
+.legal-body p  { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,.65); margin-bottom: 14px; }
+.legal-body ul { padding-left: 20px; margin-bottom: 14px; }
+.legal-body ul li { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,.65); margin-bottom: 6px; }
+.legal-body a  { color: var(--g400); text-decoration: underline; }
+.legal-body a:hover { color: var(--g300); }
+.legal-placeholder { background: rgba(196,148,48,.12); border: 1px dashed var(--gold); border-radius: var(--r6); padding: 2px 8px; color: var(--gold); font-weight: 600; font-size: 13px; }
+.legal-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 13px; }
+.legal-table th { background: var(--g900); color: #fff; font-family: var(--font-h); font-weight: 700; padding: 10px 14px; text-align: left; }
+.legal-table td { padding: 9px 14px; color: rgba(255,255,255,.65); border-bottom: 1px solid rgba(255,255,255,.06); }
+.legal-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+/* ── CONSENT CHECKBOX ── */
+.consent-group { display: flex; align-items: flex-start; gap: 10px; margin: 16px 0 8px; cursor: pointer; }
+.consent-group input[type=checkbox] { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; accent-color: var(--g500); cursor: pointer; }
+.consent-group label { font-size: 12px; line-height: 1.6; color: rgba(255,255,255,.5); cursor: pointer; }
+.consent-group label a { color: var(--g400); text-decoration: underline; }
+.consent-group label a:hover { color: var(--g300); }
