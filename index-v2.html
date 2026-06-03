@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apavi Green - Cesped Artificial y Jardines en Gran Canaria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       TOKENS
+    ============================================================ */
+    :root {
+      --bg:          #08100B;
+      --bg-surface:  #0E1912;
+      --bg-card:     #122015;
+      --bg-card-alt: #0B1A0F;
+      --green-500:   #2EB570;
+      --green-400:   #5CC98C;
+      --green-300:   #8FDDB3;
+      --gold:        #C49430;
+      --gold-light:  #D4AA52;
+      --white:       #FFFFFF;
+      --text:        #FFFFFF;
+      --text-muted:  rgba(255,255,255,.5);
+      --text-subtle: rgba(255,255,255,.28);
+      --border:      rgba(255,255,255,.07);
+      --border-mid:  rgba(255,255,255,.12);
+      --r-sm: 10px;
+      --r-md: 16px;
+      --r-lg: 24px;
+      --r-xl: 32px;
+      --font-h: 'Plus Jakarta Sans', sans-serif;
+      --font-b: 'Inter', sans-serif;
+    }
+
+    /* ============================================================
+       RESET + BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-b);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1);
+    }
+    [data-reveal].visible { opacity: 1; transform: none; }
+    [data-reveal-delay="1"] { transition-delay: .1s; }
+    [data-reveal-delay="2"] { transition-delay: .2s; }
+    [data-reveal-delay="3"] { transition-delay: .3s; }
+    [data-reveal-delay="4"] { transition-delay: .4s; }
+    [data-reveal-delay="5"] { transition-delay: .5s; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      padding: 0 32px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(8,16,11,.82);
+      border-bottom: 1px solid var(--border);
+      transition: background .3s;
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo img { height: 34px; border-radius: 6px; }
+    .nav-wordmark {
+      font-family: var(--font-h);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -.01em;
+    }
+    .nav-wordmark span { color: var(--green-400); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--green-500);
+      color: #fff;
+      font-family: var(--font-h);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: var(--r-sm);
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--green-400); transform: translateY(-1px); }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: .25s;
+    }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      inset: 68px 0 0;
+      background: rgba(8,16,11,.97);
+      padding: 32px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-h);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-muted);
+      transition: color .2s;
+    }
+    .nav-mobile a:hover { color: var(--white); }
+    .nav-mobile .nav-cta-mobile {
+      display: inline-block;
+      margin-top: 8px;
+      background: var(--green-500);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: var(--r-sm);
+      text-align: center;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      min-height: 100dvh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 68px;
+    }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 48px 80px 64px;
+      max-width: 680px;
+    }
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(46,181,112,.1);
+      border: 1px solid rgba(46,181,112,.22);
+      color: var(--green-400);
+      font-family: var(--font-h);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+      width: fit-content;
+    }
+    .hero-label::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--green-400);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-family: var(--font-h);
+      font-size: clamp(36px, 4.5vw, 62px);
+      font-weight: 900;
+      line-height: 1.06;
+      letter-spacing: -.03em;
+      color: var(--white);
+      margin-bottom: 22px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green-400);
+    }
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 440px;
+      margin-bottom: 40px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-500);
+      color: #fff;
+      font-family: var(--font-h);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: var(--r-sm);
+      transition: background .2s, transform .15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--green-400); transform: translateY(-2px); }
+    .btn-primary:active { transform: translateY(0) scale(.98); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border-mid);
+      color: rgba(255,255,255,.8);
+      font-family: var(--font-h);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: var(--r-sm);
+      transition: background .2s, border-color .2s, transform .15s;
+      white-space: nowrap;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); border-color: var(--border-mid); transform: translateY(-2px); }
+    .btn-ghost:active { transform: translateY(0) scale(.98); }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat-num {
+      font-family: var(--font-h);
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 11px;
+      color: var(--text-subtle);
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* Hero image panel */
+    .hero-visual {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 76px 40px 40px 8px;
+      background: var(--bg-surface);
+    }
+    .hero-img {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .hero-img:hover img { transform: scale(1.04); }
+    .hero-img-main {
+      grid-row: 1 / 3;
+    }
+    .hero-img-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(8,16,11,.88);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--r-sm);
+      padding: 8px 12px;
+      font-family: var(--font-h);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green-400);
+    }
+
+    /* ============================================================
+       TRUST BAR
+    ============================================================ */
+    .trust-bar {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 40px;
+    }
+    .trust-bar-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .trust-item-dot {
+      width: 5px; height: 5px;
+      background: var(--green-500);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       SECTION SHARED
+    ============================================================ */
+    .section {
+      padding: 96px 40px;
+    }
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    .section-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--green-400);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--font-h);
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -.025em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .section-title em { font-style: normal; color: var(--green-400); }
+    .section-sub {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 540px;
+    }
+
+    /* ============================================================
+       SERVICES BENTO
+    ============================================================ */
+    .services-section {
+      background: var(--bg);
+    }
+    .services-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      gap: 24px;
+    }
+    .services-link {
+      font-family: var(--font-h);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green-400);
+      border-bottom: 1px solid rgba(92,201,140,.3);
+      padding-bottom: 2px;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s;
+    }
+    .services-link:hover { color: var(--green-300); border-color: var(--green-300); }
+
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 280px 240px;
+      gap: 10px;
+    }
+    .bento-card {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-card);
+      cursor: pointer;
+      transition: transform .3s ease;
+    }
+    .bento-card:hover { transform: scale(1.015); }
+    .bento-card:hover .bento-img { transform: scale(1.06); }
+    .bento-card img,
+    .bento-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .bento-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,16,11,.9) 0%, rgba(8,16,11,.2) 60%, transparent 100%);
+    }
+    .bento-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 24px;
+    }
+    .bento-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--green-400);
+      margin-bottom: 6px;
+    }
+    .bento-name {
+      font-family: var(--font-h);
+      font-size: clamp(16px, 1.5vw, 22px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: -.01em;
+    }
+    .bento-arrow {
+      position: absolute;
+      top: 20px; right: 20px;
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: rgba(255,255,255,.7);
+      transition: background .2s, color .2s;
+    }
+    .bento-card:hover .bento-arrow { background: var(--green-500); color: #fff; border-color: var(--green-500); }
+
+    /* Bento cell positions */
+    .b1 { grid-column: 1 / 6; grid-row: 1; }
+    .b2 { grid-column: 6 / 9; grid-row: 1; }
+    .b3 { grid-column: 9 / 13; grid-row: 1; }
+    .b4 { grid-column: 1 / 5; grid-row: 2; }
+    .b5 { grid-column: 5 / 9; grid-row: 2; }
+    .b6 { grid-column: 9 / 13; grid-row: 2; }
+
+    /* ============================================================
+       STATEMENT SECTION
+    ============================================================ */
+    .statement-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 96px 40px;
+    }
+    .statement-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .statement-text {}
+    .statement-quote {
+      font-family: var(--font-h);
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+    .statement-quote strong {
+      color: var(--green-400);
+      font-weight: 900;
+    }
+    .statement-quote p { margin-bottom: 12px; }
+    .statement-body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 440px;
+      margin-bottom: 36px;
+    }
+    .statement-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .pillar {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pillar:first-child { border-top: 1px solid var(--border); }
+    .pillar-num {
+      font-family: var(--font-h);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green-400);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding-top: 3px;
+    }
+    .pillar-title {
+      font-family: var(--font-h);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .pillar-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       PORTFOLIO STRIP
+    ============================================================ */
+    .portfolio-section {
+      background: var(--bg);
+      padding: 96px 0;
+    }
+    .portfolio-header {
+      padding: 0 40px;
+      max-width: 1320px;
+      margin: 0 auto 48px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .portfolio-scroll {
+      display: flex;
+      gap: 16px;
+      padding: 0 40px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .portfolio-scroll::-webkit-scrollbar { display: none; }
+    .portfolio-card {
+      flex: 0 0 360px;
+      height: 460px;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: start;
+      background: var(--bg-card);
+      transition: transform .3s ease;
+    }
+    .portfolio-card:hover { transform: translateY(-6px); }
+    .portfolio-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+    .portfolio-card:hover img { transform: scale(1.05); }
+    .portfolio-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,16,11,.88) 0%, transparent 55%);
+    }
+    .portfolio-card-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 24px;
+    }
+    .portfolio-card-cat {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--green-400);
+      margin-bottom: 5px;
+    }
+    .portfolio-card-title {
+      font-family: var(--font-h);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    /* ============================================================
+       PROCESS
+    ============================================================ */
+    .process-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: 96px 40px;
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 64px;
+    }
+    .process-step {
+      background: var(--bg-card);
+      padding: 36px 32px;
+      position: relative;
+    }
+    .process-step:first-child { border-radius: var(--r-lg) 0 0 var(--r-lg); }
+    .process-step:last-child { border-radius: 0 var(--r-lg) var(--r-lg) 0; }
+    .process-step-num {
+      font-family: var(--font-h);
+      font-size: 48px;
+      font-weight: 900;
+      color: rgba(46,181,112,.15);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -.04em;
+    }
+    .process-step-icon {
+      width: 40px; height: 40px;
+      background: rgba(46,181,112,.1);
+      border: 1px solid rgba(46,181,112,.2);
+      border-radius: var(--r-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--green-400);
+    }
+    .process-step-title {
+      font-family: var(--font-h);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .process-step-desc {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+    .process-connector {
+      position: absolute;
+      top: 36px;
+      right: -1px;
+      width: 2px;
+      height: 40px;
+      background: rgba(46,181,112,.2);
+    }
+    .process-step:last-child .process-connector { display: none; }
+
+    /* ============================================================
+       PLAN RENOVE BANNER
+    ============================================================ */
+    @keyframes renove-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(196,148,48,.0), 0 0 24px rgba(196,148,48,.12); }
+      50%       { box-shadow: 0 0 0 6px rgba(196,148,48,.0), 0 0 40px rgba(196,148,48,.28); }
+    }
+    @keyframes renove-shine {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes renove-slide-up {
+      0%   { opacity: 0; transform: translateY(14px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes renove-badge-blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: .4; }
+    }
+    @keyframes renove-float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-4px); }
+    }
+
+    .renove-banner {
+      display: block;
+      position: relative;
+      margin-top: 8px;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a1200 0%, #1f1700 50%, #0e1912 100%);
+      border: 1px solid rgba(196,148,48,.35);
+      cursor: pointer;
+      animation: renove-pulse 3s ease-in-out infinite;
+      transition: transform .25s ease, border-color .25s ease;
+      text-decoration: none;
+    }
+    .renove-banner:hover {
+      transform: translateY(-3px) scale(1.01);
+      border-color: rgba(196,148,48,.65);
+    }
+    .renove-banner-glow {
+      position: absolute;
+      top: -40px; left: -40px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(196,148,48,.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .renove-banner-inner {
+      position: relative;
+      padding: 28px 28px 24px;
+    }
+    .renove-banner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(196,148,48,.12);
+      border: 1px solid rgba(196,148,48,.3);
+      color: var(--gold-light);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .renove-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: renove-badge-blink 1.4s ease-in-out infinite;
+    }
+    .renove-banner-title {
+      font-family: var(--font-h);
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .renove-word {
+      display: inline-block;
+    }
+    .renove-word-1 {
+      color: var(--white);
+      animation: renove-slide-up .5s cubic-bezier(.16,1,.3,1) both;
+      animation-delay: .1s;
+    }
+    .renove-word-2 {
+      background: linear-gradient(90deg, #C49430 0%, #F0C060 30%, #C49430 60%, #F0C060 80%, #C49430 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: renove-slide-up .5s cubic-bezier(.16,1,.3,1) both, renove-shine 2.8s linear infinite;
+      animation-delay: .2s, .8s;
+    }
+    .renove-banner-claim {
+      font-family: var(--font-h);
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 6px;
+      animation: renove-slide-up .5s cubic-bezier(.16,1,.3,1) both;
+      animation-delay: .3s;
+    }
+    .renove-claim-highlight {
+      color: var(--gold-light);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(196,148,48,.4);
+    }
+    .renove-banner-sub {
+      font-size: 12px;
+      color: var(--text-subtle);
+      margin-bottom: 20px;
+      animation: renove-slide-up .5s cubic-bezier(.16,1,.3,1) both;
+      animation-delay: .35s;
+    }
+    .renove-banner-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(196,148,48,.15);
+      border: 1px solid rgba(196,148,48,.35);
+      color: var(--gold-light);
+      font-family: var(--font-h);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 16px;
+      border-radius: var(--r-sm);
+      transition: background .2s, border-color .2s;
+      animation: renove-float 3s ease-in-out infinite;
+      animation-delay: .5s;
+    }
+    .renove-banner:hover .renove-banner-cta {
+      background: rgba(196,148,48,.25);
+      border-color: rgba(196,148,48,.6);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .renove-banner { animation: none; }
+      .renove-word-1, .renove-word-2, .renove-banner-claim,
+      .renove-banner-sub, .renove-banner-cta, .renove-badge-dot { animation: none; }
+      .renove-word-2 { background: linear-gradient(90deg, #C49430, #F0C060); }
+    }
+
+    /* ============================================================
+       CONFIGURADOR / PRICING
+    ============================================================ */
+    .config-section {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 96px 40px;
+    }
+    .config-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .config-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 40px;
+    }
+    .config-form-title {
+      font-family: var(--font-h);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+    .config-group { margin-bottom: 24px; }
+    .config-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text-subtle);
+      margin-bottom: 10px;
+    }
+    .config-select, .config-input {
+      width: 100%;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border-mid);
+      color: var(--white);
+      font-family: var(--font-b);
+      font-size: 15px;
+      padding: 12px 16px;
+      border-radius: var(--r-sm);
+      outline: none;
+      transition: border-color .2s;
+      appearance: none;
+    }
+    .config-select:focus, .config-input:focus { border-color: var(--green-500); }
+    .config-select option { background: #1a2e1f; color: var(--white); }
+    .config-range-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .config-range {
+      flex: 1;
+      accent-color: var(--green-500);
+      height: 4px;
+      cursor: pointer;
+    }
+    .config-range-val {
+      font-family: var(--font-h);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--white);
+      min-width: 80px;
+      text-align: right;
+    }
+    .config-result {
+      margin-top: 28px;
+      background: rgba(46,181,112,.08);
+      border: 1px solid rgba(46,181,112,.2);
+      border-radius: var(--r-md);
+      padding: 24px;
+      text-align: center;
+    }
+    .config-result-label { font-size: 12px; color: var(--green-400); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+    .config-result-price { font-family: var(--font-h); font-size: 36px; font-weight: 900; color: var(--white); }
+    .config-result-note { font-size: 12px; color: var(--text-subtle); margin-top: 4px; }
+    .config-cta { margin-top: 16px; width: 100%; text-align: center; }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    .contact-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: 96px 40px;
+    }
+    .contact-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-info-items {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .contact-info-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .contact-info-icon {
+      width: 40px; height: 40px;
+      background: rgba(46,181,112,.1);
+      border: 1px solid rgba(46,181,112,.15);
+      border-radius: var(--r-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-400);
+      flex-shrink: 0;
+    }
+    .contact-info-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--text-subtle); margin-bottom: 4px; }
+    .contact-info-val { font-family: var(--font-h); font-size: 15px; font-weight: 600; color: var(--white); }
+    .contact-info-val a { color: var(--white); transition: color .2s; }
+    .contact-info-val a:hover { color: var(--green-400); }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 12px; font-weight: 600; color: var(--text-subtle); letter-spacing: .04em; }
+    .form-input, .form-textarea, .form-select {
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border-mid);
+      color: var(--white);
+      font-family: var(--font-b);
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: var(--r-sm);
+      outline: none;
+      transition: border-color .2s, background .2s;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--green-500);
+      background: rgba(46,181,112,.05);
+    }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-subtle); }
+    .form-select option { background: #1a2e1f; }
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .form-consent input { accent-color: var(--green-500); margin-top: 2px; flex-shrink: 0; }
+    .form-consent a { color: var(--green-400); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 64px 40px 32px;
+    }
+    .footer-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+    .footer-brand {}
+    .footer-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .footer-brand-logo img { height: 32px; border-radius: 5px; }
+    .footer-tagline {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-subtle);
+      max-width: 280px;
+      margin-bottom: 24px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 8px;
+    }
+    .footer-social-btn {
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      transition: background .2s, color .2s;
+    }
+    .footer-social-btn:hover { background: var(--green-500); color: #fff; border-color: var(--green-500); }
+    .footer-col-title {
+      font-family: var(--font-h);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .footer-col-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-col-links a {
+      font-size: 14px;
+      color: var(--text-subtle);
+      transition: color .2s;
+    }
+    .footer-col-links a:hover { color: var(--white); }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 12px; color: var(--text-subtle); }
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-legal a { font-size: 12px; color: var(--text-subtle); transition: color .2s; }
+    .footer-legal a:hover { color: var(--white); }
+
+    /* ============================================================
+       FLOATING BUTTONS
+    ============================================================ */
+    .float-contact {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .float-btn {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .float-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.5); }
+    .float-btn svg { width: 22px; height: 22px; fill: #fff; }
+    .float-whatsapp { background: #25D366; }
+    .float-telegram { background: #229ED9; }
+
+    /* ============================================================
+       COOKIE BANNER (keep existing)
+    ============================================================ */
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: 48px 32px; max-width: 100%; }
+      .hero-visual { display: none; }
+      .bento {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .b1 { grid-column: 1 / 3; grid-row: auto; height: 260px; }
+      .b2,.b3,.b4,.b5 { grid-column: auto; grid-row: auto; height: 200px; }
+      .b6 { grid-column: 1 / 3; grid-row: auto; height: 200px; }
+      .statement-inner { grid-template-columns: 1fr; gap: 48px; }
+      .config-inner { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav { padding: 0 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .section { padding: 64px 20px; }
+      .hero-text { padding: 48px 20px 40px; }
+      .hero h1 { font-size: 36px; }
+      .hero-stats { gap: 20px; flex-wrap: wrap; }
+      .trust-bar { padding: 16px 20px; }
+      .trust-bar-inner { gap: 16px; justify-content: flex-start; }
+      .bento { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .b1,.b2,.b3,.b4,.b5,.b6 { grid-column: 1; height: 220px; }
+      .services-header { flex-direction: column; align-items: flex-start; }
+      .statement-section, .config-section, .contact-section, .process-section { padding: 64px 20px; }
+      .process-steps { grid-template-columns: 1fr; gap: 2px; }
+      .process-step:first-child { border-radius: var(--r-lg) var(--r-lg) 0 0; }
+      .process-step:last-child { border-radius: 0 0 var(--r-lg) var(--r-lg); }
+      .form-row { grid-template-columns: 1fr; }
+      .footer { padding: 48px 20px 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .portfolio-section { padding: 64px 0; }
+      .portfolio-header { padding: 0 20px; flex-direction: column; align-items: flex-start; }
+      .portfolio-scroll { padding: 0 20px; }
+      .portfolio-card { flex: 0 0 280px; height: 360px; }
+      .float-contact { bottom: 20px; right: 20px; }
+      .float-btn { width: 46px; height: 46px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index-v2.html" class="nav-logo">
+      <img src="assets/img/logo/logo-apavigreen.jpeg" alt="Apavi Green">
+      <span class="nav-wordmark">Apavi<span>Green</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#precio">Precio</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="cuestionario.html" class="nav-cta">Presupuesto gratis</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="navMobile">
+  <a href="#servicios" class="nav-mobile-link">Servicios</a>
+  <a href="#proyectos" class="nav-mobile-link">Proyectos</a>
+  <a href="#precio" class="nav-mobile-link">Precio</a>
+  <a href="#contacto" class="nav-mobile-link">Contacto</a>
+  <a href="cuestionario.html" class="nav-cta-mobile">Presupuesto gratis &rarr;</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-text">
+    <div class="hero-label" data-reveal>Instaladores certificados Gran Canaria</div>
+    <h1 data-reveal data-reveal-delay="1">
+      Transformamos<br>
+      tus espacios con<br>
+      <em>naturaleza real</em>
+    </h1>
+    <p class="hero-sub" data-reveal data-reveal-delay="2">
+      Cesped artificial, jardines verticales, resinas epoxi e instalaciones deportivas.
+      Equipo propio. Sin intermediarios. Garantia 10 anos.
+    </p>
+    <div class="hero-actions" data-reveal data-reveal-delay="3">
+      <a href="cuestionario.html" class="btn-primary">Presupuesto gratis &rarr;</a>
+      <a href="tel:+34654765548" class="btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
+        +34 654 765 548
+      </a>
+    </div>
+    <div class="hero-stats" data-reveal data-reveal-delay="4">
+      <div>
+        <div class="hero-stat-num">+500</div>
+        <div class="hero-stat-label">Proyectos</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">+80k m&sup2;</div>
+        <div class="hero-stat-label">Instalados</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">10 anos</div>
+        <div class="hero-stat-label">Garantia</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">24h</div>
+        <div class="hero-stat-label">Respuesta</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-img hero-img-main">
+      <img src="assets/img/lopesan-jardin1.jpg.png" alt="Proyecto de cesped artificial">
+      <div class="hero-img-badge">Cesped artificial residencial</div>
+    </div>
+    <div class="hero-img">
+      <img src="assets/img/jardin-vertical-despues1.jpg.png" alt="Jardin vertical">
+    </div>
+    <div class="hero-img">
+      <img src="assets/img/deportivo-real-1.jpg.png" alt="Instalacion deportiva">
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <span class="trust-item-dot"></span>
+      Equipo propio, sin subcontratas
+    </div>
+    <div class="trust-item">
+      <span class="trust-item-dot"></span>
+      Instaladores certificados
+    </div>
+    <div class="trust-item">
+      <span class="trust-item-dot"></span>
+      Materiales homologados
+    </div>
+    <div class="trust-item">
+      <span class="trust-item-dot"></span>
+      Presupuesto gratis en 24h
+    </div>
+    <div class="trust-item">
+      <span class="trust-item-dot"></span>
+      Gran Canaria y toda Espana
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES BENTO -->
+<section class="section services-section" id="servicios">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <div class="section-kicker" data-reveal>Nuestros servicios</div>
+        <h2 class="section-title" data-reveal data-reveal-delay="1">
+          Cada espacio,<br><em>una solucion a medida</em>
+        </h2>
+      </div>
+      <a href="proyectos.html" class="services-link" data-reveal>Ver todos los proyectos &rarr;</a>
+    </div>
+
+    <div class="bento" data-reveal>
+      <a href="cesped-artificial.html" class="bento-card b1">
+        <img class="bento-img" src="assets/img/cesped-real-1.jpg.png" alt="Cesped artificial">
+        <div class="bento-overlay"></div>
+        <div class="bento-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="bento-content">
+          <div class="bento-tag">Mas popular</div>
+          <div class="bento-name">Cesped Artificial</div>
+        </div>
+      </a>
+      <a href="jardines-verticales.html" class="bento-card b2">
+        <img class="bento-img" src="assets/img/jardin-vertical-despues1.jpg.png" alt="Jardines verticales">
+        <div class="bento-overlay"></div>
+        <div class="bento-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="bento-content">
+          <div class="bento-name">Jardines Verticales</div>
+        </div>
+      </a>
+      <a href="instalaciones-deportivas.html" class="bento-card b3">
+        <img class="bento-img" src="assets/img/deportivo-real-1.jpg.png" alt="Instalaciones deportivas">
+        <div class="bento-overlay"></div>
+        <div class="bento-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="bento-content">
+          <div class="bento-name">Instalaciones Deportivas</div>
+        </div>
+      </a>
+      <a href="espacios-infantiles.html" class="bento-card b4">
+        <img class="bento-img" src="assets/img/infantil-real-1.jpg.png" alt="Espacios infantiles">
+        <div class="bento-overlay"></div>
+        <div class="bento-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="bento-content">
+          <div class="bento-name">Espacios Infantiles</div>
+        </div>
+      </a>
+      <a href="moqueta-ferial.html" class="bento-card b5">
+        <img class="bento-img" src="assets/img/suelo-efectomadera.jpg.png" alt="Moqueta ferial">
+        <div class="bento-overlay"></div>
+        <div class="bento-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="bento-content">
+          <div class="bento-name">Moqueta Ferial</div>
+        </div>
+      </a>
+      <a href="#contacto" class="bento-card b6">
+        <img class="bento-img" src="assets/img/Parking-real 1.jpg.png" alt="Resinas epoxi">
+        <div class="bento-overlay"></div>
+        <div class="bento-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="bento-content">
+          <div class="bento-tag">Nuevo</div>
+          <div class="bento-name">Resinas Epoxi</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement-section">
+  <div class="statement-inner">
+    <div class="statement-text">
+      <div class="section-kicker" data-reveal>Por que Apavi Green</div>
+      <div class="statement-quote" data-reveal data-reveal-delay="1">
+        <p>Instaladores directos.</p>
+        <p><strong>No intermediarios.</strong></p>
+      </div>
+      <p class="statement-body" data-reveal data-reveal-delay="2">
+        Cada proyecto lo ejecuta nuestro equipo propio. Eso nos permite controlar la calidad en cada fase, cumplir los plazos y ofrecerte un precio mas honesto.
+      </p>
+      <a href="cuestionario.html" class="btn-primary" data-reveal data-reveal-delay="3">Solicitar presupuesto gratis &rarr;</a>
+    </div>
+    <div class="statement-pillars" data-reveal data-reveal-delay="2">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div>
+          <div class="pillar-title">Equipo propio certificado</div>
+          <div class="pillar-desc">Todos nuestros instaladores tienen formacion especifica y trabajan exclusivamente para Apavi Green. Sin subcontratas, sin sorpresas.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div>
+          <div class="pillar-title">Materiales de primera calidad</div>
+          <div class="pillar-desc">Trabajamos con fabricantes homologados. Fibras UV-estabilizadas, resinas certificadas y sistemas de drenaje profesional.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div>
+          <div class="pillar-title">Garantia real de 10 anos</div>
+          <div class="pillar-desc">No es una promesa de marketing. La garantia cubre materiales e instalacion y esta respaldada por un contrato firmado.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">04</div>
+        <div>
+          <div class="pillar-title">Presupuesto en 24 horas</div>
+          <div class="pillar-desc">Respondemos rapido porque valoramos tu tiempo. Presupuesto detallado, sin letra pequena, en menos de un dia laborable.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio-section" id="proyectos">
+  <div class="portfolio-header">
+    <div>
+      <div class="section-kicker" data-reveal>Nuestro trabajo</div>
+      <h2 class="section-title" data-reveal data-reveal-delay="1">Proyectos <em>realizados</em></h2>
+    </div>
+    <a href="proyectos.html" class="services-link" data-reveal>Ver portfolio completo &rarr;</a>
+  </div>
+  <div class="portfolio-scroll">
+    <div class="portfolio-card">
+      <img src="assets/img/lopesan-jardin1.jpg.png" alt="Jardin residencial">
+      <div class="portfolio-card-overlay"></div>
+      <div class="portfolio-card-info">
+        <div class="portfolio-card-cat">Cesped artificial</div>
+        <div class="portfolio-card-title">Jardin residencial Las Palmas</div>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <img src="assets/img/jardin-vertical-despues1.jpg.png" alt="Jardin vertical">
+      <div class="portfolio-card-overlay"></div>
+      <div class="portfolio-card-info">
+        <div class="portfolio-card-cat">Jardin vertical</div>
+        <div class="portfolio-card-title">Pared verde interior</div>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <img src="assets/img/deportivo-real-1.jpg.png" alt="Pista deportiva">
+      <div class="portfolio-card-overlay"></div>
+      <div class="portfolio-card-info">
+        <div class="portfolio-card-cat">Instalacion deportiva</div>
+        <div class="portfolio-card-title">Campo de futbol sala</div>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <img src="assets/img/infantil-real-1.jpg.png" alt="Zona infantil">
+      <div class="portfolio-card-overlay"></div>
+      <div class="portfolio-card-info">
+        <div class="portfolio-card-cat">Espacio infantil</div>
+        <div class="portfolio-card-title">Parque con cesped amortiguador</div>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <img src="assets/img/Parking-real 1.jpg.png" alt="Parking resina">
+      <div class="portfolio-card-overlay"></div>
+      <div class="portfolio-card-info">
+        <div class="portfolio-card-cat">Resinas epoxi</div>
+        <div class="portfolio-card-title">Parking residencial</div>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <img src="assets/img/Feria-oasis.jpg.png" alt="Feria">
+      <div class="portfolio-card-overlay"></div>
+      <div class="portfolio-card-info">
+        <div class="portfolio-card-cat">Moqueta ferial</div>
+        <div class="portfolio-card-title">Stand Feria Oasis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="container">
+    <div style="max-width:600px;">
+      <div class="section-kicker" data-reveal>Como trabajamos</div>
+      <h2 class="section-title" data-reveal data-reveal-delay="1">De la consulta<br><em>a la entrega</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step" data-reveal>
+        <div class="process-step-num">01</div>
+        <div class="process-step-title">Solicitas presupuesto</div>
+        <div class="process-step-desc">Rellenas el formulario o nos llamas. Te respondemos con un presupuesto detallado en menos de 24 horas.</div>
+        <div class="process-connector"></div>
+      </div>
+      <div class="process-step" data-reveal data-reveal-delay="1">
+        <div class="process-step-num">02</div>
+        <div class="process-step-title">Visita tecnica</div>
+        <div class="process-step-desc">Visitamos el espacio, tomamos medidas exactas y te asesoramos sobre la mejor solucion para tu proyecto.</div>
+        <div class="process-connector"></div>
+      </div>
+      <div class="process-step" data-reveal data-reveal-delay="2">
+        <div class="process-step-num">03</div>
+        <div class="process-step-title">Instalacion profesional</div>
+        <div class="process-step-desc">Nuestro equipo ejecuta la instalacion con los plazos y materiales acordados. Sin obra sucia, sin sorpresas.</div>
+        <div class="process-connector"></div>
+      </div>
+      <div class="process-step" data-reveal data-reveal-delay="3">
+        <div class="process-step-num">04</div>
+        <div class="process-step-title">Entrega con garantia</div>
+        <div class="process-step-desc">Te entregamos el proyecto terminado con certificado de instalacion y garantia de 10 anos por escrito.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIGURADOR -->
+<section class="config-section" id="precio">
+  <div class="config-inner container">
+    <div>
+      <div class="section-kicker" data-reveal>Calculadora de precio</div>
+      <h2 class="section-title" data-reveal data-reveal-delay="1">
+        Cuanto cuesta<br><em>tu proyecto</em>
+      </h2>
+      <p class="section-sub" data-reveal data-reveal-delay="2" style="margin-bottom:32px;">
+        Calcula una estimacion orientativa segun el tipo de instalacion y la superficie. El precio final se ajustara tras la visita tecnica gratuita.
+      </p>
+      <!-- PLAN RENOVE AD BANNER -->
+      <a href="plan-renove.html" class="renove-banner" data-reveal data-reveal-delay="3">
+        <div class="renove-banner-glow"></div>
+        <div class="renove-banner-inner">
+          <div class="renove-banner-badge">
+            <span class="renove-badge-dot"></span>
+            OFERTA ACTIVA
+          </div>
+          <div class="renove-banner-title">
+            <span class="renove-word renove-word-1">Plan</span>
+            <span class="renove-word renove-word-2">Renove</span>
+          </div>
+          <div class="renove-banner-claim">
+            Retiramos tu cesped viejo
+            <span class="renove-claim-highlight">gratis</span>
+          </div>
+          <div class="renove-banner-sub">Incluido en la instalacion. Sin coste adicional.</div>
+          <div class="renove-banner-cta">
+            Descubrir el Plan Renove
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="config-form" data-reveal data-reveal-delay="1">
+      <div class="config-form-title">Calcula tu presupuesto</div>
+      <div class="config-group">
+        <label class="config-label">Tipo de instalacion</label>
+        <select class="config-select" id="tipoSelect" onchange="calcPrice()">
+          <option value="8">Cesped artificial residencial</option>
+          <option value="12">Cesped deportivo</option>
+          <option value="14">Cesped amortiguador infantil</option>
+          <option value="18">Jardin vertical artificial</option>
+          <option value="25">Jardin vertical natural</option>
+          <option value="10">Moqueta ferial</option>
+          <option value="22">Resinas epoxi</option>
+        </select>
+      </div>
+      <div class="config-group">
+        <label class="config-label">Calidad del material</label>
+        <select class="config-select" id="calidadSelect" onchange="calcPrice()">
+          <option value="1">Estandar</option>
+          <option value="1.35">Premium</option>
+          <option value="1.7">Alta gama</option>
+        </select>
+      </div>
+      <div class="config-group">
+        <label class="config-label">Superficie</label>
+        <div class="config-range-row">
+          <input type="range" class="config-range" id="superficieRange" min="10" max="1000" value="80" step="5" oninput="calcPrice()">
+          <div class="config-range-val"><span id="superficieVal">80</span> m&sup2;</div>
+        </div>
+      </div>
+      <div class="config-result">
+        <div class="config-result-label">Estimacion orientativa</div>
+        <div class="config-result-price" id="precioResult">640 - 960 &euro;</div>
+        <div class="config-result-note">Precio final tras visita tecnica gratuita</div>
+      </div>
+      <div class="config-cta">
+        <a href="cuestionario.html" class="btn-primary" style="width:100%;justify-content:center;margin-top:16px;">
+          Solicitar presupuesto exacto &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contacto">
+  <div class="contact-inner container">
+    <div>
+      <div class="section-kicker" data-reveal>Contacto</div>
+      <h2 class="section-title" data-reveal data-reveal-delay="1">
+        Hablemos de<br><em>tu proyecto</em>
+      </h2>
+      <p class="section-sub" data-reveal data-reveal-delay="2">
+        Cuantanos que tienes en mente. Te respondemos en menos de 24 horas con un presupuesto sin compromiso.
+      </p>
+      <div class="contact-info-items" data-reveal data-reveal-delay="3">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01-.32 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Telefonos</div>
+            <div class="contact-info-val"><a href="tel:+34654765548">+34 654 765 548</a></div>
+            <div class="contact-info-val" style="margin-top:4px;"><a href="tel:+34636039736">+34 636 039 736</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-val"><a href="mailto:web@apavigreen.com">web@apavigreen.com</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Zona de trabajo</div>
+            <div class="contact-info-val">Gran Canaria y toda Espana</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" data-reveal data-reveal-delay="1">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="telefono">Telefono</label>
+          <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="612 345 678" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="servicio">Servicio de interes</label>
+        <select id="servicio" name="servicio" class="form-select">
+          <option value="">Selecciona un servicio</option>
+          <option>Cesped artificial</option>
+          <option>Jardin vertical</option>
+          <option>Instalacion deportiva</option>
+          <option>Espacio infantil</option>
+          <option>Moqueta ferial</option>
+          <option>Resinas epoxi</option>
+          <option>Plan Renove</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" class="form-textarea" placeholder="Cuentanos tu proyecto..."></textarea>
+      </div>
+      <div class="form-consent">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">He leido y acepto la <a href="privacidad.html">Politica de Privacidad</a> y el tratamiento de mis datos para gestionar mi consulta.</label>
+      </div>
+      <button type="submit" class="btn-primary" style="justify-content:center;">
+        Enviar mensaje &rarr;
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <img src="assets/img/logo/logo-apavigreen.jpeg" alt="Apavi Green">
+          <span class="nav-wordmark">Apavi<span>Green</span></span>
+        </div>
+        <p class="footer-tagline">Transformamos espacios con cesped artificial, jardines verticales e instalaciones deportivas en Gran Canaria y toda Espana.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/34654765548" class="footer-social-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://t.me/apavigreen" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Servicios</div>
+        <ul class="footer-col-links">
+          <li><a href="cesped-artificial.html">Cesped Artificial</a></li>
+          <li><a href="jardines-verticales.html">Jardines Verticales</a></li>
+          <li><a href="instalaciones-deportivas.html">Inst. Deportivas</a></li>
+          <li><a href="espacios-infantiles.html">Espacios Infantiles</a></li>
+          <li><a href="moqueta-ferial.html">Moqueta Ferial</a></li>
+          <li><a href="#contacto">Resinas Epoxi</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Empresa</div>
+        <ul class="footer-col-links">
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="plan-renove.html">Plan Renove</a></li>
+          <li><a href="cuestionario.html">Presupuesto gratis</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contacto</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:+34654765548">+34 654 765 548</a></li>
+          <li><a href="tel:+34636039736">+34 636 039 736</a></li>
+          <li><a href="mailto:web@apavigreen.com">web@apavigreen.com</a></li>
+          <li>Las Palmas de Gran Canaria</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="footerYear"></span> Apavi Green. Todos los derechos reservados.</p>
+      <div class="footer-legal">
+        <a href="aviso-legal.html">Aviso Legal</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-contact">
+  <a href="https://wa.me/34654765548" class="float-btn float-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a href="https://t.me/apavigreen" class="float-btn float-telegram" target="_blank" rel="noopener" aria-label="Telegram">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+  </a>
+</div>
+
+<script>
+  // ── YEAR
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+  // ── NAV MOBILE
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('navMobile');
+  hamburger.addEventListener('click', () => {
+    navMobile.classList.toggle('open');
+  });
+  navMobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navMobile.classList.remove('open'));
+  });
+
+  // ── SCROLL REVEAL
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ── CONFIGURADOR
+  function calcPrice() {
+    const tipo = parseFloat(document.getElementById('tipoSelect').value);
+    const calidad = parseFloat(document.getElementById('calidadSelect').value);
+    const sup = parseInt(document.getElementById('superficieRange').value);
+    document.getElementById('superficieVal').textContent = sup;
+    const base = tipo * calidad;
+    const min = Math.round(sup * base * 0.9);
+    const max = Math.round(sup * base * 1.35);
+    document.getElementById('precioResult').innerHTML =
+      min.toLocaleString('es-ES') + ' - ' + max.toLocaleString('es-ES') + ' &euro;';
+  }
+  calcPrice();
+
+  // ── CONTACT FORM
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type=submit]');
+    btn.textContent = 'Enviado';
+    btn.style.background = '#2EB570';
+    btn.disabled = true;
+  });
+</script>
+</body>
+</html>
