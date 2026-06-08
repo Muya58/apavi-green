@@ -433,7 +433,7 @@
     .bento {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 280px 240px;
+      grid-template-rows: 280px 240px 260px;
       gap: 10px;
     }
     .bento-card {
@@ -497,12 +497,94 @@
     .bento-card:hover .bento-arrow { background: var(--green-500); color: #fff; border-color: var(--green-500); }
 
     /* Bento cell positions */
-    .b1 { grid-column: 1 / 6; grid-row: 1; }
-    .b2 { grid-column: 6 / 9; grid-row: 1; }
+    .b1 { grid-column: 1 / 6;  grid-row: 1; }
+    .b2 { grid-column: 6 / 9;  grid-row: 1; }
     .b3 { grid-column: 9 / 13; grid-row: 1; }
-    .b4 { grid-column: 1 / 5; grid-row: 2; }
-    .b5 { grid-column: 5 / 9; grid-row: 2; }
+    .b4 { grid-column: 1 / 5;  grid-row: 2; }
+    .b5 { grid-column: 5 / 9;  grid-row: 2; }
     .b6 { grid-column: 9 / 13; grid-row: 2; }
+    /* Row 3 — Piscinas y Suelos (full width) */
+    .b7 { grid-column: 1 / 13; grid-row: 3; }
+
+    /* ============================================================
+       EFECTO NEÓN — Hover bento cards
+    ============================================================ */
+    @keyframes neon-sweep {
+      0%   { transform: translateY(-100%); opacity: 0; }
+      15%  { opacity: 1; }
+      85%  { opacity: 1; }
+      100% { transform: translateY(300%); opacity: 0; }
+    }
+
+    /* Línea de barrido neón sobre la foto */
+    .bento-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 35%;
+      background: linear-gradient(
+        to bottom,
+        rgba(46,181,112,0) 0%,
+        rgba(46,181,112,.07) 50%,
+        rgba(46,181,112,0) 100%
+      );
+      transform: translateY(-100%);
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0;
+    }
+    .bento-card:hover::after {
+      opacity: 1;
+      animation: neon-sweep 2s ease-in-out infinite;
+    }
+
+    /* Borde + aura neón */
+    .bento-card:hover {
+      box-shadow:
+        0 0 0 2px rgba(46,181,112,.85),
+        0 0 18px rgba(46,181,112,.45),
+        0 0 50px rgba(46,181,112,.2);
+    }
+
+    /* Overlay más verde en hover */
+    .bento-card:hover .bento-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(8,16,11,.96) 0%,
+        rgba(12,35,20,.55) 55%,
+        rgba(46,181,112,.07) 100%
+      );
+    }
+
+    /* Título con brillo neón */
+    .bento-name {
+      transition: color .35s ease, text-shadow .35s ease;
+    }
+    .bento-card:hover .bento-name {
+      color: #8FDDB3;
+      text-shadow:
+        0 0 8px rgba(46,181,112,1),
+        0 0 22px rgba(46,181,112,.65),
+        0 0 48px rgba(46,181,112,.3);
+    }
+
+    /* Tag neón */
+    .bento-card:hover .bento-tag {
+      text-shadow: 0 0 10px rgba(92,201,140,.9);
+    }
+
+    /* Flecha neón */
+    .bento-card:hover .bento-arrow {
+      background: rgba(46,181,112,.18);
+      border-color: rgba(46,181,112,.75);
+      box-shadow:
+        0 0 10px rgba(46,181,112,.6),
+        0 0 24px rgba(46,181,112,.3);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bento-card::after { display: none; }
+    }
 
     /* ============================================================
        STATEMENT SECTION
@@ -1410,6 +1492,19 @@
           <div class="bento-name">Resinas Epoxi</div>
         </div>
       </a>
+
+      <!-- PISCINAS Y SUELOS IMPERMEABILIZANTES — fila 3, ancho completo -->
+      <a href="#contacto" class="bento-card b7">
+        <img class="bento-img" src="assets/img/piscinas-1.jpg" alt="Piscinas y suelos impermeabilizantes">
+        <div class="bento-overlay"></div>
+        <div class="bento-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="bento-content">
+          <div class="bento-tag">Nuevo servicio</div>
+          <div class="bento-name">Piscinas y Suelos Impermeabilizantes</div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1746,6 +1841,7 @@
           <li><a href="espacios-infantiles.html">Espacios Infantiles</a></li>
           <li><a href="moqueta-ferial.html">Moqueta Ferial</a></li>
           <li><a href="#contacto">Resinas Epoxi</a></li>
+          <li><a href="#contacto">Piscinas e Impermeabilizantes</a></li>
         </ul>
       </div>
       <div>
