@@ -1187,6 +1187,39 @@
       .float-contact { bottom: 20px; right: 20px; }
       .float-btn { width: 46px; height: 46px; }
     }
+
+    /* ============================================================
+       EFECTOS 3D — Vanta · Vanilla-Tilt · Zdog
+    ============================================================ */
+
+    /* Hero: posición relativa para que Vanta.js pueda usarlo como fondo */
+    #hero { position: relative; overflow: hidden; }
+    .hero-text  { position: relative; z-index: 2; }
+    .hero-visual { position: relative; z-index: 2; }
+
+    /* Canvas Zdog flotante dentro del panel de fotos */
+    #zdog-grass {
+      position: absolute;
+      top: 18px;
+      right: 48px;
+      z-index: 10;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 22px rgba(46,181,112,.65));
+      opacity: 0;
+      animation: zdog-fadein 1.4s 1s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes zdog-fadein { to { opacity: 1; } }
+
+    /* Ocultar Zdog en móvil */
+    @media (max-width: 900px) { #zdog-grass { display: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      #zdog-grass { opacity: 1; animation: none; }
+    }
+
+    /* Bento cards: mejora de perspectiva para vanilla-tilt */
+    .bento-card { will-change: transform; }
+    /* Quitamos el scale CSS puro para que no choque con vanilla-tilt */
+    .bento-card:hover { transform: none; }
   </style>
 </head>
 <body>
@@ -1260,6 +1293,8 @@
   </div>
 
   <div class="hero-visual">
+    <!-- Ilustración 3D Zdog: clúster de césped giratorio -->
+    <canvas id="zdog-grass" width="92" height="92" aria-hidden="true"></canvas>
     <div class="hero-img hero-img-main">
       <img src="assets/img/lopesan-jardin1.jpg.png" alt="Proyecto de cesped artificial">
       <div class="hero-img-badge">Cesped artificial residencial</div>
@@ -1753,6 +1788,15 @@
   </a>
 </div>
 
+<!-- ======================================================
+     LIBRERÍAS 3D (carga diferida para no bloquear el render)
+     Vanta.js: fondo animado hero · Vanilla-Tilt: tarjetas bento · Zdog: ilustración césped
+====================================================== -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+
 <script>
   // ── YEAR
   document.getElementById('footerYear').textContent = new Date().getFullYear();
@@ -1798,6 +1842,110 @@
     btn.style.background = '#2EB570';
     btn.disabled = true;
   });
+
+  // ============================================================
+  //  EFECTOS 3D
+  // ============================================================
+
+  const _isMobile = window.innerWidth < 900;
+
+  // ── 1. VANTA WAVES — fondo animado hero (solo desktop)
+  if (!_isMobile && typeof VANTA !== 'undefined') {
+    VANTA.WAVES({
+      el: '#hero',
+      mouseControls: true,
+      touchControls: false,
+      gyroControls: false,
+      color: 0x0f2213,   // verde oscuro casi invisible, da profundidad
+      shininess: 55.00,
+      waveHeight: 10.00,
+      waveSpeed: 0.60,
+      zoom: 0.70,
+      minHeight: 200,
+      minWidth: 200
+    });
+  }
+
+  // ── 2. VANILLA-TILT — tarjetas bento de servicios
+  if (!_isMobile && typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll('.bento-card'), {
+      max: 8,
+      speed: 500,
+      glare: true,
+      'max-glare': 0.10,
+      scale: 1.04,
+      perspective: 1200
+    });
+  }
+
+  // ── 3. ZDOG — clúster de césped 3D giratorio en el hero
+  (function initZdog() {
+    const canvas = document.getElementById('zdog-grass');
+    if (!canvas || typeof Zdog === 'undefined') return;
+
+    const TAU = Zdog.TAU;
+
+    const illo = new Zdog.Illustration({
+      element: '#zdog-grass',
+      zoom: 3.0,
+      dragRotate: false
+    });
+
+    // Base: disco de tierra
+    new Zdog.Ellipse({
+      addTo: illo,
+      diameter: 22,
+      stroke: 5,
+      color: '#122015',
+      fill: true,
+      rotate: { x: TAU / 4 },
+      translate: { y: 10 }
+    });
+
+    // 5 hojas de césped distribuidas radialmente
+    const colors  = ['#2EB570', '#5CC98C', '#1a9955', '#3dcc80', '#8FDDB3'];
+    const leans   = [-3, 4, -5, 3, -1];
+    const heights = [26, 20, 24, 18, 22];
+
+    [0, TAU/5, TAU*2/5, TAU*3/5, TAU*4/5].forEach(function(ry, i) {
+      new Zdog.Shape({
+        addTo: illo,
+        path: [
+          { x: 0, y: 10 },
+          { bezier: [
+            { x: leans[i] - 2, y:  4 },
+            { x: leans[i] - 1, y: -(heights[i] / 2) },
+            { x: leans[i],     y: -heights[i] }
+          ]},
+          { bezier: [
+            { x: leans[i] + 2, y: -(heights[i] / 2) },
+            { x: leans[i] + 3, y:  4 },
+            { x: 2,             y:  10 }
+          ]}
+        ],
+        stroke: 3.5,
+        color: colors[i],
+        fill: true,
+        rotate: { y: ry }
+      });
+    });
+
+    // Animación de rotación continua
+    var zdogAngle = 0;
+    // Respeta prefers-reduced-motion
+    var noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function animateGrass() {
+      if (!noMotion) {
+        zdogAngle += 0.014;
+        illo.rotate.y = zdogAngle;
+      }
+      illo.updateRenderGraph();
+      if (!noMotion) requestAnimationFrame(animateGrass);
+    }
+    illo.updateRenderGraph(); // primer frame estático
+    if (!noMotion) requestAnimationFrame(animateGrass);
+  }());
 </script>
 </body>
 </html>
