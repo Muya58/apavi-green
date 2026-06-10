@@ -1222,6 +1222,86 @@
     ============================================================ */
 
     /* ============================================================
+       PARTNERS CAROUSEL
+    ============================================================ */
+    .partners-section {
+      padding: 80px 0 88px;
+      overflow: hidden;
+    }
+    .partners-section .section-kicker,
+    .partners-section .section-title {
+      text-align: center;
+    }
+    .partners-section .section-title {
+      margin-bottom: 48px;
+    }
+    .partners-track-wrapper {
+      overflow: hidden;
+      position: relative;
+      /* fade edges */
+      mask-image: linear-gradient(to right,
+        transparent 0%,
+        #000 120px,
+        #000 calc(100% - 120px),
+        transparent 100%
+      );
+      -webkit-mask-image: linear-gradient(to right,
+        transparent 0%,
+        #000 120px,
+        #000 calc(100% - 120px),
+        transparent 100%
+      );
+    }
+    .partners-track {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: max-content;
+      animation: partners-scroll 28s linear infinite;
+      will-change: transform;
+    }
+    .partners-track-wrapper:hover .partners-track {
+      animation-play-state: paused;
+    }
+    @keyframes partners-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .partner-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 180px;
+      height: 80px;
+      padding: 14px 24px;
+      border-radius: var(--r-md);
+      border: 1px solid var(--border-mid);
+      background: rgba(255,255,255,0.03);
+      transition: border-color .3s, background .3s, transform .3s;
+    }
+    .partner-item:hover {
+      border-color: rgba(46,181,112,.4);
+      background: rgba(46,181,112,.06);
+      transform: translateY(-3px);
+    }
+    .partner-item img {
+      max-width: 130px;
+      max-height: 48px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(0.6) brightness(1.8) contrast(0.85) opacity(0.65);
+      transition: filter .35s ease;
+    }
+    .partner-item:hover img {
+      filter: grayscale(0) brightness(1) contrast(1) opacity(1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .partners-track { animation: none; }
+    }
+
+    /* ============================================================
        RESPONSIVE
     ============================================================ */
     @media (max-width: 1024px) {
@@ -1648,6 +1728,32 @@
         <div class="process-step-title">Entrega con garantia</div>
         <div class="process-step-desc">Te entregamos el proyecto terminado con certificado de instalacion y garantia de 10 anos por escrito.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLABORADORES -->
+<section class="partners-section" aria-label="Nuestros colaboradores">
+  <div class="container">
+    <div class="section-kicker" data-reveal style="text-align:center;">Con quienes trabajamos</div>
+    <h2 class="section-title" data-reveal data-reveal-delay="1" style="text-align:center;">
+      Marcas <em>de confianza</em>
+    </h2>
+  </div>
+  <div class="partners-track-wrapper" aria-hidden="true">
+    <div class="partners-track">
+      <!-- Logos x1 -->
+      <div class="partner-item"><img src="assets/img/colaboradores/biodesign.png" alt="BIO.design" loading="lazy"></div>
+      <div class="partner-item"><img src="assets/img/colaboradores/gardenstore.png" alt="GardenStore" loading="lazy"></div>
+      <div class="partner-item"><img src="assets/img/colaboradores/levipark21.png" alt="Levipark 21" loading="lazy"></div>
+      <div class="partner-item"><img src="assets/img/colaboradores/resineo.png" alt="Rêsineo" loading="lazy"></div>
+      <div class="partner-item"><img src="assets/img/colaboradores/sungrass.png" alt="SUNGRASS" loading="lazy"></div>
+      <!-- Logos x2 (duplicado para loop infinito) -->
+      <div class="partner-item"><img src="assets/img/colaboradores/biodesign.png" alt="" loading="lazy"></div>
+      <div class="partner-item"><img src="assets/img/colaboradores/gardenstore.png" alt="" loading="lazy"></div>
+      <div class="partner-item"><img src="assets/img/colaboradores/levipark21.png" alt="" loading="lazy"></div>
+      <div class="partner-item"><img src="assets/img/colaboradores/resineo.png" alt="" loading="lazy"></div>
+      <div class="partner-item"><img src="assets/img/colaboradores/sungrass.png" alt="" loading="lazy"></div>
     </div>
   </div>
 </section>
