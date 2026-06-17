@@ -2141,7 +2141,7 @@
     });
   }
 
-  // ── 2. VANILLA-TILT — tarjetas bento de servicios
+  // ── 2. VANILLA-TILT — tarjetas bento de servicios + banner Plan Renove
   if (!_isMobile && typeof VanillaTilt !== 'undefined') {
     VanillaTilt.init(document.querySelectorAll('.bento-card'), {
       max: 8,
@@ -2150,6 +2150,14 @@
       'max-glare': 0.10,
       scale: 1.04,
       perspective: 1200
+    });
+    VanillaTilt.init(document.querySelectorAll('.renove-banner'), {
+      max: 6,
+      speed: 600,
+      glare: true,
+      'max-glare': 0.08,
+      scale: 1.02,
+      perspective: 1400
     });
   }
 
@@ -2226,22 +2234,20 @@
   (function() {
     var scroll = document.querySelector('.portfolio-scroll');
     if (!scroll) return;
-    var raf = null;
-    var speed = 1.2; // px por frame
+    var hovering = false;
+    var speed = 1.5;
+    scroll.addEventListener('mouseenter', function() { hovering = true; });
+    scroll.addEventListener('mouseleave', function() { hovering = false; });
     function step() {
-      scroll.scrollLeft += speed;
-      // loop infinito: cuando llega al final vuelve al principio
-      if (scroll.scrollLeft >= scroll.scrollWidth - scroll.clientWidth) {
-        scroll.scrollLeft = 0;
+      if (hovering) {
+        scroll.scrollLeft += speed;
+        if (scroll.scrollLeft >= scroll.scrollWidth - scroll.clientWidth - 1) {
+          scroll.scrollLeft = 0;
+        }
       }
-      raf = requestAnimationFrame(step);
+      requestAnimationFrame(step);
     }
-    scroll.addEventListener('mouseenter', function() {
-      if (!raf) raf = requestAnimationFrame(step);
-    });
-    scroll.addEventListener('mouseleave', function() {
-      if (raf) { cancelAnimationFrame(raf); raf = null; }
-    });
+    requestAnimationFrame(step);
   }());
 </script>
 </body>
