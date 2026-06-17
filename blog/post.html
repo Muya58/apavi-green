@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Artículo — Apavi Green</title>
+  <meta name="description" id="pageDesc" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#08100B;--bg-surface:#0E1912;--bg-card:#122015;--green-500:#2EB570;--green-400:#5CC98C;--green-300:#8FDDB3;--text:#FFFFFF;--text-muted:rgba(255,255,255,.5);--text-subtle:rgba(255,255,255,.28);--border:rgba(255,255,255,.07);--border-mid:rgba(255,255,255,.12);--r-md:16px;--r-lg:24px;--font-h:'Plus Jakarta Sans',sans-serif;--font-b:'Inter',sans-serif}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-b);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;padding:0 32px;transition:background .3s}
+    .nav.scrolled{background:rgba(8,16,11,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;gap:40px;width:100%;max-width:1280px;margin:0 auto}
+    .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+    .nav-logo img{width:32px;height:32px;border-radius:6px;object-fit:cover}
+    .nav-wordmark{font-family:var(--font-h);font-weight:700;font-size:17px;letter-spacing:-.3px}
+    .nav-wordmark span{color:var(--green-400)}
+    .nav-links{display:flex;list-style:none;gap:4px;margin-left:auto}
+    .nav-links a{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s,background .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(255,255,255,.06)}
+    .nav-cta{background:var(--green-500);color:#fff;padding:9px 20px;border-radius:10px;font-family:var(--font-h);font-size:14px;font-weight:700;white-space:nowrap;transition:background .2s;flex-shrink:0}
+    .nav-cta:hover{background:var(--green-400)}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}
+    .nav-mobile{display:none;position:fixed;top:68px;left:0;right:0;z-index:99;background:rgba(8,16,11,.97);backdrop-filter:blur(16px);padding:20px 24px 28px;border-bottom:1px solid var(--border);flex-direction:column;gap:4px}
+    .nav-mobile.open{display:flex}
+    .nav-mobile-link{padding:12px 16px;border-radius:10px;font-size:15px;font-weight:500;color:var(--text-muted)}
+    .nav-cta-mobile{margin-top:12px;background:var(--green-500);color:#fff;padding:14px 20px;border-radius:12px;font-family:var(--font-h);font-weight:700;text-align:center}
+
+    /* BACK LINK */
+    .post-back{max-width:800px;margin:0 auto;padding:104px 32px 0;display:flex}
+    .post-back a{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--green-400);transition:gap .2s}
+    .post-back a:hover{gap:12px}
+
+    /* POST HEADER */
+    .post-header{max-width:800px;margin:0 auto;padding:32px 32px 0}
+    .post-cat{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-400);margin-bottom:16px}
+    .post-title{font-family:var(--font-h);font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
+    .post-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:var(--text-subtle);padding-bottom:32px;border-bottom:1px solid var(--border)}
+
+    /* HERO IMAGE */
+    .post-hero-img{max-width:1000px;margin:40px auto;padding:0 32px}
+    .post-hero-img img{width:100%;height:420px;object-fit:cover;border-radius:var(--r-lg)}
+
+    /* CONTENT */
+    .post-content{max-width:800px;margin:0 auto;padding:40px 32px 80px;font-size:17px;line-height:1.75;color:rgba(255,255,255,.85)}
+    .post-content h2{font-family:var(--font-h);font-size:26px;font-weight:700;letter-spacing:-.02em;color:var(--text);margin:48px 0 16px}
+    .post-content h3{font-family:var(--font-h);font-size:20px;font-weight:700;color:var(--text);margin:32px 0 12px}
+    .post-content p{margin-bottom:20px}
+    .post-content ul,.post-content ol{padding-left:24px;margin-bottom:20px;display:flex;flex-direction:column;gap:8px}
+    .post-content li{color:rgba(255,255,255,.8)}
+    .post-content strong{color:var(--text);font-weight:600}
+    .post-content a{color:var(--green-400);text-decoration:underline;text-underline-offset:3px}
+
+    /* CTA BOX */
+    .post-cta{max-width:800px;margin:0 auto 80px;padding:0 32px}
+    .post-cta-inner{background:var(--bg-card);border:1px solid rgba(46,181,112,.25);border-radius:var(--r-lg);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .post-cta-text h3{font-family:var(--font-h);font-size:20px;font-weight:700;margin-bottom:8px}
+    .post-cta-text p{font-size:14px;color:var(--text-muted);line-height:1.55}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--green-500);color:#fff;padding:12px 24px;border-radius:12px;font-family:var(--font-h);font-size:14px;font-weight:700;white-space:nowrap;transition:background .2s,transform .2s}
+    .btn-primary:hover{background:var(--green-400);transform:translateY(-1px)}
+
+    /* RELATED */
+    .post-related{max-width:1200px;margin:0 auto 80px;padding:0 32px}
+    .post-related h2{font-family:var(--font-h);font-size:22px;font-weight:700;margin-bottom:24px}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .blog-card{display:flex;flex-direction:column;border-radius:var(--r-lg);background:var(--bg-card);border:1px solid var(--border);overflow:hidden;transition:border-color .3s,transform .3s}
+    .blog-card:hover{border-color:rgba(46,181,112,.4);transform:translateY(-4px)}
+    .blog-card-img-wrap{overflow:hidden;height:160px;flex-shrink:0}
+    .blog-card-img{width:100%;height:160px;object-fit:cover;transition:transform .5s}
+    .blog-card:hover .blog-card-img{transform:scale(1.04)}
+    .blog-card-body{padding:20px;display:flex;flex-direction:column;flex:1}
+    .blog-card-cat{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-400);margin-bottom:8px}
+    .blog-card-title{font-family:var(--font-h);font-size:15px;font-weight:700;line-height:1.35;color:var(--text)}
+
+    /* FOOTER */
+    .footer{padding:64px 32px 28px}
+    .footer-inner{max-width:1200px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+    .footer-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+    .footer-brand-logo img{width:32px;height:32px;border-radius:6px;object-fit:cover}
+    .footer-tagline{font-size:13px;line-height:1.65;color:var(--text-muted);margin-bottom:24px}
+    .footer-social{display:flex;gap:8px}
+    .footer-social-btn{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:var(--bg-card);border:1px solid var(--border-mid);color:var(--text-muted);transition:background .2s,color .2s}
+    .footer-social-btn:hover{background:var(--green-500);border-color:var(--green-500);color:#fff}
+    .footer-col-title{font-family:var(--font-h);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-subtle);margin-bottom:16px}
+    .footer-col-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-col-links a,.footer-col-links li{font-size:14px;color:var(--text-muted);transition:color .2s}
+    .footer-col-links a:hover{color:var(--green-400)}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid var(--border)}
+    .footer-copy{font-size:13px;color:var(--text-subtle)}
+    .footer-legal{display:flex;gap:20px}
+    .footer-legal a{font-size:13px;color:var(--text-subtle);transition:color .2s}
+    .footer-legal a:hover{color:var(--text-muted)}
+
+    /* FLOAT */
+    .float-contact{position:fixed;bottom:28px;right:28px;z-index:200;display:flex;flex-direction:column;gap:10px}
+    .float-btn{display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;box-shadow:0 4px 20px rgba(0,0,0,.35);transition:transform .2s}
+    .float-btn:hover{transform:scale(1.1)}
+    .float-btn svg{width:22px;height:22px;fill:#fff}
+    .float-whatsapp{background:#25D366}
+    .float-telegram{background:#2AABEE}
+
+    /* LOADING */
+    .post-loading{display:flex;align-items:center;justify-content:center;min-height:60vh;color:var(--text-muted);font-size:16px}
+
+    @media(max-width:768px){
+      .nav{padding:0 20px}.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}
+      .post-back,.post-header,.post-hero-img,.post-content,.post-cta,.post-related{padding-left:20px;padding-right:20px}
+      .post-hero-img img{height:240px}
+      .post-cta-inner{flex-direction:column;align-items:flex-start}
+      .related-grid{grid-template-columns:1fr}
+      .footer{padding:48px 20px 24px}.footer-grid{grid-template-columns:1fr}
+      .footer-bottom{flex-direction:column;align-items:flex-start;gap:16px}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="../index-v2.html" class="nav-logo">
+      <img src="../assets/img/logo/logo-apavigreen.jpeg" alt="Apavi Green">
+      <span class="nav-wordmark">Apavi<span>Green</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index-v2.html#servicios">Servicios</a></li>
+      <li><a href="../index-v2.html#proyectos">Proyectos</a></li>
+      <li><a href="../index-v2.html#precio">Precio</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+      <li><a href="../index-v2.html#contacto">Contacto</a></li>
+    </ul>
+    <a href="../cuestionario.html" class="nav-cta">Presupuesto gratis</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="../index-v2.html#servicios" class="nav-mobile-link">Servicios</a>
+  <a href="../index-v2.html#proyectos" class="nav-mobile-link">Proyectos</a>
+  <a href="../blog.html" class="nav-mobile-link">Blog</a>
+  <a href="../index-v2.html#contacto" class="nav-mobile-link">Contacto</a>
+  <a href="../cuestionario.html" class="nav-cta-mobile">Presupuesto gratis →</a>
+</div>
+
+<div id="postContent" class="post-loading">Cargando artículo...</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-logo">
+          <img src="../assets/img/logo/logo-apavigreen.jpeg" alt="Apavi Green">
+          <span class="nav-wordmark">Apavi<span>Green</span></span>
+        </div>
+        <p class="footer-tagline">Transformamos espacios con césped artificial, jardines verticales e instalaciones deportivas en Gran Canaria y toda España.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/34654765548" class="footer-social-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          <a href="https://t.me/apavigreen" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Telegram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Servicios</div>
+        <ul class="footer-col-links">
+          <li><a href="../cesped-artificial.html">Césped Artificial</a></li>
+          <li><a href="../jardines-verticales.html">Jardines Verticales</a></li>
+          <li><a href="../instalaciones-deportivas.html">Inst. Deportivas</a></li>
+          <li><a href="../espacios-infantiles.html">Espacios Infantiles</a></li>
+          <li><a href="../moqueta-ferial.html">Moqueta Ferial</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Empresa</div>
+        <ul class="footer-col-links">
+          <li><a href="../proyectos.html">Proyectos</a></li>
+          <li><a href="../plan-renove.html">Plan Renove</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index-v2.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contacto</div>
+        <ul class="footer-col-links">
+          <li><a href="tel:+34654765548">+34 654 765 548</a></li>
+          <li><a href="tel:+34636039736">+34 636 039 736</a></li>
+          <li><a href="mailto:web@apavigreen.com">web@apavigreen.com</a></li>
+          <li>Las Palmas de Gran Canaria</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="footerYear"></span> Apavi Green. Todos los derechos reservados.</p>
+      <div class="footer-legal">
+        <a href="../aviso-legal.html">Aviso Legal</a>
+        <a href="../privacidad.html">Privacidad</a>
+        <a href="../cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="float-contact">
+  <a href="https://wa.me/34654765548" class="float-btn float-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <a href="https://t.me/apavigreen" class="float-btn float-telegram" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+</div>
+
+<script>
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20), {passive:true});
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navMobile').classList.toggle('open'));
+
+  function formatDate(iso) {
+    return new Date(iso).toLocaleDateString('es-ES', {day:'numeric', month:'long', year:'numeric'});
+  }
+
+  const slug = new URLSearchParams(window.location.search).get('slug');
+
+  fetch('../blog/posts.json')
+    .then(r => r.json())
+    .then(posts => {
+      const post = posts.find(p => p.slug === slug);
+      if (!post) {
+        document.getElementById('postContent').innerHTML = '<div style="text-align:center;padding:120px 20px 80px"><h2 style="font-family:var(--font-h);margin-bottom:16px">Artículo no encontrado</h2><a href="../blog.html" style="color:var(--green-400)">← Volver al blog</a></div>';
+        return;
+      }
+
+      document.title = post.titulo + ' — Apavi Green';
+      document.getElementById('pageDesc').content = post.extracto;
+
+      const related = posts.filter(p => p.slug !== slug).slice(0, 3);
+
+      document.getElementById('postContent').innerHTML = `
+        <div class="post-back"><a href="../blog.html">← Volver al blog</a></div>
+        <div class="post-header">
+          <span class="post-cat">${post.categoria}</span>
+          <h1 class="post-title">${post.titulo}</h1>
+          <div class="post-meta">
+            <span>${formatDate(post.fecha)}</span>
+            <span>·</span>
+            <span>Equipo Apavi Green</span>
+          </div>
+        </div>
+        <div class="post-hero-img">
+          <img src="${post.imagen}" alt="${post.titulo}">
+        </div>
+        <div class="post-content">${post.contenido}</div>
+        <div class="post-cta">
+          <div class="post-cta-inner">
+            <div class="post-cta-text">
+              <h3>¿Tienes un proyecto en mente?</h3>
+              <p>Pídenos presupuesto gratis. Te visitamos en 24h y te damos precio sin compromiso.</p>
+            </div>
+            <a href="../cuestionario.html" class="btn-primary">Presupuesto gratis →</a>
+          </div>
+        </div>
+        ${related.length ? `
+        <div class="post-related">
+          <h2>Más artículos</h2>
+          <div class="related-grid">
+            ${related.map(p => `
+              <a href="post.html?slug=${p.slug}" class="blog-card">
+                <div class="blog-card-img-wrap">
+                  <img class="blog-card-img" src="${p.imagen}" alt="${p.titulo}" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                  <span class="blog-card-cat">${p.categoria}</span>
+                  <div class="blog-card-title">${p.titulo}</div>
+                </div>
+              </a>`).join('')}
+          </div>
+        </div>` : ''}
+      `;
+    })
+    .catch(() => {
+      document.getElementById('postContent').innerHTML = '<div style="text-align:center;padding:120px 20px 80px;color:var(--text-muted)">Error cargando el artículo. <a href="../blog.html" style="color:var(--green-400)">Volver al blog</a></div>';
+    });
+</script>
+</body>
+</html>

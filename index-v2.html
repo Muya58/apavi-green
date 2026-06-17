@@ -1222,6 +1222,39 @@
     ============================================================ */
 
     /* ============================================================
+       BLOG TEASER
+    ============================================================ */
+    .blog-teaser-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .blog-tcard {
+      display: flex;
+      flex-direction: column;
+      border-radius: var(--r-lg);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+    }
+    .blog-tcard:hover {
+      border-color: rgba(46,181,112,.4);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0,0,0,.35);
+    }
+    .blog-tcard-img-wrap { overflow: hidden; height: 180px; flex-shrink: 0; }
+    .blog-tcard-img { width: 100%; height: 180px; object-fit: cover; transition: transform .5s; }
+    .blog-tcard:hover .blog-tcard-img { transform: scale(1.05); }
+    .blog-tcard-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .blog-tcard-cat { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green-400); margin-bottom: 10px; }
+    .blog-tcard-title { font-family: var(--font-h); font-size: 17px; font-weight: 700; line-height: 1.35; letter-spacing: -.02em; color: var(--text); margin-bottom: 10px; transition: color .2s; flex: 1; }
+    .blog-tcard:hover .blog-tcard-title { color: var(--green-300); }
+    .blog-tcard-date { font-size: 12px; color: var(--text-subtle); margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
+    @media (max-width: 1024px) { .blog-teaser-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { .blog-teaser-grid { grid-template-columns: 1fr; } }
+
+    /* ============================================================
        PARTNERS CAROUSEL
     ============================================================ */
     .partners-section {
@@ -1392,6 +1425,7 @@
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#precio">Precio</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <a href="cuestionario.html" class="nav-cta">Presupuesto gratis</a>
@@ -1405,6 +1439,7 @@
   <a href="#servicios" class="nav-mobile-link">Servicios</a>
   <a href="#proyectos" class="nav-mobile-link">Proyectos</a>
   <a href="#precio" class="nav-mobile-link">Precio</a>
+  <a href="blog.html" class="nav-mobile-link">Blog</a>
   <a href="#contacto" class="nav-mobile-link">Contacto</a>
   <a href="cuestionario.html" class="nav-cta-mobile">Presupuesto gratis &rarr;</a>
 </div>
@@ -1832,6 +1867,24 @@
   </div>
 </section>
 
+<!-- BLOG TEASER -->
+<section class="section blog-teaser-section" id="blog">
+  <div class="container">
+    <div class="services-header" style="margin-bottom:40px;">
+      <div>
+        <div class="section-kicker" data-reveal>Del blog</div>
+        <h2 class="section-title" data-reveal data-reveal-delay="1">Últimos <em>artículos</em></h2>
+      </div>
+      <a href="blog.html" class="btn-ghost" data-reveal data-reveal-delay="2" style="align-self:flex-end;">
+        Ver todos los artículos →
+      </a>
+    </div>
+    <div class="blog-teaser-grid" id="blogTeaserGrid">
+      <!-- Cargado por JS -->
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact-section" id="contacto">
   <div class="contact-inner container">
@@ -1997,6 +2050,31 @@
 <script>
   // ── YEAR
   document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+  // ── BLOG TEASER
+  (function() {
+    var grid = document.getElementById('blogTeaserGrid');
+    if (!grid) return;
+    fetch('blog/posts.json')
+      .then(function(r){ return r.json(); })
+      .then(function(posts) {
+        posts.sort(function(a,b){ return new Date(b.fecha) - new Date(a.fecha); });
+        var latest = posts.slice(0, 3);
+        grid.innerHTML = latest.map(function(p) {
+          var d = new Date(p.fecha).toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'});
+          return '<a href="blog/post.html?slug='+p.slug+'" class="blog-tcard" data-reveal>'
+            +'<div class="blog-tcard-img-wrap"><img class="blog-tcard-img" src="'+p.imagen+'" alt="'+p.titulo+'" loading="lazy"></div>'
+            +'<div class="blog-tcard-body">'
+            +'<span class="blog-tcard-cat">'+p.categoria+'</span>'
+            +'<div class="blog-tcard-title">'+p.titulo+'</div>'
+            +'<div class="blog-tcard-date">'+d+'</div>'
+            +'</div></a>';
+        }).join('');
+        // Activar reveal en las nuevas tarjetas
+        grid.querySelectorAll('[data-reveal]').forEach(function(el){ observer.observe(el); });
+      })
+      .catch(function(){});
+  }());
 
   // ── NAV MOBILE
   const hamburger = document.getElementById('hamburger');
