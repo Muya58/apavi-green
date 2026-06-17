@@ -1274,14 +1274,14 @@
       /* fade edges */
       mask-image: linear-gradient(to right,
         transparent 0%,
-        #000 120px,
-        #000 calc(100% - 120px),
+        #000 60px,
+        #000 calc(100% - 60px),
         transparent 100%
       );
       -webkit-mask-image: linear-gradient(to right,
         transparent 0%,
-        #000 120px,
-        #000 calc(100% - 120px),
+        #000 60px,
+        #000 calc(100% - 60px),
         transparent 100%
       );
     }
@@ -1562,7 +1562,7 @@
         </div>
       </a>
       <a href="instalaciones-deportivas.html" class="bento-card b3">
-        <img class="bento-img" src="assets/img/deportivo-real-1.jpg.png" alt="Instalaciones deportivas">
+        <img class="bento-img" src="assets/img/servicios/deportivo-real-1.jpg.png" alt="Instalaciones deportivas">
         <div class="bento-overlay"></div>
         <div class="bento-arrow">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -1582,7 +1582,7 @@
         </div>
       </a>
       <a href="moqueta-ferial.html" class="bento-card b5">
-        <img class="bento-img" src="assets/img/suelo-efectomadera.jpg.png" alt="Moqueta ferial">
+        <img class="bento-img" src="assets/img/servicios/suelo-efectomadera.jpg.png" alt="Moqueta ferial">
         <div class="bento-overlay"></div>
         <div class="bento-arrow">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -1693,7 +1693,7 @@
       </div>
     </div>
     <div class="portfolio-card">
-      <img src="assets/img/deportivo-real-1.jpg.png" alt="Pista deportiva">
+      <img src="assets/img/servicios/deportivo-real-1.jpg.png" alt="Pista deportiva">
       <div class="portfolio-card-overlay"></div>
       <div class="portfolio-card-info">
         <div class="portfolio-card-cat">Instalacion deportiva</div>
@@ -2220,6 +2220,28 @@
     }
     illo.updateRenderGraph(); // primer frame estático
     if (!noMotion) requestAnimationFrame(animateGrass);
+  }());
+
+  // ── 4. PORTFOLIO HOVER AUTO-SCROLL
+  (function() {
+    var scroll = document.querySelector('.portfolio-scroll');
+    if (!scroll) return;
+    var raf = null;
+    var speed = 1.2; // px por frame
+    function step() {
+      scroll.scrollLeft += speed;
+      // loop infinito: cuando llega al final vuelve al principio
+      if (scroll.scrollLeft >= scroll.scrollWidth - scroll.clientWidth) {
+        scroll.scrollLeft = 0;
+      }
+      raf = requestAnimationFrame(step);
+    }
+    scroll.addEventListener('mouseenter', function() {
+      if (!raf) raf = requestAnimationFrame(step);
+    });
+    scroll.addEventListener('mouseleave', function() {
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
+    });
   }());
 </script>
 </body>
