@@ -1940,6 +1940,10 @@
         </div>
       </div>
       <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com">
+      </div>
+      <div class="form-group">
         <label class="form-label" for="servicio">Servicio de interes</label>
         <select id="servicio" name="servicio" class="form-select">
           <option value="">Selecciona un servicio</option>
@@ -2109,12 +2113,29 @@
   calcPrice();
 
   // ── CONTACT FORM
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = this.querySelector('button[type=submit]');
-    btn.textContent = 'Enviado';
-    btn.style.background = '#2EB570';
+    btn.textContent = 'Enviando…';
     btn.disabled = true;
+    const data = Object.fromEntries(new FormData(this));
+    try {
+      const res = await fetch('https://formspree.io/f/xkoaloob', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        btn.textContent = '¡Mensaje enviado!';
+        btn.style.background = '#2EB570';
+        this.reset();
+      } else {
+        throw new Error();
+      }
+    } catch {
+      btn.textContent = 'Error — llámanos al +34 654 765 548';
+      btn.disabled = false;
+    }
   });
 
   // ============================================================
