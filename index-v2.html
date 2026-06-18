@@ -1492,7 +1492,7 @@
       <div class="hero-img-badge">Cesped artificial residencial</div>
     </div>
     <div class="hero-img">
-      <img src="assets/img/jardin-vertical-despues1.jpg.png" alt="Jardin vertical">
+      <img src="assets/img/proyectos/jardin-vertical-despues1.jpg.png" alt="Jardin vertical">
     </div>
     <div class="hero-img">
       <img src="assets/img/servicios/trabajo ins dep 3.jpg" alt="Instalacion deportiva">
@@ -1541,7 +1541,7 @@
 
     <div class="bento" data-reveal>
       <a href="cesped-artificial.html" class="bento-card b1">
-        <img class="bento-img" src="assets/img/cesped-real-1.jpg.png" alt="Cesped artificial">
+        <img class="bento-img" src="assets/img/proyectos/cesped-real-1.jpg.png" alt="Cesped artificial">
         <div class="bento-overlay"></div>
         <div class="bento-arrow">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -1552,7 +1552,7 @@
         </div>
       </a>
       <a href="jardines-verticales.html" class="bento-card b2">
-        <img class="bento-img" src="assets/img/jardin-vertical-despues1.jpg.png" alt="Jardines verticales">
+        <img class="bento-img" src="assets/img/proyectos/jardin-vertical-despues1.jpg.png" alt="Jardines verticales">
         <div class="bento-overlay"></div>
         <div class="bento-arrow">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -1572,7 +1572,7 @@
         </div>
       </a>
       <a href="espacios-infantiles.html" class="bento-card b4">
-        <img class="bento-img" src="assets/img/infantil-real-1.jpg.png" alt="Espacios infantiles">
+        <img class="bento-img" src="assets/img/proyectos/infantil-real-1.jpg.png" alt="Espacios infantiles">
         <div class="bento-overlay"></div>
         <div class="bento-arrow">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -1592,7 +1592,7 @@
         </div>
       </a>
       <a href="#contacto" class="bento-card b6">
-        <img class="bento-img" src="assets/img/Parking-real 1.jpg.png" alt="Resinas epoxi">
+        <img class="bento-img" src="assets/img/proyectos/Parking-real 1.jpg.png" alt="Resinas epoxi">
         <div class="bento-overlay"></div>
         <div class="bento-arrow">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -1677,7 +1677,7 @@
   </div>
   <div class="portfolio-scroll">
     <div class="portfolio-card">
-      <img src="assets/img/lopesan-jardin1.jpg.png" alt="Jardin residencial">
+      <img src="assets/img/proyectos/lopesan-jardin1.jpg.png" alt="Jardin residencial">
       <div class="portfolio-card-overlay"></div>
       <div class="portfolio-card-info">
         <div class="portfolio-card-cat">Cesped artificial</div>
@@ -1685,7 +1685,7 @@
       </div>
     </div>
     <div class="portfolio-card">
-      <img src="assets/img/jardin-vertical-despues1.jpg.png" alt="Jardin vertical">
+      <img src="assets/img/proyectos/jardin-vertical-despues1.jpg.png" alt="Jardin vertical">
       <div class="portfolio-card-overlay"></div>
       <div class="portfolio-card-info">
         <div class="portfolio-card-cat">Jardin vertical</div>
@@ -1701,7 +1701,7 @@
       </div>
     </div>
     <div class="portfolio-card">
-      <img src="assets/img/infantil-real-1.jpg.png" alt="Zona infantil">
+      <img src="assets/img/proyectos/infantil-real-1.jpg.png" alt="Zona infantil">
       <div class="portfolio-card-overlay"></div>
       <div class="portfolio-card-info">
         <div class="portfolio-card-cat">Espacio infantil</div>
@@ -1709,7 +1709,7 @@
       </div>
     </div>
     <div class="portfolio-card">
-      <img src="assets/img/Parking-real 1.jpg.png" alt="Parking resina">
+      <img src="assets/img/proyectos/Parking-real 1.jpg.png" alt="Parking resina">
       <div class="portfolio-card-overlay"></div>
       <div class="portfolio-card-info">
         <div class="portfolio-card-cat">Resinas epoxi</div>
@@ -1717,7 +1717,7 @@
       </div>
     </div>
     <div class="portfolio-card">
-      <img src="assets/img/Feria-oasis.jpg.png" alt="Feria">
+      <img src="assets/img/proyectos/Feria-oasis.jpg.png" alt="Feria">
       <div class="portfolio-card-overlay"></div>
       <div class="portfolio-card-info">
         <div class="portfolio-card-cat">Moqueta ferial</div>
@@ -2062,16 +2062,15 @@
         var latest = posts.slice(0, 3);
         grid.innerHTML = latest.map(function(p) {
           var d = new Date(p.fecha).toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'});
-          return '<a href="blog/post.html?slug='+p.slug+'" class="blog-tcard" data-reveal>'
-            +'<div class="blog-tcard-img-wrap"><img class="blog-tcard-img" src="'+p.imagen+'" alt="'+p.titulo+'" loading="lazy"></div>'
+          var imgSrc = p.imagen.replace(/^\.\.\//, '');
+          return '<a href="blog/post.html?slug='+p.slug+'" class="blog-tcard visible">'
+            +'<div class="blog-tcard-img-wrap"><img class="blog-tcard-img" src="'+imgSrc+'" alt="'+p.titulo+'" loading="lazy"></div>'
             +'<div class="blog-tcard-body">'
             +'<span class="blog-tcard-cat">'+p.categoria+'</span>'
             +'<div class="blog-tcard-title">'+p.titulo+'</div>'
             +'<div class="blog-tcard-date">'+d+'</div>'
             +'</div></a>';
         }).join('');
-        // Activar reveal en las nuevas tarjetas
-        grid.querySelectorAll('[data-reveal]').forEach(function(el){ observer.observe(el); });
       })
       .catch(function(){});
   }());
