@@ -1,6 +1,6 @@
 /* assets/js/cuestionario.js — Multi-step lead form (4 steps) + Formspree */
 
-const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // ← Reemplazar con el ID real
+const FORMSPREE_ID = 'xkoaloob';
 
 class Cuestionario {
   constructor(selector) {
