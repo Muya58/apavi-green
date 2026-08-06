@@ -540,14 +540,18 @@
     .bento-card:hover .bento-arrow { background: var(--green-500); color: #fff; border-color: var(--green-500); }
 
     /* Bento cell positions */
-    .b1 { grid-column: 1 / 6;  grid-row: 1; }
-    .b2 { grid-column: 6 / 9;  grid-row: 1; }
-    .b3 { grid-column: 9 / 13; grid-row: 1; }
-    .b4 { grid-column: 1 / 5;  grid-row: 2; }
-    .b5 { grid-column: 5 / 9;  grid-row: 2; }
-    .b6 { grid-column: 9 / 13; grid-row: 2; }
-    /* Row 3 — Piscinas y Suelos (full width) */
-    .b7 { grid-column: 1 / 13; grid-row: 3; }
+    /* Row 1 — Concesionarios oficiales (destacados) */
+    .b0a { grid-column: 1 / 7;  grid-row: 1; min-height: 360px; }
+    .b0b { grid-column: 7 / 13; grid-row: 1; min-height: 360px; }
+    .b0a .bento-tag, .b0b .bento-tag { background: rgba(196,148,48,.9); color: #fff; }
+    /* Row 2 */
+    .b1 { grid-column: 1 / 6;  grid-row: 2; }
+    .b2 { grid-column: 6 / 9;  grid-row: 2; }
+    .b3 { grid-column: 9 / 13; grid-row: 2; }
+    /* Row 3 */
+    .b4 { grid-column: 1 / 5;  grid-row: 3; }
+    .b5 { grid-column: 5 / 9;  grid-row: 3; }
+    .b6 { grid-column: 9 / 13; grid-row: 3; }
 
     /* ============================================================
        EFECTO NEÓN — Hover bento cards
@@ -1383,6 +1387,7 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
       }
+      .b0a,.b0b { grid-column: auto; grid-row: auto; height: 280px; }
       .b1 { grid-column: 1 / 3; grid-row: auto; height: 260px; }
       .b2,.b3,.b4,.b5 { grid-column: auto; grid-row: auto; height: 200px; }
       .b6 { grid-column: 1 / 3; grid-row: auto; height: 200px; }
@@ -1403,7 +1408,8 @@
       .trust-bar { padding: 16px 20px; }
       .trust-bar-inner { gap: 16px; justify-content: flex-start; }
       .bento { grid-template-columns: 1fr; grid-template-rows: auto; }
-      .b1,.b2,.b3,.b4,.b5,.b6 { grid-column: 1; height: 220px; }
+      .b0a,.b0b,.b1,.b2,.b3,.b4,.b5,.b6 { grid-column: 1; height: 220px; }
+      .b0a,.b0b { height: 260px; }
       .services-header { flex-direction: column; align-items: flex-start; }
       .statement-section, .config-section, .contact-section, .process-section { padding: 64px 20px; }
       .process-steps { grid-template-columns: 1fr; gap: 2px; }
@@ -1582,6 +1588,28 @@
     </div>
 
     <div class="bento" data-reveal>
+      <a href="https://piscinadearenatenerife.com" class="bento-card b0a" target="_blank" rel="noopener">
+        <img class="bento-img" src="assets/img/servicios/Piscina 2.jpeg" alt="Piscina de arena Bio.design en Tenerife — concesionario oficial Apavi Green">
+        <div class="bento-overlay"></div>
+        <div class="bento-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="bento-content">
+          <div class="bento-tag">Concesionario oficial</div>
+          <div class="bento-name">Bio.design · Piscinas de Arena</div>
+        </div>
+      </a>
+      <a href="https://resineocanarias.com" class="bento-card b0b" target="_blank" rel="noopener">
+        <img class="bento-img" src="assets/img/servicios/resineo-terraza.jpg" alt="Suelo Resineo en piscina y terraza en Canarias — Apavi Green">
+        <div class="bento-overlay"></div>
+        <div class="bento-arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="bento-content">
+          <div class="bento-tag">Concesionario oficial</div>
+          <div class="bento-name">Resineo · Piscinas y moqueta de mármol</div>
+        </div>
+      </a>
       <a href="cesped-artificial.html" class="bento-card b1">
         <img class="bento-img" src="assets/img/proyectos/cesped-real-1.jpg.png" alt="Césped artificial instalado en jardín de Gran Canaria — Apavi Green">
         <div class="bento-overlay"></div>
@@ -1645,18 +1673,6 @@
         </div>
       </a>
 
-      <!-- PISCINAS Y SUELOS IMPERMEABILIZANTES — fila 3, ancho completo -->
-      <a href="#contacto" class="bento-card b7">
-        <img class="bento-img" src="assets/img/servicios/Piscina 2.jpeg" alt="Piscina con césped y tarima de madera en jardín residencial — Apavi Green">
-        <div class="bento-overlay"></div>
-        <div class="bento-arrow">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </div>
-        <div class="bento-content">
-          <div class="bento-tag">Nuevo servicio</div>
-          <div class="bento-name">Piscinas y moqueta de mármol</div>
-        </div>
-      </a>
     </div>
   </div>
 </section>
