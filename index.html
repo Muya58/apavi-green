@@ -483,11 +483,12 @@
       border-radius: var(--r-lg);
       overflow: hidden;
       position: relative;
+      z-index: 1;
       background: var(--bg-card);
       cursor: pointer;
-      transition: transform .3s ease;
+      transition: transform .3s ease, z-index 0s;
     }
-    .bento-card:hover { transform: scale(1.015); }
+    .bento-card:hover { transform: scale(1.015); z-index: 10; }
     .bento-card:hover .bento-img { transform: scale(1.06); }
     .bento-card img,
     .bento-img {
@@ -1893,7 +1894,7 @@
     <div data-reveal>
       <div class="renove-launch-badge">&#9889; Oferta de lanzamiento</div>
       <div class="section-kicker">Plan Renove</div>
-      <h2 class="section-title" style="margin-bottom:0;">C&eacute;sped Confort 30mm<br><em>instalado y garantizado</em></h2>
+      <h2 class="section-title" style="margin-bottom:0;">Plan Renove<br><em>instalado y garantizado</em></h2>
       <div class="renove-price-row">
         <div class="renove-price-big">23,50<span>&nbsp;€/m²</span></div>
         <div class="renove-guarantee-pill">
