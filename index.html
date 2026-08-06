@@ -989,90 +989,139 @@
     }
 
     /* ============================================================
-       CONFIGURADOR / PRICING
+       PLAN RENOVE SECTION
     ============================================================ */
-    .config-section {
+    .renove-full-section {
       background: var(--bg);
       border-top: 1px solid var(--border);
       padding: 96px 40px;
     }
-    .config-inner {
+    .renove-full-inner {
       max-width: 1320px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 64px;
-      align-items: start;
+      align-items: center;
     }
-    .config-form {
+    .renove-launch-badge {
+      display: inline-block;
+      background: rgba(196,148,48,.15);
+      border: 1px solid #C49430;
+      color: #C49430;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 999px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .renove-price-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin: 28px 0 20px;
+    }
+    .renove-price-big {
+      font-family: var(--font-h);
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+    }
+    .renove-price-big span { font-size: 24px; color: var(--green-400); }
+    .renove-guarantee-pill {
+      background: rgba(46,181,112,.1);
+      border: 1px solid rgba(46,181,112,.25);
+      border-radius: var(--r-md);
+      padding: 12px 20px;
+      text-align: center;
+    }
+    .renove-guarantee-num {
+      font-family: var(--font-h);
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--green-400);
+      display: block;
+      line-height: 1;
+    }
+    .renove-guarantee-label { font-size: 12px; color: var(--text-subtle); margin-top: 4px; display: block; }
+    .renove-maint-note {
+      font-size: 13px;
+      color: var(--text-subtle);
+      line-height: 1.6;
+      border-left: 2px solid var(--green-500);
+      padding-left: 14px;
+      margin-top: 20px;
+    }
+    .renove-free-box {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--r-xl);
       padding: 40px;
     }
-    .config-form-title {
+    .renove-free-title {
       font-family: var(--font-h);
       font-size: 20px;
       font-weight: 800;
       color: var(--white);
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
-    .config-group { margin-bottom: 24px; }
-    .config-label {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: var(--text-subtle);
-      margin-bottom: 10px;
-    }
-    .config-select, .config-input {
-      width: 100%;
-      background: rgba(255,255,255,.05);
-      border: 1px solid var(--border-mid);
-      color: var(--white);
-      font-family: var(--font-b);
-      font-size: 15px;
-      padding: 12px 16px;
-      border-radius: var(--r-sm);
-      outline: none;
-      transition: border-color .2s;
-      appearance: none;
-    }
-    .config-select:focus, .config-input:focus { border-color: var(--green-500); }
-    .config-select option { background: #1a2e1f; color: var(--white); }
-    .config-range-row {
+    .renove-free-title span { color: var(--green-400); }
+    .renove-free-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 16px;
     }
-    .config-range {
-      flex: 1;
-      accent-color: var(--green-500);
-      height: 4px;
-      cursor: pointer;
-    }
-    .config-range-val {
-      font-family: var(--font-h);
-      font-size: 20px;
-      font-weight: 800;
+    .renove-free-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 16px;
       color: var(--white);
-      min-width: 80px;
-      text-align: right;
+      font-weight: 500;
+      line-height: 1.4;
     }
-    .config-result {
-      margin-top: 28px;
-      background: rgba(46,181,112,.08);
-      border: 1px solid rgba(46,181,112,.2);
-      border-radius: var(--r-md);
-      padding: 24px;
-      text-align: center;
+    .renove-free-list li em { color: var(--text-subtle); font-style: normal; font-size: 13px; display: block; margin-top: 2px; }
+    .renove-check-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--green-500);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #0B2918;
+      font-weight: 900;
+      font-size: 14px;
     }
-    .config-result-label { font-size: 12px; color: var(--green-400); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
-    .config-result-price { font-family: var(--font-h); font-size: 36px; font-weight: 900; color: var(--white); }
-    .config-result-note { font-size: 12px; color: var(--text-subtle); margin-top: 4px; }
-    .config-cta { margin-top: 16px; width: 100%; text-align: center; }
+    .renove-product-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: var(--text-subtle);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 1024px) {
+      .renove-full-inner { grid-template-columns: 1fr; gap: 40px; }
+      .renove-price-big { font-size: 48px; }
+    }
+    @media (max-width: 640px) {
+      .renove-full-section { padding: 64px 20px; }
+      .renove-price-big { font-size: 42px; }
+      .renove-free-box { padding: 28px 20px; }
+    }
 
     /* ============================================================
        CONTACT
@@ -1838,81 +1887,54 @@
   </div>
 </section>
 
-<!-- CONFIGURADOR -->
-<section class="config-section" id="precio">
-  <div class="config-inner container">
-    <div>
-      <div class="section-kicker" data-reveal>Calculadora de precio</div>
-      <h2 class="section-title" data-reveal data-reveal-delay="1">
-        Cuanto cuesta<br><em>tu proyecto</em>
-      </h2>
-      <p class="section-sub" data-reveal data-reveal-delay="2" style="margin-bottom:32px;">
-        Calcula una estimacion orientativa segun el tipo de instalacion y la superficie. El precio final se ajustara tras la visita tecnica gratuita.
-      </p>
-      <!-- PLAN RENOVE AD BANNER -->
-      <a href="plan-renove.html" class="renove-banner" data-reveal data-reveal-delay="3">
-        <div class="renove-banner-glow"></div>
-        <div class="renove-banner-inner">
-          <div class="renove-banner-badge">
-            <span class="renove-badge-dot"></span>
-            OFERTA ACTIVA
-          </div>
-          <div class="renove-banner-title">
-            <span class="renove-word renove-word-1">Plan</span>
-            <span class="renove-word renove-word-2">Renove</span>
-          </div>
-          <div class="renove-banner-claim">
-            Retiramos tu cesped viejo
-            <span class="renove-claim-highlight">gratis</span>
-          </div>
-          <div class="renove-banner-sub">Incluido en la instalacion. Sin coste adicional.</div>
-          <div class="renove-banner-cta">
-            Descubrir el Plan Renove
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
+<!-- PLAN RENOVE -->
+<section class="renove-full-section" id="plan-renove">
+  <div class="renove-full-inner">
+    <div data-reveal>
+      <div class="renove-launch-badge">&#9889; Oferta de lanzamiento</div>
+      <div class="section-kicker">Plan Renove</div>
+      <h2 class="section-title" style="margin-bottom:0;">C&eacute;sped Confort 30mm<br><em>instalado y garantizado</em></h2>
+      <div class="renove-price-row">
+        <div class="renove-price-big">23,50<span>&nbsp;€/m²</span></div>
+        <div class="renove-guarantee-pill">
+          <span class="renove-guarantee-num">8</span>
+          <span class="renove-guarantee-label">a&ntilde;os de<br>garant&iacute;a</span>
         </div>
+      </div>
+      <div class="renove-product-tag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Producto: C&eacute;sped Confort 30mm
+      </div>
+      <p class="renove-maint-note">
+        Incluye mantenimiento con medios mec&aacute;nicos y manuales para el correcto cuidado del c&eacute;sped instalado.
+      </p>
+      <a href="plan-renove.html" class="btn btn-primary" style="margin-top:32px;display:inline-flex;">
+        Ver el Plan Renove completo &rarr;
       </a>
     </div>
 
-    <div class="config-form" data-reveal data-reveal-delay="1">
-      <div class="config-form-title">Calcula tu presupuesto</div>
-      <div class="config-group">
-        <label class="config-label">Tipo de instalacion</label>
-        <select class="config-select" id="tipoSelect" onchange="calcPrice()">
-          <option value="27">Cesped artificial residencial</option>
-          <option value="12">Cesped deportivo</option>
-          <option value="14">Cesped amortiguador infantil</option>
-          <option value="18">Jardin vertical artificial</option>
-          <option value="25">Jardin vertical natural</option>
-          <option value="10">Pavimento PVC</option>
-          <option value="22">Resinas epoxi</option>
-        </select>
-      </div>
-      <div class="config-group">
-        <label class="config-label">Calidad del material</label>
-        <select class="config-select" id="calidadSelect" onchange="calcPrice()">
-          <option value="1">Estandar</option>
-          <option value="1.35">Premium</option>
-          <option value="1.7">Alta gama</option>
-        </select>
-      </div>
-      <div class="config-group">
-        <label class="config-label">Superficie</label>
-        <div class="config-range-row">
-          <input type="range" class="config-range" id="superficieRange" min="10" max="1000" value="80" step="5" oninput="calcPrice()">
-          <div class="config-range-val"><span id="superficieVal">80</span> m&sup2;</div>
-        </div>
-      </div>
-      <div class="config-result">
-        <div class="config-result-label">Estimacion orientativa</div>
-        <div class="config-result-price" id="precioResult">640 - 960 &euro;</div>
-        <div class="config-result-note">Precio final tras visita tecnica gratuita</div>
-      </div>
-      <div class="config-cta">
-        <a href="cuestionario.html" class="btn-primary" style="width:100%;justify-content:center;margin-top:16px;">
-          Solicitar presupuesto exacto &rarr;
-        </a>
-      </div>
+    <div class="renove-free-box" data-reveal data-reveal-delay="1">
+      <div class="renove-free-title">Incluido <span>GRATIS</span></div>
+      <ul class="renove-free-list">
+        <li>
+          <div class="renove-check-icon">&#10003;</div>
+          <div>Retirada del c&eacute;sped antiguo</div>
+        </li>
+        <li>
+          <div class="renove-check-icon">&#10003;</div>
+          <div>Malla Antihierba</div>
+        </li>
+        <li>
+          <div class="renove-check-icon">&#10003;</div>
+          <div>
+            Regularizaci&oacute;n de la superficie
+            <em>si es necesario</em>
+          </div>
+        </li>
+      </ul>
+      <a href="https://wa.me/34654765548?text=Hola%2C%20me%20interesa%20el%20Plan%20Renove%20a%2023%2C50%20%E2%82%AC%2Fm%C2%B2.%20Quisiera%20un%20presupuesto%20gratuito." class="btn btn-primary" style="width:100%;justify-content:center;" target="_blank" rel="noopener">
+        &#128172; Pedir presupuesto por WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -2154,20 +2176,6 @@
     });
   }, { threshold: 0.12 });
   revealEls.forEach(el => io.observe(el));
-
-  // ── CONFIGURADOR
-  function calcPrice() {
-    const tipo = parseFloat(document.getElementById('tipoSelect').value);
-    const calidad = parseFloat(document.getElementById('calidadSelect').value);
-    const sup = parseInt(document.getElementById('superficieRange').value);
-    document.getElementById('superficieVal').textContent = sup;
-    const base = tipo * calidad;
-    const min = Math.round(sup * base * 0.93);
-    const max = Math.round(sup * base * 1.11);
-    document.getElementById('precioResult').innerHTML =
-      min.toLocaleString('es-ES') + ' - ' + max.toLocaleString('es-ES') + ' &euro;';
-  }
-  calcPrice();
 
   // ── CONTACT FORM
   document.getElementById('contactForm').addEventListener('submit', async function(e) {
