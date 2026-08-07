@@ -1125,6 +1125,83 @@
     }
 
     /* ============================================================
+       TESTIMONIOS
+    ============================================================ */
+    .testimonios-section {
+      background: var(--bg-base);
+      padding: 96px 20px;
+    }
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .testimonio-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .testimonio-stars {
+      display: flex;
+      gap: 3px;
+      color: #F5C518;
+      font-size: 15px;
+    }
+    .testimonio-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-body);
+      flex: 1;
+    }
+    .testimonio-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .testimonio-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--green-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .testimonio-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+    .testimonio-source {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .testimonio-google {
+      margin-left: auto;
+      opacity: 0.5;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    @media (max-width: 900px) {
+      .testimonios-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .testimonios-grid { grid-template-columns: 1fr; }
+      .testimonios-section { padding: 64px 20px; }
+    }
+
+    /* ============================================================
        CONTACT
     ============================================================ */
     .contact-section {
@@ -1936,6 +2013,101 @@
       <a href="https://wa.me/34654765548?text=Hola%2C%20me%20interesa%20el%20Plan%20Renove%20a%2023%2C50%20%E2%82%AC%2Fm%C2%B2.%20Quisiera%20un%20presupuesto%20gratuito." class="btn btn-primary" style="width:100%;justify-content:center;" target="_blank" rel="noopener">
         &#128172; Pedir presupuesto por WhatsApp
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios-section" id="testimonios">
+  <div class="container">
+    <div class="services-header" style="margin-bottom:0;">
+      <div class="section-kicker">Opiniones reales</div>
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="section-subtitle">5,0 ★ en Google · 24 reseñas verificadas</p>
+    </div>
+    <div class="testimonios-grid">
+
+      <div class="testimonio-card" data-reveal>
+        <div class="testimonio-stars">★★★★★</div>
+        <p class="testimonio-text">"Una experiencia de 10. Me instalaron c&eacute;sped artificial en la terraza y el resultado fue impecable. Los acabados quedaron perfectos, el c&eacute;sped es de una calidad excelente y se nota que cuidan cada detalle."</p>
+        <div class="testimonio-author">
+          <div class="testimonio-avatar">M</div>
+          <div>
+            <div class="testimonio-name">Mario</div>
+            <div class="testimonio-source">Google · hace 1 semana</div>
+          </div>
+          <span class="testimonio-google">Google</span>
+        </div>
+      </div>
+
+      <div class="testimonio-card" data-reveal data-reveal-delay="1">
+        <div class="testimonio-stars">★★★★★</div>
+        <p class="testimonio-text">"Trabajo impecable, disfrutando de un verano sin mantenimiento, disfrutando del c&eacute;sped artificial. Rapidez y trato impecable."</p>
+        <div class="testimonio-author">
+          <div class="testimonio-avatar">O</div>
+          <div>
+            <div class="testimonio-name">Oliver Iban Sanchez Mederos</div>
+            <div class="testimonio-source">Local Guide · hace 1 semana</div>
+          </div>
+          <span class="testimonio-google">Google</span>
+        </div>
+      </div>
+
+      <div class="testimonio-card" data-reveal data-reveal-delay="2">
+        <div class="testimonio-stars">★★★★★</div>
+        <p class="testimonio-text">"Gran profesional! Install&oacute; el c&eacute;sped en tiempo y forma de gran calidad. Recomiendo 100%. Gracias Apavi Green."</p>
+        <div class="testimonio-author">
+          <div class="testimonio-avatar">A</div>
+          <div>
+            <div class="testimonio-name">Alejandro Castro Navarro</div>
+            <div class="testimonio-source">Local Guide · hace 1 semana</div>
+          </div>
+          <span class="testimonio-google">Google</span>
+        </div>
+      </div>
+
+      <div class="testimonio-card" data-reveal data-reveal-delay="1">
+        <div class="testimonio-stars">★★★★★</div>
+        <p class="testimonio-text">"Excelente experiencia. Un distribuidor totalmente recomendable por su profesionalidad, el trato cercano y el asesoramiento durante todo el proceso. Se nota que conocen muy bien el producto y ofrecen soluciones de gran calidad."</p>
+        <div class="testimonio-author">
+          <div class="testimonio-avatar">C</div>
+          <div>
+            <div class="testimonio-name">Cristina Beloso</div>
+            <div class="testimonio-source">Local Guide · hace 6 d&iacute;as</div>
+          </div>
+          <span class="testimonio-google">Google</span>
+        </div>
+      </div>
+
+      <div class="testimonio-card" data-reveal data-reveal-delay="2">
+        <div class="testimonio-stars">★★★★★</div>
+        <p class="testimonio-text">"Trabajo excelente. Bien acabado y r&aacute;pido y limpios. Muy contento."</p>
+        <div class="testimonio-author">
+          <div class="testimonio-avatar">L</div>
+          <div>
+            <div class="testimonio-name">Luis Torres</div>
+            <div class="testimonio-source">Local Guide · hace 1 semana</div>
+          </div>
+          <span class="testimonio-google">Google</span>
+        </div>
+      </div>
+
+      <div class="testimonio-card" data-reveal data-reveal-delay="3">
+        <div class="testimonio-stars">★★★★★</div>
+        <p class="testimonio-text">"Buenos profesionales!"</p>
+        <div class="testimonio-author">
+          <div class="testimonio-avatar">M</div>
+          <div>
+            <div class="testimonio-name">Mabilia Padr&oacute;n</div>
+            <div class="testimonio-source">Google · hace 1 semana</div>
+          </div>
+          <span class="testimonio-google">Google</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="https://g.co/kgs/your-link" target="_blank" rel="noopener" class="btn btn-secondary">Ver todas las rese&ntilde;as en Google →</a>
     </div>
   </div>
 </section>
