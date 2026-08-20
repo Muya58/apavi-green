@@ -27,7 +27,8 @@
     "fecha": "2026-07-27",
     "imagen": "../assets/img/proyectos/cesped-real-1.jpg.png",
     "extracto": "Desde 18 €/m² hasta 45 €/m² según calidad. Todo lo que incluye el precio instalado, los factores que lo encarecen y cómo calcular el presupuesto de tu jardín en Canarias.",
-    "contenido": ""
+    "url": "blog/precio-cesped-artificial-canarias.html",
+    "contenido": "<p>La pregunta más frecuente que recibimos es siempre la misma: <strong>¿cuánto cuesta instalar césped artificial?</strong> La respuesta depende de la calidad elegida y el uso previsto, pero aquí tienes los rangos reales que manejamos en Canarias.</p><h2>Precio por calidad</h2><ul><li><strong>Básico</strong> — 18-24 €/m² · zonas decorativas de poco uso, balcones</li><li><strong>Estándar</strong> — 25-34 €/m² · jardines residenciales, terrazas y patios</li><li><strong>Premium</strong> — 35-45 €/m² · uso intensivo, niños o mascotas</li><li><strong>Deportivo</strong> — 40-70 €/m² · pistas de pádel y fútbol sala</li></ul><p>Estos precios son <strong>instalados</strong>: incluyen retirada del material anterior, nivelación, base de zahorra compactada, geotextil anti-malas hierbas, el propio césped, relleno de sílice y caucho, y remates perimetrales.</p><h2>Qué encarece la instalación</h2><p>El estado del suelo, la forma del jardín (esquinas, elementos a rodear), el acceso a la zona y el transporte entre islas pueden añadir entre un 5% y un 15% al presupuesto base. Para Tenerife, Lanzarote y Fuerteventura aplicamos un sobrecoste de transporte de 1 a 3 €/m².</p><h2>¿Merece la pena la inversión?</h2><p>Un jardín de 50 m² con césped estándar (unos 1.500 €) se amortiza frente al césped natural en 2-3 años, contando el ahorro en agua de riego (300-600 €/año en Canarias), jardinería y fertilizantes.</p><p>En Apavi Green hacemos la visita técnica gratis en Gran Canaria y enviamos presupuesto detallado en 24 horas. Los precios de esta guía no incluyen IGIC (7%), que se detalla en el presupuesto final.</p>"
   },
   {
     "id": 3,
@@ -38,5 +39,35 @@
     "imagen": "../assets/img/proyectos/Parking-real 1.jpg.png",
     "extracto": "Las resinas epoxi son la solución preferida para parkings y garajes en comunidades de vecinos. Analizamos costes, durabilidad y todo lo que necesita saber la comunidad.",
     "contenido": "<p>Cada vez más comunidades de vecinos en Gran Canaria optan por las <strong>resinas epoxi</strong> para renovar sus parkings. No es casualidad: ofrecen una combinación difícil de superar de durabilidad, limpieza y estética a un coste razonable.</p><h2>¿Por qué resina epoxi y no pintura?</h2><p>La pintura para suelos dura entre 1 y 3 años con el tráfico normal de un parking comunitario. La resina epoxi bien aplicada dura entre <strong>10 y 20 años</strong> con un mantenimiento casi nulo. La diferencia de coste inicial se amortiza en el primer ciclo de renovación.</p><h2>Ventajas concretas para comunidades</h2><ul><li>Superficie continua sin juntas donde acumular suciedad</li><li>Resistente a manchas de aceite, líquidos de frenos y gasolina</li><li>Fácil de limpiar con mopa o fregadora</li><li>Mejora el rebote de luz artificial del garaje</li><li>Posibilidad de añadir señalización (plazas, pasillos, salidas)</li></ul><h2>¿Cuánto cuesta?</h2><p>El coste varía según el estado del suelo base y la superficie total. En Apavi Green hacemos un estudio técnico gratuito y presupuesto detallado sin sorpresas. Para comunidades con más de 500 m², aplicamos condiciones especiales.</p><p>Contacta con nosotros y te visitamos en menos de 48 horas.</p>"
+  },
+  {
+    "id": 5,
+    "slug": "cesped-artificial-piscina",
+    "titulo": "Césped Artificial en Piscinas: Todo lo que Necesitas Saber",
+    "categoria": "Césped Artificial",
+    "fecha": "2025-01-15",
+    "imagen": "../assets/img/proyectos/piscina-real-1.jpg.png",
+    "extracto": "Guía completa sobre cómo instalar césped artificial alrededor de tu piscina en Gran Canaria: materiales, drenaje y mantenimiento.",
+    "url": "blog/cesped-artificial-piscina.html"
+  },
+  {
+    "id": 6,
+    "slug": "jardines-verticales-gran-canaria",
+    "titulo": "Jardines Verticales en Gran Canaria: Ventajas, Tipos y Mantenimiento",
+    "categoria": "Jardines Verticales",
+    "fecha": "2025-03-05",
+    "imagen": "../assets/img/servicios/vertical-real-1.jpg.png",
+    "extracto": "Jardines verticales en Gran Canaria: naturales vs artificiales, instalación, mantenimiento y precios.",
+    "url": "blog/jardines-verticales-gran-canaria.html"
+  },
+  {
+    "id": 7,
+    "slug": "resinas-epoxi-garaje",
+    "titulo": "Resinas Epoxi para Garajes y Locales: Guía Completa",
+    "categoria": "Resinas Epoxi",
+    "fecha": "2025-02-10",
+    "imagen": "../assets/img/proyectos/Parking-real 1.jpg.png",
+    "extracto": "Todo sobre resinas epoxi para garajes y locales en Gran Canaria: tipos, instalación, precios y mantenimiento.",
+    "url": "blog/resinas-epoxi-garaje.html"
   }
 ]
