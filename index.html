@@ -1716,8 +1716,8 @@
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-text">
-    <div class="hero-label" data-reveal>Instaladores certificados Gran Canaria</div>
-    <h1 data-reveal data-reveal-delay="1">
+    <div class="hero-label">Instaladores certificados Gran Canaria</div>
+    <h1>
       Creamos el espacio<br>
       <em>del que te vas a enamorar</em>
     </h1>
@@ -2391,10 +2391,10 @@
      LIBRERÍAS 3D (carga diferida para no bloquear el render)
      Vanta.js: fondo animado hero · Vanilla-Tilt: tarjetas bento · Zdog: ilustración césped
 ====================================================== -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
-<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js" defer></script>
 
 <script>
   // ── YEAR
@@ -2470,8 +2470,12 @@
   });
 
   // ============================================================
-  //  EFECTOS 3D
+  //  EFECTOS 3D — se aplazan hasta 'load' para no competir con el
+  //  pintado inicial (LCP) ni bloquear el hilo principal (TBT).
+  //  Los <script defer> de three/vanta/vanilla-tilt/zdog ya han
+  //  terminado de ejecutarse para cuando dispara este evento.
   // ============================================================
+  window.addEventListener('load', function() {
 
   const _isMobile = window.innerWidth < 900;
 
@@ -2487,6 +2491,7 @@
       waveHeight: 10.00,
       waveSpeed: 0.60,
       zoom: 0.70,
+      scale: 0.75,        // reduce resolución interna del canvas → menos coste por frame
       minHeight: 200,
       minWidth: 200
     });
@@ -2580,6 +2585,8 @@
     illo.updateRenderGraph(); // primer frame estático
     if (!noMotion) requestAnimationFrame(animateGrass);
   }());
+
+  }); // fin window.addEventListener('load', ...)
 
   // ── 4. PORTFOLIO HOVER AUTO-SCROLL
   (function() {
