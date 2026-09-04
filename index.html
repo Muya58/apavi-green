@@ -2412,7 +2412,7 @@
         grid.innerHTML = latest.map(function(p) {
           var d = new Date(p.fecha).toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'});
           var imgSrc = p.imagen.replace(/^\.\.\//, '');
-          return '<a href="blog/post.html?slug='+p.slug+'" class="blog-tcard visible">'
+          return '<a href="'+(p.url || 'blog/post.html?slug='+p.slug)+'" class="blog-tcard visible">'
             +'<div class="blog-tcard-img-wrap"><img class="blog-tcard-img" src="'+imgSrc+'" alt="'+p.titulo+'" loading="lazy"></div>'
             +'<div class="blog-tcard-body">'
             +'<span class="blog-tcard-cat">'+p.categoria+'</span>'
