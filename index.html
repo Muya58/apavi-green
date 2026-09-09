@@ -1485,8 +1485,34 @@
     .float-telegram { background: #229ED9; }
 
     /* ============================================================
-       COOKIE BANNER (keep existing)
+       COOKIE BANNER
     ============================================================ */
+    #cookieBanner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -8px 32px rgba(0,0,0,.4);
+      transform: translateY(100%);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+    }
+    #cookieBanner.cb-visible { transform: translateY(0); }
+    .cb-inner { max-width: 1280px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .cb-text { flex: 1; min-width: 260px; }
+    .cb-title { font-family: var(--font-h); font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .cb-desc { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.6; }
+    .cb-link { color: var(--green-400); text-decoration: underline; }
+    .cb-link:hover { color: var(--green-300); }
+    .cb-actions { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .cb-btn { font-family: var(--font-h); font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 10px; cursor: pointer; border: none; transition: all .15s; white-space: nowrap; }
+    .cb-btn-primary { background: var(--green-500); color: #fff; }
+    .cb-btn-primary:hover { background: var(--green-400); }
+    .cb-btn-secondary { background: rgba(255,255,255,.08); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.15); }
+    .cb-btn-secondary:hover { background: rgba(255,255,255,.14); color: #fff; }
+    @media (max-width: 640px) {
+      .cb-inner { padding: 16px 20px; gap: 16px; }
+      .cb-actions { width: 100%; }
+      .cb-btn { flex: 1; text-align: center; }
+    }
 
     /* ============================================================
        BLOG TEASER
@@ -2608,5 +2634,7 @@
     requestAnimationFrame(step);
   }());
 </script>
+<script src="assets/js/cookies.js"></script>
+<script src="assets/js/analytics.js"></script>
 </body>
 </html>

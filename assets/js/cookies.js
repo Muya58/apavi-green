@@ -57,6 +57,7 @@
 
     document.getElementById('cbAcceptAll').addEventListener('click', function () {
       saveConsent('all');
+      window.dispatchEvent(new CustomEvent('ag:consent', { detail: { type: 'all' } }));
       hideBanner(banner);
     });
 
