@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: sustituir por el Measurement ID real de GA4
+  var GA_MEASUREMENT_ID = 'G-P68MBLLY5R';
   var STORAGE_KEY = 'ag_cookie_consent';
   var CONSENT_VERSION = '1';
   var loaded = false;
