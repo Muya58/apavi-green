@@ -25,11 +25,28 @@ Cada página tiene: title/meta/OG únicos, canonical propio, schema `Service`+`L
 - `index.html` — nueva sección "Ahora también en Tenerife y Andalucía" justo después de Proyectos, con tarjetas a las 4 zonas + enlace a `zonas.html`. También añadido enlace en el footer (columna "Empresa").
 - Footer de las 4 páginas de zona + `zonas.html` — columna "Zonas" con enlaces cruzados entre ellas.
 
-## Pendiente (no resuelto hoy, requiere info del usuario)
+## Estrategia de tráfico explicada (misma sesión)
 
-1. **Tarifa real de Andalucía** — en cuanto el usuario tenga precio cerrado con el nuevo proveedor de Península, sustituir el CTA "a consultar" por rangos de precio reales en las 3 páginas de Andalucía (y en el FAQ/schema correspondiente).
+Se explicaron 3 vías no excluyentes para llevar tráfico a estas zonas, con costes/tiempos distintos:
+
+1. **SEO/páginas** (lo ya construido) — gratis, lento (2-6 meses), necesita autoridad (reseñas, Google Business Profile).
+2. **Redes sociales orgánicas** (`apavigreensl`) — gratis pero limitado sin fotos reales de las zonas nuevas; solo apoyo, no motor principal.
+3. **Publicidad de pago geo-segmentada** (Google Ads / Meta Ads) — la única vía rápida; ~5-10 €/día por zona para empezar. Google Ads = intención de compra directa; Meta Ads = generación de demanda con foto/vídeo (se pueden usar fotos de Canarias siendo honestos).
+
+Recomendación dada: Google Business Profile primero (gratis, ya resuelto hoy) → luego decidir presupuesto de ads.
+
+## Google Business Profile (resuelto hoy)
+
+- Ya existía una ficha de Apavi Green en Google Business Profile.
+- El equipo de Andalucía es una **empresa colaboradora/subcontratista** en Cádiz, sin dirección propia conocida → se descartó crear una ficha nueva con dirección inventada (riesgo de suspensión por Google).
+- Recomendación aplicada: **una sola ficha**, añadiendo Tenerife, Cádiz, Málaga y Sevilla como áreas de servicio adicionales sobre la ficha existente (mismo teléfono, misma marca Apavi Green de cara al cliente).
+- **Usuario confirma: ya está hecho** ("Ya lo tengo").
+
+## Pendiente
+
+1. **Tarifa real de Andalucía** — en cuanto el usuario tenga precio cerrado con el proveedor colaborador de Cádiz, sustituir el CTA "a consultar" por rangos de precio reales en las 3 páginas de Andalucía (y en el FAQ/schema correspondiente).
 2. **Fotos de obras reales en las 4 zonas** — sustituir los placeholders "Próximamente" en cuanto el usuario las tenga, e idealmente subir a `proyectos.html` filtrando por zona.
-3. **Redes sociales**: el usuario mencionó también crecer en redes, no solo web. Aún no abordado — pendiente decidir: Google Business Profile por zona, contenido geo-etiquetado en Instagram/Facebook (`apavigreensl`), posible publicidad geo-segmentada. Debe tratarse en otra sesión.
+3. **Publicidad de pago (Google Ads / Meta Ads) geo-segmentada** — el usuario va a hablar con sus socios mañana para decidir presupuesto. Siguiente sesión: definir campañas, audiencias y presupuesto por zona una vez tengan luz verde.
 4. Sigue pendiente la lista de baja prioridad del informe original (ver `2026-09-09-despliegue-y-ga4.md`).
 
 ## Rama de trabajo
