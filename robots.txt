@@ -1,5 +1,13 @@
 ﻿User-agent: *
 Allow: /
 Disallow: /_partials/
+Disallow: /index-old-backup.html
+Disallow: /mockup-home-aprobado.html
+Disallow: /boceto-landing.html
+Disallow: /landing.html
+Disallow: /guia-gbp.html
+Disallow: /guia-publicacion.html
+Disallow: /brand-kit.html
+Disallow: /estrategia-redes-sociales.html
 
 Sitemap: https://apavigreen.com/sitemap.xml
