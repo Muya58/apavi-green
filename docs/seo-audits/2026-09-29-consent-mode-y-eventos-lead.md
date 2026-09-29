@@ -42,3 +42,11 @@ El modo avanzado envía pings sin cookies antes del consentimiento. Es la config
 - PR #1 fusionado en `master`.
 - Generado `docs/gtm/apavigreen-leads-import.json` para importar (Administrar → Importar contenedor → Combinar → Cambiar nombre de los conflictivos). Crea: `DLV - link_location`, `DLV - form_id`, activador `CE - Leads` (regex) y etiqueta `GA4 - Evento - Leads` (G-P68MBLLY5R, nombre `{{Event}}`).
 - Validar en Vista previa (Tag Assistant) y publicar.
+
+## ⚠️ Incidencia: https://apavigreen.com (sin www) sin SSL
+- Detectado al lanzar la Vista previa de GTM: `ERR_SSL_PROTOCOL_ERROR` (Chrome) y fallo también en Safari con 4G → afecta a todos.
+- SSL Shopper: `apavigreen.com` → 54.170.183.243, servidor **Caddy** (AWS), **sin certificado**. No es GitHub Pages (185.199.108-111.153).
+- Hipótesis: redirección/reenvío del registrador que solo funciona por http.
+- Arreglo propuesto: quitar el reenvío, registros A del apex → 185.199.108.153 / .109 / .110 / .111, `www` CNAME → `muya58.github.io`, activar "Enforce HTTPS" en GitHub Pages.
+- Pendiente del cliente: SSL check de `www.apavigreen.com`, registrador/captura DNS, captura de Settings → Pages.
+- Mientras tanto, Vista previa de GTM con `https://www.apavigreen.com`.
