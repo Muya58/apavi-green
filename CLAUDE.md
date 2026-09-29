@@ -24,5 +24,8 @@
 ## Contacto
 - Teléfono/WhatsApp correcto: +34 654 765 548.
 
+## Al empezar una sesión
+- Leer el último `docs/seo-audits/*-resumen-sesion-y-pendientes.md` y retomar desde su lista de pendientes.
+
 ## Notas de trabajo
 - Registro diario en `docs/seo-audits/AAAA-MM-DD-*.md` (formato Obsidian, enlaces `[[...]]`). Actualizar al final de cada tarea.
