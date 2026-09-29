@@ -30,3 +30,5 @@ Contexto: [[2026-09-29-analisis-embudo-ga4]]
 
 ## Nota legal
 El modo avanzado envía pings sin cookies antes del consentimiento. Es la configuración que recomienda Google, pero conviene mencionarlo en `cookies.html` y confirmarlo con quien lleve la parte legal. Si se prefiere el modo básico, basta con volver a cargar GTM solo tras aceptar, manteniendo el `consent default`.
+
+- Teléfono del aviso legal corregido a `+34 654 765 548` (confirmado por el cliente).
