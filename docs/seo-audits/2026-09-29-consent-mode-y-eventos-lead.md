@@ -32,3 +32,8 @@ Contexto: [[2026-09-29-analisis-embudo-ga4]]
 El modo avanzado envía pings sin cookies antes del consentimiento. Es la configuración que recomienda Google, pero conviene mencionarlo en `cookies.html` y confirmarlo con quien lleve la parte legal. Si se prefiere el modo básico, basta con volver a cargar GTM solo tras aceptar, manteniendo el `consent default`.
 
 - Teléfono del aviso legal corregido a `+34 654 765 548` (confirmado por el cliente).
+
+## PR y siguientes pasos
+- PR abierto: https://github.com/Muya58/apavi-green/pull/1 (rama `claude/elegant-darwin-xvdvqo` → `master`). Vigilado por Claude.
+- Fusión: en GitHub, pestaña "Files changed" para revisar → "Merge pull request" → "Confirm merge". GitHub Pages publica `master` en apavigreen.com en 1-2 min.
+- Para tener más datos: GTM + eventos clave (ver arriba), Google Search Console enlazada a GA4, Google Business Profile con UTM, UTMs en redes/WhatsApp/folletos (QR), excluir tráfico interno, retención de datos a 14 meses, Microsoft Clarity (mapas de calor, respetando consentimiento).
