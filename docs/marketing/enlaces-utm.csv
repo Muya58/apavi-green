@@ -1,0 +1,14 @@
+﻿id;canal;uso;url;qr
+gbp-web;Google Business Profile;Botón 'Sitio web' de la ficha;https://www.apavigreen.com/?utm_source=google&utm_medium=organic&utm_campaign=ficha-gbp;
+gbp-cita;Google Business Profile;Enlace de 'Pedir cita / presupuesto';https://www.apavigreen.com/cuestionario.html?utm_source=google&utm_medium=organic&utm_campaign=ficha-gbp-cita;
+gbp-post;Google Business Profile;Botón de las publicaciones de la ficha;https://www.apavigreen.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-publicaciones;
+instagram-bio;Instagram;Enlace de la biografía;https://www.apavigreen.com/?utm_source=instagram&utm_medium=social&utm_campaign=perfil;
+facebook;Facebook;Botón/Web de la página;https://www.apavigreen.com/?utm_source=facebook&utm_medium=social&utm_campaign=perfil;
+whatsapp-perfil;WhatsApp Business;Web del perfil de empresa;https://www.apavigreen.com/?utm_source=whatsapp&utm_medium=social&utm_campaign=perfil;
+whatsapp-estado;WhatsApp Business;Enlace en estados y mensajes;https://www.apavigreen.com/cuestionario.html?utm_source=whatsapp&utm_medium=social&utm_campaign=estados;
+email-firma;Email;Firma de web@ e info@;https://www.apavigreen.com/?utm_source=email&utm_medium=email&utm_campaign=firma;
+folleto;Folleto;QR del folleto;https://www.apavigreen.com/cuestionario.html?utm_source=folleto&utm_medium=qr&utm_campaign=impresos-2026;qr/folleto.svg / .png
+triptico;Tríptico;QR del tríptico;https://www.apavigreen.com/cuestionario.html?utm_source=triptico&utm_medium=qr&utm_campaign=impresos-2026;qr/triptico.svg / .png
+lona;Lona;QR de la lona de obra;https://www.apavigreen.com/?utm_source=lona&utm_medium=qr&utm_campaign=impresos-2026;qr/lona.svg / .png
+tarjeta;Tarjeta de visita;QR de la tarjeta;https://www.apavigreen.com/?utm_source=tarjeta&utm_medium=qr&utm_campaign=impresos-2026;qr/tarjeta.svg / .png
+furgoneta;Vehículo rotulado;QR de la furgoneta;https://www.apavigreen.com/?utm_source=furgoneta&utm_medium=qr&utm_campaign=impresos-2026;qr/furgoneta.svg / .png

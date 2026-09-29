@@ -59,3 +59,6 @@ El modo avanzado envía pings sin cookies antes del consentimiento. Es la config
 - La IP FTP guardada (53.30.159.68) no es de AWS ni coincide con la web: probablemente IP antigua o errata (¿54.x?). La web está en AWS detrás de un balanceador → pedir al proveedor el host FTP/SFTP actual.
 - Preparado `docs/entregas/email-proveedor-ssl-ftp-2026-09-29.eml` (remitente web@apavigreen.com, 4 capturas adjuntas, sin destinatario). **Mañana (30-9): enviar desde el correo corporativo.**
 - Destinatarios añadidos al .eml: Para soporte@redessystem.com, soportetecnico@voxia.es; CC jose.aperi@redessystem.com, rafael.fuentes@voxia.es, info@apavigreen.com. Recomendado responder en el hilo "ApaviGreen - Alojamiento web".
+
+## UTM y QR
+- Hecho → [[2026-09-29-utm-y-qr]] (`docs/marketing/`). Entregado `docs/entregas/utm-y-qr-2026-09-29.zip`.

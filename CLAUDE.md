@@ -18,6 +18,9 @@
 - GTM `GTM-KVGB6TK4` → GA4 `G-P68MBLLY5R`. Cargado desde `assets/js/analytics.js` con Consent Mode v2.
 - Eventos al dataLayer: `click_whatsapp`, `click_telefono`, `click_email`, `generate_lead` (form_id).
 
+## Marketing
+- Enlaces UTM y QR: `docs/marketing/enlaces-utm.csv` y `docs/marketing/qr/`. Base siempre `https://www.apavigreen.com`. Nomenclatura en `docs/marketing/2026-09-29-utm-y-qr.md`.
+
 ## Contacto
 - Teléfono/WhatsApp correcto: +34 654 765 548.
 
