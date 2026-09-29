@@ -97,12 +97,13 @@ class Cuestionario {
         });
 
         if (res.ok) {
+          (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', form_id: 'cuestionario', page_path: location.pathname });
           this._showSuccess(nombre);
         } else {
           throw new Error('Error en el servidor');
         }
       } catch (err) {
-        this._showError('Hubo un problema. Llámanos directamente al +34 XXX XXX XXX.');
+        this._showError('Hubo un problema. Llámanos directamente al +34 654 765 548.');
         submitBtn.disabled = false;
         submitBtn.textContent = 'Enviar solicitud';
       }

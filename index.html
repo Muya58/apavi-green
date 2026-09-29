@@ -2503,6 +2503,7 @@
         body: JSON.stringify(data)
       });
       if (res.ok) {
+        (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', form_id: 'contacto_home', page_path: location.pathname });
         btn.textContent = '¡Mensaje enviado!';
         btn.style.background = '#2EB570';
         this.reset();
