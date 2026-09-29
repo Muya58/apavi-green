@@ -57,3 +57,4 @@ El modo avanzado envía pings sin cookies antes del consentimiento. Es la config
 - FTP caído: `53.30.159.68:21` da timeout en FileZilla. Pendiente: comprobar IP de www, probar ftp.apavigreen.com / SFTP 22 / otra red. Añadido al email del proveedor.
 - SSL Shopper `www.apavigreen.com`: 54.72.89.210, `awselb/2.0` (balanceador AWS), certificado Amazon RSA 2048 M01 con SAN `apavigreen.com, *.apavigreen.com`, válido hasta 5-12-2026. → El certificado ya cubre el dominio sin www; solo falta apuntar el apex al balanceador (ALIAS) + redirección 301. Email actualizado.
 - La IP FTP guardada (53.30.159.68) no es de AWS ni coincide con la web: probablemente IP antigua o errata (¿54.x?). La web está en AWS detrás de un balanceador → pedir al proveedor el host FTP/SFTP actual.
+- Preparado `docs/entregas/email-proveedor-ssl-ftp-2026-09-29.eml` (remitente web@apavigreen.com, 4 capturas adjuntas, sin destinatario). **Mañana (30-9): enviar desde el correo corporativo.**
