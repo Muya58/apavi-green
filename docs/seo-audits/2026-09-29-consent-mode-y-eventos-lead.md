@@ -55,3 +55,5 @@ El modo avanzado envía pings sin cookies antes del consentimiento. Es la config
 - Confirmado por el cliente: la web se publica **siempre por FTP**. Añadido `CLAUDE.md` con el flujo de despliegue.
 - Comprobado: `cesped-artificial-tenerife.html` carga en producción → los cambios del 4 y el 9 de septiembre ya estaban subidos por FTP.
 - FTP caído: `53.30.159.68:21` da timeout en FileZilla. Pendiente: comprobar IP de www, probar ftp.apavigreen.com / SFTP 22 / otra red. Añadido al email del proveedor.
+- SSL Shopper `www.apavigreen.com`: 54.72.89.210, `awselb/2.0` (balanceador AWS), certificado Amazon RSA 2048 M01 con SAN `apavigreen.com, *.apavigreen.com`, válido hasta 5-12-2026. → El certificado ya cubre el dominio sin www; solo falta apuntar el apex al balanceador (ALIAS) + redirección 301. Email actualizado.
+- La IP FTP guardada (53.30.159.68) no es de AWS ni coincide con la web: probablemente IP antigua o errata (¿54.x?). La web está en AWS detrás de un balanceador → pedir al proveedor el host FTP/SFTP actual.
