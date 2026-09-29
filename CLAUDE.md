@@ -8,6 +8,12 @@
 - Versión canónica servida: `https://www.apavigreen.com` (AWS, balanceador `awselb`, IP 54.72.89.210, cert. Amazon que cubre apex y *.). El apex apunta a 54.170.183.243 (Caddy, sin SSL) — incidencia abierta 29-9-2026.
 - El archivo `CNAME` es residual de GitHub Pages y no se usa.
 
+## Proveedor de hosting / redes
+- Hilo de referencia: "ApaviGreen - Alojamiento web" (4-8-2026).
+- Redes System: soporte@redessystem.com, José Aperi Crespo (jose.aperi@redessystem.com)
+- Voxia: soportetecnico@voxia.es, Rafael Fuentes (rafael.fuentes@voxia.es)
+- Correos de Apavi Green: web@apavigreen.com (usuario), info@apavigreen.com
+
 ## Analítica
 - GTM `GTM-KVGB6TK4` → GA4 `G-P68MBLLY5R`. Cargado desde `assets/js/analytics.js` con Consent Mode v2.
 - Eventos al dataLayer: `click_whatsapp`, `click_telefono`, `click_email`, `generate_lead` (form_id).
