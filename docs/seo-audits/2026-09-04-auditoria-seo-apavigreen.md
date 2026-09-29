@@ -1,7 +1,7 @@
 # Auditoría SEO — apavigreen.com
 
 **Fecha:** 4 de septiembre de 2026
-**Alcance:** Auditoría técnica y on-page completa, basada en el código fuente del repositorio (`muya58/apavi-green`, rama `master`), que es lo que se despliega en `apavigreen.com` vía GitHub Pages (archivo `CNAME`).
+**Alcance:** Auditoría técnica y on-page completa, basada en el código fuente del repositorio (`muya58/apavi-green`, rama `master`), (nota 29-9: la web en realidad se publica por FTP, no por GitHub Pages).
 **Nota metodológica:** El acceso saliente a `apavigreen.com` estaba bloqueado desde este entorno, así que la auditoría se hizo leyendo el código fuente real (HTML, JSON-LD, robots.txt, sitemap.xml) en vez de la web renderizada. Esto es en realidad más fiable para meta tags, schema y estructura — pero **no puede medir Core Web Vitals reales, velocidad de carga ni renderizado móvil real**. Recomendación: correr PageSpeed Insights y el Rich Results Test sobre la URL en vivo tras aplicar las correcciones.
 
 ---

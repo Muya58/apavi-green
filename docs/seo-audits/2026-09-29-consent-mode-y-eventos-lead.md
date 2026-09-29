@@ -52,3 +52,4 @@ El modo avanzado envía pings sin cookies antes del consentimiento. Es la config
 - Mientras tanto, Vista previa de GTM con `https://www.apavigreen.com`.
 - El DNS lo gestiona una empresa externa → redactado email: `docs/entregas/email-proveedor-ssl-2026-09-29.md`.
 - La web se publica por **FTP** (no por GitHub Pages): los cambios de hoy hay que subirlos a mano → `docs/entregas/subir-por-ftp-2026-09-29.zip` (index.html, aviso-legal.html, assets/js/analytics.js, assets/js/cuestionario.js).
+- Confirmado por el cliente: la web se publica **siempre por FTP**. Añadido `CLAUDE.md` con el flujo de despliegue.
