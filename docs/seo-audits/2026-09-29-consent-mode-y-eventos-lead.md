@@ -50,3 +50,5 @@ El modo avanzado envía pings sin cookies antes del consentimiento. Es la config
 - Arreglo propuesto: quitar el reenvío, registros A del apex → 185.199.108.153 / .109 / .110 / .111, `www` CNAME → `muya58.github.io`, activar "Enforce HTTPS" en GitHub Pages.
 - Pendiente del cliente: SSL check de `www.apavigreen.com`, registrador/captura DNS, captura de Settings → Pages.
 - Mientras tanto, Vista previa de GTM con `https://www.apavigreen.com`.
+- El DNS lo gestiona una empresa externa → redactado email: `docs/entregas/email-proveedor-ssl-2026-09-29.md`.
+- La web se publica por **FTP** (no por GitHub Pages): los cambios de hoy hay que subirlos a mano → `docs/entregas/subir-por-ftp-2026-09-29.zip` (index.html, aviso-legal.html, assets/js/analytics.js, assets/js/cuestionario.js).
