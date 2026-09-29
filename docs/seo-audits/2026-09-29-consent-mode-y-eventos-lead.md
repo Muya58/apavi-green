@@ -37,3 +37,8 @@ El modo avanzado envía pings sin cookies antes del consentimiento. Es la config
 - PR abierto: https://github.com/Muya58/apavi-green/pull/1 (rama `claude/elegant-darwin-xvdvqo` → `master`). Vigilado por Claude.
 - Fusión: en GitHub, pestaña "Files changed" para revisar → "Merge pull request" → "Confirm merge". GitHub Pages publica `master` en apavigreen.com en 1-2 min.
 - Para tener más datos: GTM + eventos clave (ver arriba), Google Search Console enlazada a GA4, Google Business Profile con UTM, UTMs en redes/WhatsApp/folletos (QR), excluir tráfico interno, retención de datos a 14 meses, Microsoft Clarity (mapas de calor, respetando consentimiento).
+
+## Configuración de GTM (sesión 29-9, tarde)
+- PR #1 fusionado en `master`.
+- Generado `docs/gtm/apavigreen-leads-import.json` para importar (Administrar → Importar contenedor → Combinar → Cambiar nombre de los conflictivos). Crea: `DLV - link_location`, `DLV - form_id`, activador `CE - Leads` (regex) y etiqueta `GA4 - Evento - Leads` (G-P68MBLLY5R, nombre `{{Event}}`).
+- Validar en Vista previa (Tag Assistant) y publicar.
