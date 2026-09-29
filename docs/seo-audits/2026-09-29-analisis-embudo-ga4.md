@@ -20,3 +20,6 @@
 
 ## Otros hallazgos
 - `aviso-legal.html:60` usa `+34 654 795 518`, distinto del teléfono del resto de la web (`654 765 548`). Verificar cuál es el correcto.
+
+## Seguimiento
+- Puntos 1 y 2 implementados → [[2026-09-29-consent-mode-y-eventos-lead]]
