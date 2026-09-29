@@ -2,6 +2,7 @@
 
 ## Despliegue (IMPORTANTE)
 - La web se publica **siempre por FTP** (lo sube el cliente a mano). **No** se despliega desde GitHub: fusionar a `master` no publica nada.
+- Servidor FTP guardado por el cliente: `53.30.159.68:21` (dio timeout el 29-9-2026; verificar datos con el proveedor).
 - Al terminar cada cambio: generar un zip con **solo los archivos de la web modificados** (manteniendo carpetas, sin `docs/`) en `docs/entregas/subir-por-ftp-AAAA-MM-DD.zip`, enviarlo al usuario e indicar en qué carpeta va cada archivo.
 - Dominio y DNS los gestiona una **empresa externa**: cualquier cambio de DNS/SSL/redirecciones se pide por email (ver `docs/entregas/`).
 - Versión canónica servida: `https://www.apavigreen.com`. El dominio sin www no tiene SSL (incidencia abierta 29-9-2026).

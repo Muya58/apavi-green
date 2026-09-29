@@ -54,3 +54,4 @@ El modo avanzado envía pings sin cookies antes del consentimiento. Es la config
 - La web se publica por **FTP** (no por GitHub Pages): los cambios de hoy hay que subirlos a mano → `docs/entregas/subir-por-ftp-2026-09-29.zip` (index.html, aviso-legal.html, assets/js/analytics.js, assets/js/cuestionario.js).
 - Confirmado por el cliente: la web se publica **siempre por FTP**. Añadido `CLAUDE.md` con el flujo de despliegue.
 - Comprobado: `cesped-artificial-tenerife.html` carga en producción → los cambios del 4 y el 9 de septiembre ya estaban subidos por FTP.
+- FTP caído: `53.30.159.68:21` da timeout en FileZilla. Pendiente: comprobar IP de www, probar ftp.apavigreen.com / SFTP 22 / otra red. Añadido al email del proveedor.

@@ -1,4 +1,4 @@
-**Asunto:** Urgente – apavigreen.com (sin www) no carga: falta certificado SSL
+**Asunto:** Urgente – apavigreen.com (sin www) sin certificado SSL y acceso FTP caído
 
 Hola,
 
@@ -19,6 +19,8 @@ Esto nos está haciendo perder visitas (mucha gente escribe el dominio sin www, 
 3. Que `www.apavigreen.com` siga funcionando exactamente como ahora.
 
 La forma más sencilla suele ser apuntar el registro A de `apavigreen.com` (@) al mismo servidor que `www` y hacer la redirección desde allí, o activar SSL en el servicio de redirección actual.
+
+**Además**, no podemos conectar por FTP al servidor: la conexión a `53.30.159.68:21` agota el tiempo de espera ("No se pudo conectar al servidor"). ¿Nos podéis confirmar los datos de acceso actuales (servidor, protocolo FTP/SFTP, puerto y carpeta de la web) y si hay alguna restricción por IP? Tenemos pendiente subir una actualización de la web.
 
 ¿Nos podéis confirmar cuándo podréis hacerlo y avisarnos cuando esté listo para comprobarlo?
 
