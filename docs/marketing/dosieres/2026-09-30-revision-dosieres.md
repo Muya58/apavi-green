@@ -20,3 +20,9 @@ Originales en `docs/marketing/dosieres/originales/`.
 - Sistema común: portada · problema/solución · productos · proceso · garantías · **cierre con CTA + QR + botones clicables**.
 - Doble salida por dosier: **PDF A4 multipágina con enlaces** (email) + **carrusel 1080×1350** (WhatsApp, última imagen con QR).
 - QR/UTM por dosier: `utm_source=dosier-<sector>&utm_medium=whatsapp|email&utm_campaign=dosieres-2026`.
+
+## Antes / después con IA (decisión 30-9)
+- Opción recomendada: **foto real del "antes"** (espacio del cliente/prospecto) + **"después" generado por IA** rotulado como *"Simulación del resultado"*. Sirve además como propuesta personalizada de venta.
+- Opción ilustrativa: antes y después 100 % IA → rotular *"Imagen ilustrativa"*. No usar en secciones de "trabajos realizados".
+- **Nunca** presentar una imagen generada como obra real (riesgo de publicidad engañosa y de confianza).
+- Ya existe un antes/después **real**: `assets/img/servicios/Pavimento Antes_despues.jpg` (resina en local, 960 px — válido para WhatsApp/PDF pequeño, no para imprenta).
