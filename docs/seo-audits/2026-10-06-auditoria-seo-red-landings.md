@@ -258,3 +258,9 @@ Nota: en `biodesign-tenerife`, `tests/leads-handler.test.js` ya fallaba antes de
 3. Claude: reaplicar los enlaces de las páginas hub sobre esas versiones → paquete `SUBIR-FTP/2026-10-07-recuperacion/` → revisión archivo por archivo → subida.
 4. Guardar en GitHub la versión real del servidor (fuente de la verdad).
 5. Después: GSC (sitemap con www y solicitud de indexación), fusionar los PRs de Résineo y Bio.design y los artículos del blog.
+
+## Fusionados (6 oct, noche)
+- [Muya58/resineo-canarias#1](https://github.com/Muya58/resineo-canarias/pull/1) → `master` (df76865). Vercel publica solo; la preview del PR estaba en "Ready".
+- [Muya58/biodesign-tenerife#1](https://github.com/Muya58/biodesign-tenerife/pull/1) → `master` (16943e9). Vercel publica solo.
+- Comprobado antes de fusionar: ninguno de los dos repos tiene despliegue por FTP (solo `vercel.json`). No afectan a apavigreen.com.
+- Pendiente: GSC de las dos landings (sitemap + solicitar la indexación).
