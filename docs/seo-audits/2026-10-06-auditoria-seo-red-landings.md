@@ -4,6 +4,7 @@
 **Sitios:** `apavigreen.com` (principal), `resineocanarias.com` (Résineo), landing de piscinas de arena Bio.design
 **Repos revisados:** `Muya58/apavi-green`, `Muya58/resineo-canarias`, `Muya58/biodesign-tenerife`
 **Método:** este entorno no puede abrir las webs en vivo (el proxy bloquea los tres dominios), así que se auditó el código fuente de los tres repos y se comprobó la indexación con búsquedas `site:`. **Pendiente de verificar en Search Console:** cobertura real del índice, Core Web Vitals y consultas.
+**✅ Actualización (misma sesión):** el usuario confirma que el dominio correcto es **`piscinadearenatenerife.com` (singular, con www)**. `piscinasdearenatenerife.com` (plural) es de un **competidor** (Beach Feel / Stone Feel), así que no hay que tocarlo. Ver el apartado *Estado de los quick wins* al final.
 **Auditorías anteriores:** [[2026-09-04-auditoria-seo-apavigreen]] · [[2026-09-09-expansion-tenerife-andalucia]] · [[2026-09-29-analisis-embudo-ga4]]
 
 ---
@@ -24,7 +25,7 @@ La web principal tiene una base técnica sólida, gracias a lo que se arregló e
 
 | Sitio | Problema | Severidad | Arreglo |
 |---|---|---|---|
-| Piscinas | Dominio del código (`piscinadearenatenerife.com`) ≠ dominio comunicado (`piscinasdearenatenerife.com`). El plural pertenece a un tercero que vende Beach Feel | 🔴 Crítico | Confirmar qué dominio es nuestro. Si es el singular, olvidarse del plural (o intentar comprarlo). Si es el plural, hay que desplegar ahí el repo y quitar el WordPress |
+| Piscinas | ✅ RESUELTO: el dominio bueno es el singular. Dominio del código (`piscinadearenatenerife.com`) ≠ dominio comunicado (`piscinasdearenatenerife.com`). El plural pertenece a un tercero que vende Beach Feel | 🔴 Crítico | Confirmar qué dominio es nuestro. Si es el singular, olvidarse del plural (o intentar comprarlo). Si es el plural, hay que desplegar ahí el repo y quitar el WordPress |
 | Piscinas | `index.html` de Apavi (líneas 1837 y 2410) enlaza al singular. Si el nuestro es el plural, ese enlace está roto | 🔴 Crítico | Alinear con el dominio correcto |
 | Résineo + Piscinas | Teléfono `+34654795518` en el schema y en los `tel:` (Résineo `index.html:34`; Bio.design `index.html` y 2 enlaces `tel:`) | 🔴 Crítico | Cambiar a `+34654765548` en las dos |
 | Résineo | `site:resineocanarias.com` no devuelve ningún resultado. 7 URLs en el sitemap, pero páginas de 70-250 palabras | 🔴 Crítico | Ampliar el contenido (ver §3) y enviar el sitemap en GSC |
@@ -165,3 +166,21 @@ Reglas:
 - Búsqueda `site:resineocanarias.com`: 0 resultados
 - Competidores: tropicalpoolcanarias.com, piscinasdisersan.com
 - Código: `resineo-canarias/index.html`, `biodesign-tenerife/index.html`, `biodesign-tenerife/sitemap.xml`, `apavi-green/index.html:1837,2410`
+
+---
+
+## Estado de los quick wins (6 oct 2026)
+
+| # | Acción | Estado | Dónde |
+|---|---|---|---|
+| 1 | Confirmar el dominio de piscinas | ✅ Singular `www.piscinadearenatenerife.com` | — |
+| 2 | Teléfono 654 765 548 en las landings | ✅ Hecho | Résineo: `index.html` (schema). Bio.design: schema, `aviso-legal`, `contacto` y el mensaje de error de `cuestionario.js` |
+| 3 | Enlaces de las landings al hub | ✅ Hecho | Résineo: footer de las 10 páginas enlaza a Apavi (home, césped, resinas) y a piscinas de arena; `parentOrganization` en el schema. Bio.design: "Apavi Green" del footer enlaza a apavigreen.com en 8 páginas |
+| 4 | Search Console: propiedades, sitemaps, indexación | ⏳ Pendiente (usuario) | GSC |
+| 5 | Contacto de Résineo | 🟡 Parcial: teléfono + WhatsApp añadidos; el formulario sigue pendiente | `resineo-canarias/contacto.html` |
+| 6 | Garantía 8 vs 10 años | ❓ Decisión del usuario: ¿8 años es solo el producto Plan Renove (Confort 30 mm) y 10 años la garantía general? | `index.html` (meta + FAQ) |
+| 7 | Anchors descriptivos de Apavi hacia las landings | ✅ Hecho, y enlaces a `https://www.piscinadearenatenerife.com/` (evita la redirección) | `index.html` |
+| 8 | GA4/GTM en Résineo | ⏳ Pendiente | — |
+
+Ramas: `claude/eloquent-meitner-0l435q` en los tres repos (`apavi-green`, `resineo-canarias`, `biodesign-tenerife`). Las landings se despliegan desde `master` en Vercel: **hasta que se fusionen esas ramas, los cambios no estarán en vivo**.
+Nota: en `biodesign-tenerife`, `tests/leads-handler.test.js` ya fallaba antes de estos cambios (dependencias sin instalar en el entorno); el resto de los tests pasa.
