@@ -14,8 +14,9 @@ ARCHIVOS NUEVOS (2)
 - piscinas-de-arena.html
 - suelos-resineo.html
 
-ARCHIVOS MODIFICADOS (15)
-- index.html ............ las tarjetas de Piscinas de arena y Résineo llevan a las páginas nuevas; pie de página actualizado
+ARCHIVOS MODIFICADOS (16)
+- index.html ............ las tarjetas de Piscinas de arena y Résineo llevan a las páginas nuevas; pie de página actualizado; garantía 10 años
+- plan-renove.html ...... garantía unificada a 10 años
 - sitemap.xml ........... incluye las 2 páginas nuevas
 - resinas-epoxi.html .... enlace a Suelo Résineo + pie de página
 - 12 páginas más ........ solo cambia el pie de página (enlaces a las 2 páginas nuevas)

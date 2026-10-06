@@ -227,3 +227,10 @@ Nota: en `biodesign-tenerife`, `tests/leads-handler.test.js` ya fallaba antes de
 - El usuario sube el paquete por FTP → comprobar las 2 URLs en vivo → GSC: enviar `https://www.apavigreen.com/sitemap.xml` y solicitar la indexación.
 - Artículos del blog: "Piscina de arena vs gresite" y "Suelo antideslizante para el borde de la piscina".
 - (Opcional) Despliegue automático por FTP/SFTP con GitHub Actions para no subir a mano.
+
+## Sesión 6 oct (4): garantía unificada a 10 años
+- Decisión del usuario: **garantía de 10 años** en toda la comunicación de Apavi.
+- `index.html`: meta description, OG, Twitter y schema (oferta Plan Renove + 3 FAQ) → 10 años.
+- `plan-renove.html`: texto de la oferta, cifra destacada y paso 4 → 10 años. El testimonio ("césped de hace 8 años") no se toca porque no habla de la garantía.
+- **Sin cambiar (pendiente de confirmar):** la tabla de `blog/precio-cesped-artificial-canarias.html` da la garantía por gama (Básico 5 / Estándar 8 / Premium 10 años). Es garantía del producto según la calidad, no la garantía general.
+- FTP: `SUBIR-FTP/2026-10-06-piscinas-y-resineo/` actualizado (ya incluye estos cambios) + `SUBIR-FTP/2026-10-06-garantia-10-anos/` por si el primero ya se había subido.
