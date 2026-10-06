@@ -264,3 +264,9 @@ Nota: en `biodesign-tenerife`, `tests/leads-handler.test.js` ya fallaba antes de
 - [Muya58/biodesign-tenerife#1](https://github.com/Muya58/biodesign-tenerife/pull/1) → `master` (16943e9). Vercel publica solo.
 - Comprobado antes de fusionar: ninguno de los dos repos tiene despliegue por FTP (solo `vercel.json`). No afectan a apavigreen.com.
 - Pendiente: GSC de las dos landings (sitemap + solicitar la indexación).
+
+## Correo de contacto: web@apavigreen.com
+- Indicación del usuario: el correo de contacto es **web@apavigreen.com**.
+- Résineo: `info@` → `web@` en el schema y en contacto.html ([Muya58/resineo-canarias#2](https://github.com/Muya58/resineo-canarias/pull/2), fusionado; Vercel lo publica).
+- Bio.design: ya usaba `web@`. ✅
+- **Apavi (pendiente, para la recuperación de mañana):** `proyectos.html:126` sigue con `info@apavigreen.com` (2 veces). No se toca ahora porque el FTP de Apavi está congelado hasta recuperar el trabajo del 6-10; corregirlo en el paquete de recuperación, partiendo de la versión del servidor.
