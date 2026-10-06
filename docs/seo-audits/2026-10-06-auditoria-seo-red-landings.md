@@ -240,3 +240,14 @@ Nota: en `biodesign-tenerife`, `tests/leads-handler.test.js` ya fallaba antes de
 - Se deshace el commit de la garantía en `index.html` y `plan-renove.html`. Se elimina el paquete `SUBIR-FTP/2026-10-06-garantia-10-anos/`.
 - `SUBIR-FTP/2026-10-06-piscinas-y-resineo/` vuelve a tener 17 archivos (sin `plan-renove.html`), con el `index.html` sin cambios de garantía. **Es el único paquete que hay que subir.**
 - Aprendizaje: no unificar cifras de garantía entre productos; si hace falta, aclarar en el texto "según producto".
+
+## ⚠️ Incidente 6 oct (noche): se sobrescribe el trabajo de la mañana en el servidor
+- Por la mañana, el usuario hizo cambios en Apavi desde el **ordenador del trabajo** y los subió por FTP: fotos nuevas y cambios en resinas epoxi, jardines verticales y "en todo". **Esos cambios no estaban en GitHub.**
+- El paquete `SUBIR-FTP/2026-10-06-piscinas-y-resineo/` se generó desde GitHub (versión del 29-9) y, al subirlo, **sobrescribió 15 HTML + sitemap** con versiones antiguas. El usuario confirma que se ha perdido el trabajo de hoy en esas páginas.
+- **Sigue en el servidor:** las fotos subidas hoy (el paquete no llevaba imágenes) y las páginas que no estaban en el paquete.
+- **Plan de recuperación:**
+  1. Ordenador del trabajo: buscar la carpeta local desde la que se subió por FTP (o la conversación de Claude/herramienta con la que se editó).
+  2. Si no hay copia: pedir a Voxia que restaure la copia de seguridad (snapshot de AWS) de hoy anterior a las 21:00, solo de los 15 HTML + sitemap.
+  3. Con esas versiones: reaplicar los cambios de enlazado (script `apavi_hubs.py`: footer, bento de la portada, enlace en resinas-epoxi, sitemap) **encima** y generar un paquete nuevo.
+  4. Guardar en GitHub la versión real del servidor.
+- **Regla nueva (obligatoria):** antes de preparar cualquier paquete para el FTP de Apavi, **preguntar si se ha cambiado algo en el servidor desde la última sincronización** y, si es así, partir de los archivos del servidor (descargarlos por FTP), nunca solo de GitHub. Cualquier cambio que haga el usuario por su cuenta → subirlo también a GitHub.
