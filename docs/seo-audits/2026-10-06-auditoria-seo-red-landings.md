@@ -184,3 +184,27 @@ Reglas:
 
 Ramas: `claude/eloquent-meitner-0l435q` en los tres repos (`apavi-green`, `resineo-canarias`, `biodesign-tenerife`). Las landings se despliegan desde `master` en Vercel: **hasta que se fusionen esas ramas, los cambios no estarán en vivo**.
 Nota: en `biodesign-tenerife`, `tests/leads-handler.test.js` ya fallaba antes de estos cambios (dependencias sin instalar en el entorno); el resto de los tests pasa.
+
+---
+
+## Sesión 6 oct (continuación): PRs y contenido de Résineo
+
+**PRs abiertos:**
+- [Muya58/apavi-green#2](https://github.com/Muya58/apavi-green/pull/2): informe + enlaces www y anchors descriptivos
+- [Muya58/biodesign-tenerife#1](https://github.com/Muya58/biodesign-tenerife/pull/1): teléfono + enlace a Apavi en el footer
+- [Muya58/resineo-canarias#1](https://github.com/Muya58/resineo-canarias/pull/1): teléfono, enlaces, **contenido ampliado** y arreglos de CSS
+
+**Résineo: lo hecho (estrategia #1 del plan trimestral)**
+- `piscinas` (~1.000 palabras), `suelos-terrazas` (~850) y `tecnologia` (~700 + ficha técnica), con FAQ visible y schema Service/FAQPage.
+- `realizaciones`, `quienes-somos` y `contacto` ampliadas sin inventar obras ni precios.
+- Home: H1 con keyword; «El suelo que respira tu piscina» pasa a subtítulo.
+- Bug corregido: el botón «Pedir presupuesto» de la cabecera era invisible (texto verde sobre fondo verde).
+- Datos técnicos verificados con fuentes públicas de Résineo/LRVision: 95-97 % granulado, drenaje de 30-50 L/s/m², PN18, 10 mm sobre hormigón / 30 mm sobre grava, CSTB, hidrolimpiadora máx. 80 bar a 30 cm, vida útil de 10-15 años.
+
+**Pendiente**
+1. Fusionar los 3 PRs (las landings no cambian en vivo hasta entonces).
+2. GSC: enviar los sitemaps y solicitar la indexación.
+3. Decidir la garantía 8 vs 10 años en Apavi.
+4. Siguiente paso: páginas hub en Apavi (`/piscinas-de-arena.html`, `/suelos-resineo.html`).
+5. Résineo: formulario real de contacto, GA4/GTM, imágenes a WebP y fotos de obras propias cuando las haya.
+6. Precio orientativo €/m² de Résineo en cuanto lo tengáis cerrado (sube mucho la conversión y el SEO de "precio").
