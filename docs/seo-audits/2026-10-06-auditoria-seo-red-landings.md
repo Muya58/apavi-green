@@ -234,3 +234,9 @@ Nota: en `biodesign-tenerife`, `tests/leads-handler.test.js` ya fallaba antes de
 - `plan-renove.html`: texto de la oferta, cifra destacada y paso 4 → 10 años. El testimonio ("césped de hace 8 años") no se toca porque no habla de la garantía.
 - **Sin cambiar (pendiente de confirmar):** la tabla de `blog/precio-cesped-artificial-canarias.html` da la garantía por gama (Básico 5 / Estándar 8 / Premium 10 años). Es garantía del producto según la calidad, no la garantía general.
 - FTP: `SUBIR-FTP/2026-10-06-piscinas-y-resineo/` actualizado (ya incluye estos cambios) + `SUBIR-FTP/2026-10-06-garantia-10-anos/` por si el primero ya se había subido.
+
+## Sesión 6 oct (5): se revierte la garantía a 10 años
+- **Decisión final del usuario:** cada producto mantiene su propia garantía (p. ej. Plan Renove · Confort 30 mm = 8 años; tabla del blog por gamas: 5/8/10). Los "10 años" generales de la portada se quedan como estaban.
+- Se deshace el commit de la garantía en `index.html` y `plan-renove.html`. Se elimina el paquete `SUBIR-FTP/2026-10-06-garantia-10-anos/`.
+- `SUBIR-FTP/2026-10-06-piscinas-y-resineo/` vuelve a tener 17 archivos (sin `plan-renove.html`), con el `index.html` sin cambios de garantía. **Es el único paquete que hay que subir.**
+- Aprendizaje: no unificar cifras de garantía entre productos; si hace falta, aclarar en el texto "según producto".
