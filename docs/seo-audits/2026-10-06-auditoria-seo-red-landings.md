@@ -251,3 +251,10 @@ Nota: en `biodesign-tenerife`, `tests/leads-handler.test.js` ya fallaba antes de
   3. Con esas versiones: reaplicar los cambios de enlazado (script `apavi_hubs.py`: footer, bento de la portada, enlace en resinas-epoxi, sitemap) **encima** y generar un paquete nuevo.
   4. Guardar en GitHub la versión real del servidor.
 - **Regla nueva (obligatoria):** antes de preparar cualquier paquete para el FTP de Apavi, **preguntar si se ha cambiado algo en el servidor desde la última sincronización** y, si es así, partir de los archivos del servidor (descargarlos por FTP), nunca solo de GitHub. Cualquier cambio que haga el usuario por su cuenta → subirlo también a GitHub.
+
+## ✅ Para mañana (7 oct)
+1. En el ordenador del trabajo: localizar los HTML subidos el 6-10 por la mañana (carpeta de FileZilla, Explorador `*.html fechademodificación:...`, Descargas o conversación de Claude).
+2. Hacerlos llegar a esta sesión: subirlos a GitHub en `Muya58/apavi-green` → **Add file → Upload files**, a la carpeta `servidor/2026-10-07/` (rama nueva), o adjuntar un .zip en el chat.
+3. Claude: reaplicar los enlaces de las páginas hub sobre esas versiones → paquete `SUBIR-FTP/2026-10-07-recuperacion/` → revisión archivo por archivo → subida.
+4. Guardar en GitHub la versión real del servidor (fuente de la verdad).
+5. Después: GSC (sitemap con www y solicitud de indexación), fusionar los PRs de Résineo y Bio.design y los artículos del blog.
