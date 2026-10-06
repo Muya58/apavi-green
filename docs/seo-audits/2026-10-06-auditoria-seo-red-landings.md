@@ -208,3 +208,22 @@ Nota: en `biodesign-tenerife`, `tests/leads-handler.test.js` ya fallaba antes de
 4. Siguiente paso: páginas hub en Apavi (`/piscinas-de-arena.html`, `/suelos-resineo.html`).
 5. Résineo: formulario real de contacto, GA4/GTM, imágenes a WebP y fotos de obras propias cuando las haya.
 6. Precio orientativo €/m² de Résineo en cuanto lo tengáis cerrado (sube mucho la conversión y el SEO de "precio").
+
+---
+
+## Sesión 6 oct (3): páginas hub en Apavi (subida manual por FTP)
+
+**Contexto:** apavigreen.com está en AWS y se sube **a mano por FTP**: los cambios no se publican al fusionar el PR. A partir de ahora, cada entrega para Apavi va en una carpeta `SUBIR-FTP/<fecha>-<tema>/` con la misma estructura que el servidor, un `LEEME.txt` y un `.zip`.
+
+**Hecho**
+- Nuevas: `piscinas-de-arena.html` (~670 palabras, concesión Bio.design solo en la provincia de Santa Cruz de Tenerife) y `suelos-resineo.html` (~580 palabras, todas las islas). Cada una con FAQ visible + schema `Service` y `FAQPage`, enlace a su landing y enlaces cruzados (Résineo ↔ piscinas de arena, Résineo ↔ resina epoxi, piscinas de arena → césped artificial Tenerife).
+- Portada: las tarjetas bento de Bio.design y Résineo apuntan a las páginas internas (ya no abren otra pestaña). En el footer, "Piscinas y moqueta de mármol" (#contacto) se sustituye por los 2 enlaces nuevos; "Nuestras marcas" sigue enlazando a las landings.
+- Footer "Servicios" de 13 páginas + 1 artículo del blog: añadidos Piscinas de Arena y Suelo Résineo.
+- `resinas-epoxi.html`: enlace contextual a Suelo Résineo.
+- `sitemap.xml`: 2 URLs nuevas; lastmod actualizado de home y resinas-epoxi.
+- Paquete: `SUBIR-FTP/2026-10-06-piscinas-y-resineo/` (17 archivos) + `.zip`.
+
+**Pendiente**
+- El usuario sube el paquete por FTP → comprobar las 2 URLs en vivo → GSC: enviar `https://www.apavigreen.com/sitemap.xml` y solicitar la indexación.
+- Artículos del blog: "Piscina de arena vs gresite" y "Suelo antideslizante para el borde de la piscina".
+- (Opcional) Despliegue automático por FTP/SFTP con GitHub Actions para no subir a mano.

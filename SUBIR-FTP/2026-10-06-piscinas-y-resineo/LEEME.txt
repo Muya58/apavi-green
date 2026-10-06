@@ -1,0 +1,30 @@
+SUBIDA FTP - 6 de octubre de 2026
+Páginas nuevas: Piscinas de Arena + Suelo Résineo
+==================================================
+
+CÓMO SUBIRLO
+1. Abre tu programa de FTP (FileZilla u otro) y conéctate al servidor de apavigreen.com.
+2. En el servidor, entra en la carpeta raíz de la web (donde están index.html y sitemap.xml).
+3. Arrastra TODO el contenido de esta carpeta (no la carpeta en sí) a esa raíz.
+   - Cuando pregunte si sobrescribir, di que SÍ.
+   - La carpeta "blog" contiene 1 archivo: va dentro de la carpeta "blog" del servidor.
+4. No subas este archivo LEEME.txt (no pasa nada si lo subes, pero no hace falta).
+
+ARCHIVOS NUEVOS (2)
+- piscinas-de-arena.html
+- suelos-resineo.html
+
+ARCHIVOS MODIFICADOS (15)
+- index.html ............ las tarjetas de Piscinas de arena y Résineo llevan a las páginas nuevas; pie de página actualizado
+- sitemap.xml ........... incluye las 2 páginas nuevas
+- resinas-epoxi.html .... enlace a Suelo Résineo + pie de página
+- 12 páginas más ........ solo cambia el pie de página (enlaces a las 2 páginas nuevas)
+
+COMPROBAR DESPUÉS DE SUBIR
+- https://www.apavigreen.com/piscinas-de-arena.html
+- https://www.apavigreen.com/suelos-resineo.html
+- En la portada, pulsa las tarjetas "Bio.design · Piscinas de Arena" y "Resineo": deben abrir las páginas nuevas.
+
+GOOGLE SEARCH CONSOLE (propiedad www.apavigreen.com)
+- Sitemaps -> enviar: https://www.apavigreen.com/sitemap.xml
+- Inspección de URLs -> solicitar indexación de las 2 páginas nuevas.
