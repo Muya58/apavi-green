@@ -81,3 +81,8 @@
 En una sesión nueva, desde cualquier ordenador, escribe:
 
 > *"Lee `docs/seo-audits/2026-10-06-RESUMEN-SESION-Y-PLAN-7-OCT.md` de la rama `claude/eloquent-meitner-0l435q` del repo apavi-green y sigue con el plan del 7 de octubre."*
+
+---
+
+## 6. Herramienta guardada
+- `docs/herramientas/apavi_hubs.py`: script que generó las páginas hub y añade los enlaces (tarjetas de la portada, pie de página "Servicios", enlace en resinas-epoxi y sitemap). **Para la recuperación de mañana NO se ejecuta entero**, porque volvería a crear las páginas hub (que ya están bien en el servidor). Se reutilizan solo sus bloques de "portada", "footers", "resinas-epoxi" y "sitemap" sobre los archivos del servidor.
