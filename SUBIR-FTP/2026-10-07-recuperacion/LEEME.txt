@@ -1,0 +1,37 @@
+SUBIDA FTP - 7 de octubre de 2026
+Recuperación + galería de obras de epoxi + todo el archipiélago
+================================================================
+
+Parte de TU web de ayer (los paquetes SUBIR-FTP-2026-10-06 ... -r que subiste
+hoy desde la oficina) y le añade solo estos cambios. No borra nada tuyo.
+
+CÓMO SUBIRLO
+1. FileZilla: izquierda = esta carpeta, derecha = raíz del servidor
+   (donde están index.html y sitemap.xml).
+2. Selecciona TODO menos este LEEME.txt y arrástralo a la raíz.
+3. Cuando pregunte por los archivos existentes: "Sobrescribir" y marca
+   "Usar siempre esta acción" (NO "si es más reciente").
+   La carpeta "blog" lleva 1 archivo y se fusiona con la del servidor.
+
+QUÉ CAMBIA (23 archivos)
+- resinas-epoxi.html ..... cada obra se abre en grande con flechas para pasar de
+                           una a otra (también deslizando en el móvil) y botón
+                           "Quiero un suelo así". Enlace a Suelo Résineo.
+- index.html ............. sección "Todo el archipiélago canario y Andalucía":
+                           tarjeta "Todas las Islas Canarias" -> zonas.html,
+                           tarjetas con estilo (antes salían sin diseño),
+                           Cádiz/Málaga con tilde. Tarjetas Bio.design y Résineo
+                           -> páginas nuevas. Pie de página con los enlaces nuevos.
+- piscinas-de-arena.html . (actualizada con el menú y el pie de página nuevos)
+- suelos-resineo.html .... (actualizada con el menú y el pie de página nuevos)
+- sitemap.xml ............ tus 29 URLs de ayer + las 2 páginas nuevas (31)
+- proyectos.html ......... correo de contacto web@apavigreen.com
+- 17 páginas más ......... solo el pie de página "Servicios": añade
+                           "Piscinas de Arena" y "Suelo Résineo"
+
+NO TOCA: fotos (assets), plan-renove, blog.html, avisos legales, cuestionario.
+
+COMPROBAR DESPUÉS (Ctrl+F5)
+- www.apavigreen.com/resinas-epoxi.html -> pulsa una obra: se abre en grande.
+- Portada -> sección de cobertura con "Todas las Islas Canarias".
+- Tarjetas "Bio.design" y "Resineo" de la portada -> abren las páginas nuevas.
