@@ -1,0 +1,17 @@
+SUBIDA FTP - 7 oct 2026 (b): 3 arreglos pequeños
+================================================
+Ya existían antes de ayer; no tocan nada de tu trabajo.
+
+Sube todo menos este LEEME.txt a la raíz del servidor ("Sobrescribir").
+La carpeta assets/js lleva 1 archivo: va dentro de assets/js del servidor.
+
+- assets/js/cookies.js ... en los artículos del blog, los enlaces del banner de
+                           cookies ("Política de Cookies" y "Privacidad") daban
+                           error 404. Ahora llevan a la página correcta.
+- cookies.html ........... la tabla de cookies se salía de la pantalla en el móvil.
+- quienes-somos.html ..... las cifras ("+200 proyectos"…) se salían de la
+                           pantalla en el móvil; ahora van en una columna.
+
+COMPROBAR (en el móvil, Ctrl+F5 en el ordenador):
+- Abre un artículo del blog -> banner de cookies -> "Política de Cookies".
+- Quiénes somos en el móvil: no debe moverse hacia los lados.

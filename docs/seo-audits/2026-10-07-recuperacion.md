@@ -19,3 +19,10 @@ Anterior: [[2026-10-06-RESUMEN-SESION-Y-PLAN-7-OCT]] (rama `claude/eloquent-meit
 
 ## Fotos subidas el 6-10 sin usar en ninguna página
 - Añadidas a la galería de epoxi: `resina-epoxi-local-gran-superficie.webp` y `resina-epoxi-local-acabado-brillo.webp`. `resina-epoxi-camara.webp` es un duplicado exacto de `resina-epoxi-camara-frigorifica.webp` (mismo archivo); no se añade.
+
+## Comprobación del 7-10 tras la subida
+- No se puede abrir apavigreen.com desde la sesión (dominio bloqueado por la red del entorno). Revisión local de las 37 páginas de la rama `servidor-2026-10-06`: enlaces internos, imágenes, errores de JS y scroll horizontal en móvil.
+- Todo lo subido hoy, correcto. Se encontraron 3 fallos anteriores, ya arreglados en `SUBIR-FTP/2026-10-07-b-arreglos/`:
+  - `assets/js/cookies.js`: los enlaces del banner eran relativos → 404 en `/blog/`. Ahora son `/cookies.html` y `/privacidad.html`.
+  - `cookies.html`: la tabla se desbordaba en móvil → contenedor con scroll.
+  - `quienes-somos.html`: la rejilla de 2 columnas se desbordaba en móvil → 1 columna por debajo de 760 px.
