@@ -46,3 +46,4 @@ Anterior: [[2026-10-06-RESUMEN-SESION-Y-PLAN-7-OCT]] (rama `claude/eloquent-meit
 - Paquete: `SUBIR-FTP/2026-10-07-d-blog-piscinas/` (SUBIR-ESTO + INSTRUCCIONES aparte).
 - ✅ Blog subido y verificado en vivo (11 archivos idénticos; sitemap con 33 URLs). Pendiente: el usuario solicita la indexación de los 2 artículos.
 - Siguiente: kit de reseñas → [[2026-10-07-kit-resenas-google]] (docs/marketing).
+- 7-10: se llegó al cupo diario de solicitudes de indexación de Apavi en GSC. **El 8-10, terminar con las que falten** de: blog/piscina-de-arena-vs-gresite, blog/suelo-antideslizante-borde-piscina, cesped-artificial-la-palma, -la-gomera, -el-hierro. Résineo y Piscinas tienen su propio cupo.
