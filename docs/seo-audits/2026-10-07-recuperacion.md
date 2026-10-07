@@ -18,4 +18,4 @@ Anterior: [[2026-10-06-RESUMEN-SESION-Y-PLAN-7-OCT]] (rama `claude/eloquent-meit
 - **proyectos.html:** info@ → web@apavigreen.com.
 
 ## Fotos subidas el 6-10 sin usar en ninguna página
-- `assets/img/resinas/resina-epoxi-camara.webp`, `resina-epoxi-local-acabado-brillo.webp`, `resina-epoxi-local-gran-superficie.webp` (se pueden añadir a la galería de epoxi si el usuario quiere).
+- Añadidas a la galería de epoxi: `resina-epoxi-local-gran-superficie.webp` y `resina-epoxi-local-acabado-brillo.webp`. `resina-epoxi-camara.webp` es un duplicado exacto de `resina-epoxi-camara-frigorifica.webp` (mismo archivo); no se añade.

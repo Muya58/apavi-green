@@ -14,7 +14,7 @@ CÓMO SUBIRLO
    La carpeta "blog" lleva 1 archivo y se fusiona con la del servidor.
 
 QUÉ CAMBIA (23 archivos)
-- resinas-epoxi.html ..... cada obra se abre en grande con flechas para pasar de
+- resinas-epoxi.html ..... 2 obras nuevas (locales comerciales). Cada obra se abre en grande con flechas para pasar de
                            una a otra (también deslizando en el móvil) y botón
                            "Quiero un suelo así". Enlace a Suelo Résineo.
 - index.html ............. sección "Todo el archipiélago canario y Andalucía":
