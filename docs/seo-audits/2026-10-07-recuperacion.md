@@ -44,3 +44,5 @@ Anterior: [[2026-10-06-RESUMEN-SESION-Y-PLAN-7-OCT]] (rama `claude/eloquent-meit
 - Fotos de Bio.design y Résineo (catálogo del fabricante, con el crédito "Imagen: Bio.design/Résineo"; no se presentan como obras propias) → `assets/img/blog/piscinas/`.
 - Categoría nueva "Piscinas" en `posts.json`; sitemap con 33 URLs; enlaces desde las páginas hub.
 - Paquete: `SUBIR-FTP/2026-10-07-d-blog-piscinas/` (SUBIR-ESTO + INSTRUCCIONES aparte).
+- ✅ Blog subido y verificado en vivo (11 archivos idénticos; sitemap con 33 URLs). Pendiente: el usuario solicita la indexación de los 2 artículos.
+- Siguiente: kit de reseñas → [[2026-10-07-kit-resenas-google]] (docs/marketing).
