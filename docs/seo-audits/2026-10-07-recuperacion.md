@@ -35,3 +35,5 @@ Anterior: [[2026-10-06-RESUMEN-SESION-Y-PLAN-7-OCT]] (rama `claude/eloquent-meit
 - ✅ Carpeta `/2026-10-07-b-arreglos/` borrada del servidor (verificado: 404).
 - Lección: las instrucciones van FUERA de la carpeta a subir (`SUBIR-ESTO/`), y se sube su CONTENIDO, no la carpeta.
 - Search Console: sitemaps listos (Apavi 31, Résineo 7, Piscinas 6; las 44 URLs dan 200; cada robots.txt apunta a su sitemap). El usuario envía los sitemaps y solicita la indexación (prioridad: home, resinas-epoxi, piscinas-de-arena, suelos-resineo, zonas, Lanzarote, Fuerteventura, caso Carrizal; al día siguiente La Palma, La Gomera y El Hierro).
+- ✅ Indexación solicitada en GSC (7-10). Incidencia: un 404 en Fuerteventura era por un punto al final de la URL pegada; la página da 200 también para Googlebot.
+- Próximo: el 8-10, solicitar la indexación de La Palma, La Gomera y El Hierro. Dentro de 1-2 semanas, revisar Páginas > Indexadas y Rendimiento.
