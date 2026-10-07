@@ -4,7 +4,7 @@ Anterior: [[2026-10-06-RESUMEN-SESION-Y-PLAN-7-OCT]] (rama `claude/eloquent-meit
 
 ## Qué pasó
 - El 6-10 por la noche, un paquete generado desde GitHub sobrescribió el trabajo de la mañana en el servidor.
-- El 7-10 el usuario volvió a subir sus archivos desde la oficina y envió un zip con **todos los paquetes FTP del 6-10**: `SUBIR-FTP-2026-10-06` (completo) y `-b, -c, -e, -f, -g, -h, -i, -j, -l, -m, -n, -o, -q, -r`. **Faltan a, d, k y p** (pendiente de confirmar si existieron).
+- El 7-10 el usuario volvió a subir sus archivos desde la oficina y envió un zip con **todos los paquetes FTP del 6-10**: `SUBIR-FTP-2026-10-06` (completo) y `-b, -c, -e, -f, -g, -h, -i, -j, -l, -m, -n, -o, -q, -r`. Las letras a, d, k y p **no existieron** (confirmado por el usuario el 7-10): la reconstrucción está completa.
 
 ## Fuente de la verdad
 - Rama **`servidor-2026-10-06`** = `master` + paquetes del 6-10 aplicados en orden. Es la copia de lo que hay en el servidor.
