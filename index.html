@@ -1705,6 +1705,25 @@
     .bento-card { will-change: transform; }
     /* Quitamos el scale CSS puro para que no choque con vanilla-tilt */
     .bento-card:hover { transform: none; }
+    /* ZONAS (cobertura) */
+    #zonas{background:transparent!important;}
+    #zonas .container{max-width:1200px;margin:0 auto;padding:0 40px;}
+    #zonas .section-header{margin-bottom:32px;}
+    #zonas .section-label{color:var(--green-400);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;}
+    #zonas .section-sub{color:rgba(255,255,255,.6);max-width:640px;line-height:1.7;margin-top:12px;}
+    #zonas .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+    #zonas .benefit-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:24px 22px;display:flex;flex-direction:column;transition:border-color .2s ease,transform .2s ease;}
+    #zonas .benefit-card:hover{border-color:var(--green-500);transform:translateY(-3px);}
+    #zonas .benefit-card:first-child{background:linear-gradient(160deg,rgba(46,181,112,.18),rgba(255,255,255,.03));border-color:rgba(92,201,140,.35);}
+    #zonas .benefit-icon{font-size:30px;margin-bottom:12px;}
+    #zonas .benefit-title{color:#fff;font-size:17px;font-weight:700;margin-bottom:8px;}
+    #zonas .benefit-desc{color:rgba(255,255,255,.62);font-size:14px;line-height:1.6;flex:1;}
+    #zonas .benefit-card a{color:var(--green-400)!important;text-decoration:none;}
+    #zonas .benefit-card a:hover{color:var(--green-300)!important;}
+    #zonas .btn-green{display:inline-block;background:var(--green-500);color:#fff;font-weight:600;padding:13px 26px;border-radius:999px;text-decoration:none;}
+    #zonas .btn-green:hover{background:var(--green-400);}
+    @media (max-width:1000px){#zonas .benefit-grid{grid-template-columns:repeat(2,1fr);}}
+    @media (max-width:600px){#zonas .container{padding:0 20px;}#zonas .benefit-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -1834,7 +1853,7 @@
     </div>
 
     <div class="bento" data-reveal>
-      <a href="https://piscinadearenatenerife.com" class="bento-card b0a" target="_blank" rel="noopener">
+      <a href="piscinas-de-arena.html" class="bento-card b0a">
         <img class="bento-img" src="assets/img/servicios/piscina-2.webp" alt="Piscina de arena Bio.design en Tenerife — concesionario oficial Apavi Green">
         <div class="bento-overlay"></div>
         <div class="bento-arrow">
@@ -1845,7 +1864,7 @@
           <div class="bento-name">Bio.design · Piscinas de Arena</div>
         </div>
       </a>
-      <a href="https://resineocanarias.com" class="bento-card b0b" target="_blank" rel="noopener">
+      <a href="suelos-resineo.html" class="bento-card b0b">
         <img class="bento-img" src="assets/img/servicios/resineo-terraza.webp" alt="Suelo Resineo en piscina y terraza en Canarias — Apavi Green">
         <div class="bento-overlay"></div>
         <div class="bento-arrow">
@@ -2029,13 +2048,13 @@
     <div class="section-header">
       <div class="deco-line"></div>
       <div class="section-label">Cobertura</div>
-      <h2 class="section-title">Ahora tambien en <em>Tenerife y Andalucia</em></h2>
-      <p class="section-sub">Ademas de Canarias, ya instalamos cesped artificial en la provincia de Tenerife, Cadiz, Malaga y Sevilla.</p>
+      <h2 class="section-title">Todo el <em>archipiélago canario</em> y Andalucía</h2>
+      <p class="section-sub">Trabajamos en las 7 islas Canarias con equipo propio, y también instalamos césped artificial en Cádiz, Málaga y Sevilla.</p>
     </div>
     <div class="benefit-grid">
-      <div class="benefit-card"><div class="benefit-icon">&#127754;</div><div class="benefit-title">Tenerife</div><div class="benefit-desc">Norte y sur de la isla.</div><a href="cesped-artificial-tenerife.html" style="display:inline-block;margin-top:10px;font-weight:600;">Ver zona &rarr;</a></div>
-      <div class="benefit-card"><div class="benefit-icon">&#127754;</div><div class="benefit-title">Cadiz</div><div class="benefit-desc">Jerez, El Puerto, Chiclana y provincia.</div><a href="cesped-artificial-cadiz.html" style="display:inline-block;margin-top:10px;font-weight:600;">Ver zona &rarr;</a></div>
-      <div class="benefit-card"><div class="benefit-icon">&#127960;</div><div class="benefit-title">Malaga</div><div class="benefit-desc">Costa del Sol y provincia.</div><a href="cesped-artificial-malaga.html" style="display:inline-block;margin-top:10px;font-weight:600;">Ver zona &rarr;</a></div>
+      <div class="benefit-card"><div class="benefit-icon">&#127754;</div><div class="benefit-title">Todas las Islas Canarias</div><div class="benefit-desc">Trabajamos en todo el archipiélago: Gran Canaria, Tenerife, Lanzarote, Fuerteventura, La Palma, La Gomera y El Hierro.</div><a href="zonas.html" style="display:inline-block;margin-top:10px;font-weight:600;">Ver todas las islas &rarr;</a></div>
+      <div class="benefit-card"><div class="benefit-icon">&#127754;</div><div class="benefit-title">Cádiz</div><div class="benefit-desc">Jerez, El Puerto, Chiclana y provincia.</div><a href="cesped-artificial-cadiz.html" style="display:inline-block;margin-top:10px;font-weight:600;">Ver zona &rarr;</a></div>
+      <div class="benefit-card"><div class="benefit-icon">&#127960;</div><div class="benefit-title">Málaga</div><div class="benefit-desc">Costa del Sol y provincia.</div><a href="cesped-artificial-malaga.html" style="display:inline-block;margin-top:10px;font-weight:600;">Ver zona &rarr;</a></div>
       <div class="benefit-card"><div class="benefit-icon">&#9728;</div><div class="benefit-title">Sevilla</div><div class="benefit-desc">Capital y provincia.</div><a href="cesped-artificial-sevilla.html" style="display:inline-block;margin-top:10px;font-weight:600;">Ver zona &rarr;</a></div>
     </div>
     <div style="text-align:center;margin-top:28px;"><a href="zonas.html" class="btn-green">Ver todas las zonas &rarr;</a></div>
@@ -2382,7 +2401,8 @@
           <li><a href="espacios-infantiles.html">Espacios Infantiles</a></li>
           <li><a href="pavimento-pvc.html">Pavimento PVC</a></li>
           <li><a href="resinas-epoxi.html">Resinas Epoxi</a></li>
-          <li><a href="#contacto">Piscinas y moqueta de mármol</a></li>
+          <li><a href="piscinas-de-arena.html">Piscinas de Arena</a></li>
+          <li><a href="suelos-resineo.html">Suelo Résineo</a></li>
         </ul>
       </div>
       <div>
@@ -2407,8 +2427,8 @@
       <div>
         <div class="footer-col-title">Nuestras marcas</div>
         <ul class="footer-col-links">
-          <li><a href="https://piscinadearenatenerife.com" target="_blank" rel="noopener">Bio.design Tenerife</a></li>
-          <li><a href="https://resineocanarias.com" target="_blank" rel="noopener">Resineo Canarias</a></li>
+          <li><a href="https://www.piscinadearenatenerife.com/" target="_blank" rel="noopener">Piscinas de arena en Tenerife (Bio.design)</a></li>
+          <li><a href="https://resineocanarias.com/" target="_blank" rel="noopener">Suelos Résineo para piscinas y terrazas</a></li>
         </ul>
       </div>
     </div>
