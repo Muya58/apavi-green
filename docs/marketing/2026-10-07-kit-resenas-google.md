@@ -4,11 +4,21 @@
 > Es lo que más ayuda ahora al SEO local: posición en Google Maps y en el "pack local", y confianza para quien compara empresas.
 > Relacionado: [[2026-10-07-recuperacion]] · [[2026-10-06-auditoria-seo-red-landings]]
 
-## 1. Consigue tu enlace directo de reseña (una sola vez)
+## 0. Enlace y materiales (listos)
+- **Enlace de reseña:** https://g.page/r/CfyJk8i25aSgEAE/review
+- **QR** (verificado, lleva al enlace): `docs/marketing/resenas/qr-resenas-google.png` y `.svg` (vectorial, para imprenta)
+- **Tarjeta para WhatsApp/redes** 1080×1350: `docs/marketing/resenas/tarjeta-resenas-1080x1350.png`
+- **Tarjeta imprimible A6** (10,5×14,8 cm a 300 ppp): `docs/marketing/resenas/tarjeta-resenas-A6-imprimir.png`
+
+### Respuesta rápida de WhatsApp Business
+Ajustes → Herramientas para la empresa → Respuestas rápidas → Añadir. Atajo: `/resena`. Mensaje:
+> ¡Muchas gracias por confiar en Apavi Green! 😊 Si estás contento con el trabajo, nos ayudaría mucho tu opinión en Google (1 minuto): https://g.page/r/CfyJk8i25aSgEAE/review ¡Gracias!
+
+## 1. Cómo se consiguió el enlace (por si hay que repetirlo)
 1. Entra en Google con la cuenta de la ficha y busca **"Apavi Green"**, o abre business.google.com.
 2. En el panel de tu ficha pulsa **"Pedir reseñas"** (o "Conseguir más reseñas").
 3. Copia el enlace (tipo `https://g.page/r/XXXXXXXX/review`). Al abrirlo, el cliente ve directamente las estrellas.
-4. Pégalo en los mensajes de abajo, donde pone **[ENLACE]**, y guárdalo también en WhatsApp Business como respuesta rápida (`/resena`).
+4. Pégalo en los mensajes de abajo, donde pone **https://g.page/r/CfyJk8i25aSgEAE/review**, y guárdalo también en WhatsApp Business como respuesta rápida (`/resena`).
 
 ## 2. A quién pedírsela (por orden)
 1. Clientes de los **últimos 3-6 meses** contentos con el trabajo (Carrizal, Lanzarote, Tafira, oficinas de epoxi, guardería…).
@@ -22,13 +32,13 @@ Meta realista: **10 reseñas nuevas en 30 días** y luego 3-4 al mes.
 ### WhatsApp: obra recién terminada
 > ¡Hola [Nombre]! Soy [tu nombre], de Apavi Green. Muchas gracias por confiar en nosotros para [el césped / el suelo de resina / el jardín vertical]. 😊
 > Si estás contento con el resultado, nos ayudaría muchísimo que dejaras una reseña en Google, solo te llevará un minuto:
-> 👉 [ENLACE]
+> 👉 https://g.page/r/CfyJk8i25aSgEAE/review
 > Si te apetece, menciona qué hicimos y en qué zona (por ejemplo, "césped artificial en Telde"). ¡Gracias de corazón!
 
 ### WhatsApp: cliente de hace unos meses
 > ¡Hola [Nombre]! Soy [tu nombre], de Apavi Green. Hace unos meses os instalamos [el césped artificial / el suelo de resina] en [zona]. ¿Qué tal sigue? 😊
 > Estamos pidiendo a nuestros clientes que nos cuenten su experiencia en Google, porque nos ayuda mucho a llegar a más gente. Si te animas:
-> 👉 [ENLACE]
+> 👉 https://g.page/r/CfyJk8i25aSgEAE/review
 > ¡Mil gracias!
 
 ### Email (empresas, comunidades, hoteles)
@@ -38,14 +48,14 @@ Meta realista: **10 reseñas nuevas en 30 días** y luego 3-4 al mes.
 > Gracias de nuevo por contar con Apavi Green para [descripción breve del trabajo] en [lugar]. Esperamos que estéis contentos con el resultado.
 >
 > Si es así, ¿podrías dedicarnos un minuto para dejar una reseña en Google? Nos ayuda mucho a que otras empresas nos conozcan:
-> [ENLACE]
+> https://g.page/r/CfyJk8i25aSgEAE/review
 >
 > Cualquier cosa que necesites, aquí estamos.
 > Un saludo,
 > [Tu nombre] · Apavi Green · +34 654 765 548 · web@apavigreen.com
 
 ### Recordatorio (solo una vez, a los 5-7 días, si no la ha dejado)
-> ¡Hola [Nombre]! Te dejo de nuevo el enlace por si se te pasó; es solo un minuto 🙏 👉 [ENLACE] ¡Gracias!
+> ¡Hola [Nombre]! Te dejo de nuevo el enlace por si se te pasó; es solo un minuto 🙏 👉 https://g.page/r/CfyJk8i25aSgEAE/review ¡Gracias!
 
 ## 4. Responder a TODAS las reseñas (en menos de 48 h)
 - **Positiva:** "¡Gracias, [Nombre]! Fue un placer instalar [servicio] en [zona]. Para cualquier cosa, aquí nos tienes. — Equipo Apavi Green". Mencionar el servicio y la zona ayuda al SEO.
