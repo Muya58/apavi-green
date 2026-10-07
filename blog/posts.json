@@ -1,5 +1,15 @@
 [
   {
+    "id": 8,
+    "slug": "caso-exito-cesped-artificial-carrizal",
+    "titulo": "Caso de éxito: jardín y piscina con césped artificial en Carrizal",
+    "categoria": "Césped Artificial",
+    "fecha": "2026-10-06",
+    "imagen": "../assets/img/blog/carrizal/carrizal-piscina-pabellon.webp",
+    "extracto": "Así transformamos el jardín de una casa en Carrizal, Gran Canaria: pradera junto a la piscina, franjas entre caminos y jardineras, todo con césped artificial y sin riego.",
+    "url": "blog/caso-exito-cesped-artificial-carrizal.html"
+  },
+  {
     "id": 1,
     "slug": "cuanto-dura-cesped-artificial",
     "titulo": "¿Cuánto dura el césped artificial? Todo lo que necesitas saber",
