@@ -37,3 +37,10 @@ Anterior: [[2026-10-06-RESUMEN-SESION-Y-PLAN-7-OCT]] (rama `claude/eloquent-meit
 - Search Console: sitemaps listos (Apavi 31, Résineo 7, Piscinas 6; las 44 URLs dan 200; cada robots.txt apunta a su sitemap). El usuario envía los sitemaps y solicita la indexación (prioridad: home, resinas-epoxi, piscinas-de-arena, suelos-resineo, zonas, Lanzarote, Fuerteventura, caso Carrizal; al día siguiente La Palma, La Gomera y El Hierro).
 - ✅ Indexación solicitada en GSC (7-10). Incidencia: un 404 en Fuerteventura era por un punto al final de la URL pegada; la página da 200 también para Googlebot.
 - Próximo: el 8-10, solicitar la indexación de La Palma, La Gomera y El Hierro. Dentro de 1-2 semanas, revisar Páginas > Indexadas y Rendimiento.
+
+## Blog: 2 artículos nuevos (7-10)
+- `blog/piscina-de-arena-vs-gresite.html` (~840 palabras): comparativa, tabla, FAQ, schema Article+FAQPage+Breadcrumb; enlaza a piscinas-de-arena, piscinadearenatenerife.com y césped Tenerife.
+- `blog/suelo-antideslizante-borde-piscina.html` (~850 palabras): normativa (CTE DB SUA 1, clase 3 en piscinas de uso público; DIN 51097; PN18), comparativa de suelos, Résineo; enlaza a suelos-resineo, resineocanarias.com/piscinas y artículos de césped.
+- Fotos de Bio.design y Résineo (catálogo del fabricante, con el crédito "Imagen: Bio.design/Résineo"; no se presentan como obras propias) → `assets/img/blog/piscinas/`.
+- Categoría nueva "Piscinas" en `posts.json`; sitemap con 33 URLs; enlaces desde las páginas hub.
+- Paquete: `SUBIR-FTP/2026-10-07-d-blog-piscinas/` (SUBIR-ESTO + INSTRUCCIONES aparte).

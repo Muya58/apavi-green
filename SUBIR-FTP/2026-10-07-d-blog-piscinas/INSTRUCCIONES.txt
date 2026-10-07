@@ -1,0 +1,18 @@
+SUBIDA FTP - 7 oct 2026 (d): 2 artículos nuevos del blog
+=========================================================
+Entra en la carpeta "SUBIR-ESTO", selecciona TODO lo de dentro (Ctrl+A) y
+arrástralo a la RAÍZ del servidor (donde está index.html) -> "Sobrescribir".
+Las carpetas "blog" y "assets" se fusionan solas con las del servidor.
+
+QUÉ LLEVA (11 archivos)
+- blog/piscina-de-arena-vs-gresite.html ............ artículo nuevo
+- blog/suelo-antideslizante-borde-piscina.html ..... artículo nuevo
+- blog/posts.json .................................. añade los 2 artículos al listado del blog
+- assets/img/blog/piscinas/ (5 fotos) .............. fotos de los artículos
+- sitemap.xml ...................................... + 2 URLs (33 en total)
+- piscinas-de-arena.html y suelos-resineo.html ..... enlace a cada artículo
+
+COMPROBAR: www.apavigreen.com/blog.html -> filtro "Piscinas" con los 2 artículos.
+Search Console -> solicitar indexación de:
+https://www.apavigreen.com/blog/piscina-de-arena-vs-gresite.html
+https://www.apavigreen.com/blog/suelo-antideslizante-borde-piscina.html
