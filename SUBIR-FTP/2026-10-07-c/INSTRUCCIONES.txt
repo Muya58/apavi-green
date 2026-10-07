@@ -1,0 +1,21 @@
+SUBIDA FTP - 7 oct 2026 (c)
+===========================
+1) EN EL SERVIDOR, BORRA la carpeta "2026-10-07-b-arreglos" que quedó en la raíz
+   (clic derecho -> Eliminar). Es una copia suelta y crea páginas duplicadas.
+
+2) ENTRA en la carpeta "SUBIR-ESTO" de tu ordenador, selecciona TODO lo que hay
+   DENTRO (Ctrl+A) y arrástralo a la RAÍZ del servidor (donde está index.html).
+   ¡Ojo! El contenido, no la carpeta "SUBIR-ESTO".
+   -> "Sobrescribir" + "Usar siempre esta acción".
+
+QUÉ SE ARREGLA
+- assets/js/cuestionario.js : si falla el envío, mostraba "+34 XXX XXX XXX";
+                              ahora tu teléfono. Y avisa a Google Analytics de
+                              cada solicitud (generate_lead).
+- assets/js/analytics.js ... : versión del 29-9 (Consent Mode v2 + medición de
+                              clics en WhatsApp, teléfono y email).
+- assets/js/cookies.js ..... : enlaces del banner de cookies en el blog (daban 404).
+- cookies.html ............. : tabla de cookies en el móvil.
+- quienes-somos.html ....... : se salía de la pantalla en el móvil.
+
+Cuando termines, dímelo y lo compruebo en vivo.
