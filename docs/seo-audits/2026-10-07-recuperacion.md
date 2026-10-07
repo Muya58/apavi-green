@@ -26,3 +26,11 @@ Anterior: [[2026-10-06-RESUMEN-SESION-Y-PLAN-7-OCT]] (rama `claude/eloquent-meit
   - `assets/js/cookies.js`: los enlaces del banner eran relativos → 404 en `/blog/`. Ahora son `/cookies.html` y `/privacidad.html`.
   - `cookies.html`: la tabla se desbordaba en móvil → contenedor con scroll.
   - `quienes-somos.html`: la rejilla de 2 columnas se desbordaba en móvil → 1 columna por debajo de 760 px.
+
+## ✅ Verificación en vivo (7-10, mañana)
+- Dominios permitidos en la red del entorno: ya se pueden revisar las 3 webs en vivo.
+- **apavigreen.com:** los 51 archivos de la web (HTML, sitemap, JS, CSS) coinciden con la rama `servidor-2026-10-06` (solo cambian los saltos de línea CRLF del FTP). 31/31 URLs del sitemap correctas en móvil: sin 404, sin errores de JS, sin enlaces rotos, sin scroll horizontal.
+- `cuestionario.js` ya muestra "+34 654 765 548"; `analytics.js` con Consent Mode v2 (29-9) por fin en producción.
+- **resineocanarias.com:** 7/7 OK. **www.piscinadearenatenerife.com:** 6/6 OK.
+- Pendiente: borrar del servidor la carpeta `/2026-10-07-b-arreglos/` (copia suelta).
+- Lección: las instrucciones van FUERA de la carpeta a subir (`SUBIR-ESTO/`), y se sube su CONTENIDO, no la carpeta.
