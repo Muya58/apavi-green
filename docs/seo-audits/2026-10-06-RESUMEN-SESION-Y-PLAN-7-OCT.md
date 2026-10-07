@@ -86,3 +86,11 @@ En una sesión nueva, desde cualquier ordenador, escribe:
 
 ## 6. Herramienta guardada
 - `docs/herramientas/apavi_hubs.py`: script que generó las páginas hub y añade los enlaces (tarjetas de la portada, pie de página "Servicios", enlace en resinas-epoxi y sitemap). **Para la recuperación de mañana NO se ejecuta entero**, porque volvería a crear las páginas hub (que ya están bien en el servidor). Se reutilizan solo sus bloques de "portada", "footers", "resinas-epoxi" y "sitemap" sobre los archivos del servidor.
+
+---
+
+## 7. Avance del 7 oct
+- ✅ El usuario ha vuelto a subir por FTP su carpeta local de la oficina (`C:\Users\APAVIGREEN\...`), sin `sitemap.xml`. **El trabajo del 6-10 por la mañana queda restaurado en el servidor.**
+- Siguen en el servidor: `piscinas-de-arena.html`, `suelos-resineo.html` y el `sitemap.xml` nuevo.
+- Se han perdido temporalmente: los enlaces a las 2 páginas nuevas (tarjetas de la portada y pie de página "Servicios").
+- Pendiente: recibir el .zip de esa carpeta → guardarlo en GitHub como versión buena → epoxi: cada obra abre su galería (no el cuestionario) → reañadir los enlaces → `proyectos.html` info@ → web@ → paquete FTP pequeño.
