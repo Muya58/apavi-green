@@ -52,3 +52,9 @@ Anterior: [[2026-10-06-RESUMEN-SESION-Y-PLAN-7-OCT]] (rama `claude/eloquent-meit
 - El usuario confirma que las páginas pendientes ya están indexadas o solicitadas (2 artículos del blog, La Palma, La Gomera, El Hierro, Résineo y Piscinas de arena).
 - Próximo control: en 1-2 semanas, GSC → Páginas (indexadas) y Rendimiento (consultas).
 - Siguiente tarea: reseñas → [[2026-10-07-kit-resenas-google]].
+
+## 9-10: paquete "epoxi-y-direccion" subido y verificado
+- Los 4 archivos que hay en el servidor (resinas-epoxi, index, aviso-legal, privacidad) son idénticos al repositorio.
+- La galería de epoxi tiene 15 obras y ninguna repetida. El lightbox funciona ("Obra 1 de 15" y vuelve a la 15 con ←), sin errores de JavaScript, y las 15 imágenes cargan (200).
+- La dirección queda como "Calle Don Pedro Infinito" en la portada (schema), el aviso legal y la privacidad.
+- No se ha subido nada que no debía: INSTRUCCIONES.txt y SUBIR-ESTO/ dan 404.
