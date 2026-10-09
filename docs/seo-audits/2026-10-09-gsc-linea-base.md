@@ -55,3 +55,12 @@
 2. cesped-artificial.html: FAQ y schema, bloque "por zonas de Gran Canaria" (Telde, Arucas, Carrizal, Tafira…), obras reales. Dejar la portada como marca y servicios y que enlace a cesped-artificial.html con el texto "césped artificial en Las Palmas".
 3. instalaciones-deportivas.html: FAQ y schema.
 4. Ficha de Google Business Profile: reseñas (campaña en marcha), categorías, servicios y fotos. Es lo que más mueve "césped artificial las palmas" en el mapa.
+
+## Corrección tras revisar el código (9-10)
+- **Error mío en la revisión anterior:** las 4 páginas clave **sí tienen FAQ con schema** (jardines verticales 7 preguntas, césped 6, deportivas 6, portada sí). La comprobación quitaba los `<script>` antes de buscar. Además, jardines-verticales ya tiene "natural vs artificial", precios, proceso y ventajas, y 30 páginas la enlazan.
+- Canibalización: la portada apunta a "Gran Canaria" y cesped-artificial.html a "Las Palmas de Gran Canaria". Están razonablemente separadas, así que **no se toca**.
+- **Conclusión:** el contenido de la página está bien. Lo que frena el posicionamiento es fuera de la web:
+  1. **Fotos reales**: jardines-verticales.html tiene 1 sola foto. Las que hay en el servidor (vertical-real-1, jardin-vertical-despues1) son de 206 px; jardin-vertical-despues-1 parece de catálogo y vertical-evento-hq sale con personas. Hay que pedir al usuario 6-10 fotos de obras propias en buena resolución, para montar una galería con lightbox como la de epoxi.
+  2. **Ficha de Google y reseñas**: campaña en marcha ([[2026-10-08-campana-resenas]]).
+  3. **Enlaces externos**: proveedores/colaboradores, directorios locales (Páginas Amarillas, Cylex, Habitissimo, Cronoshare), asociaciones de empresas de Canarias, prensa local.
+- **No se prepara paquete FTP** hasta tener las fotos.
