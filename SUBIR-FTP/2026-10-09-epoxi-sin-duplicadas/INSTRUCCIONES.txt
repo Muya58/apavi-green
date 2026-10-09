@@ -1,0 +1,13 @@
+PAQUETE 2026-10-09: galería de resinas epoxi sin fotos repetidas
+====================================================================
+Qué cambia: se quitan 2 obras de la galería que eran la misma foto que las
+del gimnasio ("Local comercial - Gran superficie" y "Local comercial -
+Acabado brillo"). La galería pasa de 17 a 15 obras distintas.
+
+Cómo subirlo (FileZilla):
+1. Abre la carpeta SUBIR-ESTO.
+2. Selecciona su contenido (Ctrl+A): es un solo archivo, resinas-epoxi.html.
+3. Arrástralo a la RAÍZ del servidor (donde está index.html).
+4. Si pregunta, elige "Sobrescribir".
+
+No subas este archivo INSTRUCCIONES.txt.
