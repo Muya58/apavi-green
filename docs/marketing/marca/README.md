@@ -1,4 +1,6 @@
-# Imagen de marca Apavi Green (nueva, 9-10-2026)
+# Imagen de marca Apavi Green (nueva, 9-10-2026): PENDIENTE DE APROBACIÓN
+
+> ⚠️ Aún no aprobada. **No cambiar la web ni las fichas hasta tener el visto bueno.** Cuando se apruebe, el cambio se hace a la vez en la web (unas 35 páginas, por FTP), en la ficha de Google, en las redes y en los directorios.
 
 > Relacionado: [[2026-10-09-kit-directorios]]
 

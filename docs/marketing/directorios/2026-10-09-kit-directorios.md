@@ -61,6 +61,7 @@ Copia y pega siempre estos datos, sin cambiar ni una coma.
 césped artificial · instalación césped artificial · césped artificial Las Palmas · césped artificial Gran Canaria · jardín vertical · jardines verticales artificiales · resina epoxi · suelo de resina · pavimento deportivo · pista de pádel · césped deportivo · parque infantil · suelo de caucho · piscina de arena · suelo Résineo · suelo antideslizante piscina · concesionario Bio.design Canarias · concesionario Résineo Canarias · piscina de arena Bio.design
 
 ## Fotos (carpeta `docs/marketing/directorios/fotos/`)
+- ⚠️ **Logo:** la imagen nueva está **pendiente de aprobación** (9-10). Mientras tanto, los directorios llevan el **logo actual** (01 y 02), igual que la web y la ficha de Google, para que todo coincida. Los logos nuevos están en `logo-nuevo-pendiente/`; cuando se apruebe, se cambian a la vez en la web, en Google y en los directorios.
 - `01-logo-apavi-green-cuadrado.jpg`: foto de perfil o logo (800×800).
 - `02-logo-apavi-green.jpg`: logo horizontal / portada.
 - `03` a `06`: obras reales de resina epoxi (oficina Las Palmas, guardería, gimnasio, cocina industrial).
