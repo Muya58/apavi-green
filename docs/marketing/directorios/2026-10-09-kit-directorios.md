@@ -37,13 +37,13 @@ Copia y pega siempre estos datos, sin cambiar ni una coma.
 6. Reformas de exteriores / Piscinas
 
 ## Descripción corta (≈150 caracteres)
-> Instalación de césped artificial, jardines verticales, resinas epoxi y pavimentos deportivos en Canarias. Equipo propio y presupuesto gratis en 24 h.
+> Concesionario oficial de Bio.design y Résineo en Canarias. Césped artificial, jardines verticales, resinas epoxi y pavimentos deportivos. Presupuesto en 24 h.
 
 ## Descripción media (≈500 caracteres)
-> Apavi Green es una empresa de Las Palmas de Gran Canaria especializada en césped artificial, jardines verticales naturales y artificiales, suelos de resina epoxi, pavimentos deportivos, parques infantiles, piscinas de arena y suelo Résineo. Trabajamos en las 7 islas Canarias y en Andalucía con equipo propio, para particulares, comunidades, hoteles, colegios, clubes y empresas. Visita técnica y presupuesto sin compromiso en 24 horas.
+> Apavi Green es una empresa de Las Palmas de Gran Canaria especializada en césped artificial, jardines verticales naturales y artificiales, suelos de resina epoxi, pavimentos deportivos, parques infantiles, piscinas de arena y suelo Résineo. Somos concesionario oficial de Bio.design y Résineo en Canarias. Trabajamos en las 7 islas Canarias y en Andalucía con equipo propio, para particulares, comunidades, hoteles, colegios, clubes y empresas. Visita técnica y presupuesto sin compromiso en 24 horas.
 
 ## Descripción larga (≈1.200 caracteres, para Páginas Amarillas, Habitissimo y similares)
-> Apavi Green es una empresa canaria con sede en Las Palmas de Gran Canaria dedicada al diseño e instalación de superficies y espacios exteriores e interiores. Trabajamos con equipo propio en las 7 islas Canarias (Gran Canaria, Tenerife, Lanzarote, Fuerteventura, La Palma, La Gomera y El Hierro) y en Andalucía.
+> Apavi Green es una empresa canaria con sede en Las Palmas de Gran Canaria dedicada al diseño e instalación de superficies y espacios exteriores e interiores, y **concesionario oficial de Bio.design y Résineo en Canarias**. Trabajamos con equipo propio en las 7 islas Canarias (Gran Canaria, Tenerife, Lanzarote, Fuerteventura, La Palma, La Gomera y El Hierro) y en Andalucía.
 >
 > Nuestros servicios:
 > • Césped artificial para terrazas, azoteas, jardines, piscinas y comunidades, preparado para el sol, el viento y el salitre de Canarias.
@@ -51,14 +51,14 @@ Copia y pega siempre estos datos, sin cambiar ni una coma.
 > • Suelos de resina epoxi para garajes, naves, cocinas industriales, gimnasios, guarderías y oficinas.
 > • Pavimentos deportivos: pistas de pádel, tenis, fútbol y multideporte.
 > • Parques infantiles y suelos de seguridad.
-> • Piscinas de arena y suelo Résineo antideslizante para bordes de piscina y terrazas.
+> • Piscinas de arena Bio.design y suelo Résineo antideslizante para bordes de piscina y terrazas, como concesionario oficial en Canarias.
 >
 > Hacemos una visita técnica gratuita, te enviamos un presupuesto detallado en 24 horas y nos encargamos de todo: preparación del terreno, instalación y limpieza final. Trabajamos para particulares, comunidades de propietarios, hoteles, colegios, clubes deportivos, ayuntamientos y empresas.
 >
 > Pide tu presupuesto gratis en www.apavigreen.com o llámanos al 654 765 548.
 
 ## Servicios / palabras clave (para los campos de "servicios" o "etiquetas")
-césped artificial · instalación césped artificial · césped artificial Las Palmas · césped artificial Gran Canaria · jardín vertical · jardines verticales artificiales · resina epoxi · suelo de resina · pavimento deportivo · pista de pádel · césped deportivo · parque infantil · suelo de caucho · piscina de arena · suelo Résineo · suelo antideslizante piscina
+césped artificial · instalación césped artificial · césped artificial Las Palmas · césped artificial Gran Canaria · jardín vertical · jardines verticales artificiales · resina epoxi · suelo de resina · pavimento deportivo · pista de pádel · césped deportivo · parque infantil · suelo de caucho · piscina de arena · suelo Résineo · suelo antideslizante piscina · concesionario Bio.design Canarias · concesionario Résineo Canarias · piscina de arena Bio.design
 
 ## Fotos (carpeta `docs/marketing/directorios/fotos/`)
 - `01-logo-apavi-green-cuadrado.jpg`: foto de perfil o logo (800×800).
@@ -80,7 +80,7 @@ césped artificial · instalación césped artificial · césped artificial Las 
 | 7 | **Habitissimo** (habitissimo.es) | Perfil gratis, cobran por contactos | Muy buscado para reformas. El perfil con fotos y la descripción larga ya da enlace y visibilidad. | [ ] |
 | 8 | **Cronoshare** (cronoshare.com) | Perfil gratis, cobran por contactos | Igual que Habitissimo. | [ ] |
 | 9 | **Cámara de Comercio de Gran Canaria** / asociaciones del sector | Según cada una | Enlace local de mucha confianza. | [ ] |
-| 10 | **Proveedores y colaboradores** (fabricante del césped, Bio.design/Résineo…) | Gratis | Pedirles que pongan a Apavi Green como instalador en su web, con enlace. | [ ] |
+| 10 | **Bio.design y Résineo** (y el fabricante del césped) | Gratis | **Prioridad alta:** como concesionario oficial, pedirles que aparezca Apavi Green en su web (mapa de distribuidores o instaladores), con enlace a www.apavigreen.com. Es el mejor enlace que podéis conseguir. | [ ] |
 
 **Cómo hacerlo:**
 - Usa siempre el correo **web@apavigreen.com** para registrarte.
