@@ -68,7 +68,7 @@ césped artificial · instalación césped artificial · césped artificial Las 
 ## Directorios: orden de alta
 | # | Directorio | Coste | Notas | Hecho |
 |---|---|---|---|---|
-| 1 | **Bing Places** (bingplaces.com) | Gratis | Se puede **importar directamente desde la ficha de Google**. 5 minutos. | [ ] |
+| 1 | **Bing Places** (bingplaces.com) | Gratis | Se puede **importar directamente desde la ficha de Google**. 5 minutos. | ✅ 9-10 (sincronizado con Google) |
 | 2 | **Apple Business Connect** (businessconnect.apple.com) | Gratis | Para salir en Apple Maps (iPhone). Verificación por teléfono o documento. | [ ] |
 | 3 | **Páginas Amarillas** (paginasamarillas.es) | Ficha básica gratis | Te llamarán para venderte publicidad: **no hace falta contratar nada**. | [ ] |
 | 4 | **Cylex** (cylex.es) | Gratis | Rápido. | [ ] |
