@@ -1,0 +1,19 @@
+PAQUETE 2026-10-09: galería epoxi sin repetidas + dirección unificada
+=======================================================================
+(Sustituye al paquete "2026-10-09-epoxi-sin-duplicadas": ese ya no hace falta.)
+
+Qué cambia:
+- resinas-epoxi.html: se quitan 2 obras que eran la misma foto que las del
+  gimnasio. La galería queda con 15 obras distintas.
+- index.html, aviso-legal.html, privacidad.html: la dirección se escribe
+  igual que en la ficha de Google:
+  "Calle Don Pedro Infinito 105, 1ª planta, 35012 Las Palmas de Gran Canaria".
+  No cambia nada visible del diseño ni el logo.
+
+Cómo subirlo (FileZilla):
+1. Abre la carpeta SUBIR-ESTO.
+2. Selecciona su contenido (Ctrl+A): son 4 archivos .html.
+3. Arrástralos a la RAÍZ del servidor (donde está index.html).
+4. Si pregunta, elige "Sobrescribir".
+
+No subas este archivo INSTRUCCIONES.txt.

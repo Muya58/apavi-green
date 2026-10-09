@@ -6,17 +6,13 @@
 ## ⚠️ Regla de oro: datos EXACTAMENTE iguales en todas partes
 Copia y pega siempre estos datos, sin cambiar ni una coma.
 
-**⚠️ Revisar antes de empezar:** la web pone la dirección de dos formas.
-- En el schema de la portada: "C. Don Pedro Infinito, 105, 1ª planta".
-- En el aviso legal y la privacidad: "Calle Pedro Infinito 105, 1.ª planta".
-
-**Usa la que aparezca en tu ficha de Google** y dime cuál es para unificar la web.
+**Dirección confirmada con la ficha de Google (9-10):** Calle Don Pedro Infinito 105, 1ª planta, 35012 Las Palmas de Gran Canaria, Las Palmas, España. La web se unifica con esta misma forma.
 
 | Campo | Dato |
 |---|---|
 | Nombre comercial | Apavi Green |
 | Razón social | Apavi Green S.L. · CIF B70933270 |
-| Dirección | Calle Pedro Infinito, 105, 1ª planta *(o la versión de tu ficha de Google)* |
+| Dirección | Calle Don Pedro Infinito, 105, 1ª planta |
 | Código postal / ciudad | 35012 Las Palmas de Gran Canaria |
 | Provincia | Las Palmas |
 | Teléfono principal | +34 654 765 548 |
@@ -94,4 +90,4 @@ Al preparar las fotos he visto que 2 de las obras añadidas el 7-10 a la galerí
 - `local-gran-superficie` = `gimnasio-liso`
 - `local-acabado-brillo` = `gimnasio-arido`
 
-Se quitan de la galería (17 → 15 obras). Paquete: `SUBIR-FTP/2026-10-09-epoxi-sin-duplicadas/`.
+Se quitan de la galería (17 → 15 obras). Paquete: `SUBIR-FTP/2026-10-09-epoxi-y-direccion/` (junto con la dirección unificada).
