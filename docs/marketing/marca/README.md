@@ -11,5 +11,5 @@
 
 - Lema: **"Soluciones para exteriores"** (en la versión azul marino: "Soluciones naturales para exteriores").
 - Sello: **"Concesionario oficial"**. Pendiente: ¿de qué marca o fabricante? Conviene decirlo en textos y directorios.
-- Colores principales: azul (APAVI), verde hoja (GREEN), azul marino (lema y sello).
+- Colores principales: azul **#1EA2CA** (APAVI), verde hoja **#8ABB4C** (GREEN), azul marino ≈ **#1B2350** (lema y sello).
 - Pendiente: cambiar el logo de la web, que sigue con el antiguo (logo-apavigreen-transp.webp y el icono 🌿 de la cabecera).
